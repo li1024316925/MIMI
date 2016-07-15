@@ -36,6 +36,7 @@
     rootVC.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
     rootVC.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
     
+    //设置为根视图
     self.window.rootViewController = rootVC;
     
     
