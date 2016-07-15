@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import "MMDrawerController.h"
+#import "CenterViewController.h"
+#import "LeftViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +21,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    //创建窗口
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = window;
+    [self.window makeKeyAndVisible];
+    
+    //创建根视图控制器
+    CenterViewController *centerVC = [[CenterViewController alloc] init];
+    centerVC.view.backgroundColor = [UIColor yellowColor];
+    LeftViewController *leftVC = [[LeftViewController alloc] init];
+    
+    MMDrawerController *rootVC = [[MMDrawerController alloc] initWithCenterViewController:centerVC leftDrawerViewController:leftVC];
+    rootVC.maximumLeftDrawerWidth = 330;
+    rootVC.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    rootVC.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
+    
+    self.window.rootViewController = rootVC;
     
     
     return YES;

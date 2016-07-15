@@ -9,6 +9,13 @@
 #import "LeftViewController.h"
 
 @interface LeftViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *homeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *foundBtn;
+@property (weak, nonatomic) IBOutlet UIButton *unLoginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *weiboBtn;
+@property (weak, nonatomic) IBOutlet UIButton *weixinBtn;
+@property (weak, nonatomic) IBOutlet UIButton *messgeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *setingBtn;
 
 @end
 
@@ -18,6 +25,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
+- (IBAction)homeAction:(UIButton *)sender {
+}
+- (IBAction)foundAction:(UIButton *)sender {
+}
+- (IBAction)messgeAction:(UIButton *)sender {
+}
+- (IBAction)setingAction:(UIButton *)sender {
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
