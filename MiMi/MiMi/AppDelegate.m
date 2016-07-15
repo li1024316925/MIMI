@@ -50,9 +50,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     
-    
-    
-    
+
     
 }
 
