@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AA319021D38D5D600F64761 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319011D38D5D600F64761 /* main.m */; };
+		2AA319051D38D5D600F64761 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319041D38D5D600F64761 /* AppDelegate.m */; };
+		2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AA3190C1D38D5D600F64761 /* Assets.xcassets */; };
+		2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA3190E1D38D5D600F64761 /* LaunchScreen.storyboard */; };
+		2AA319211D38D6E200F64761 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319201D38D6E200F64761 /* CenterViewController.m */; };
+		2AA319251D38D6F000F64761 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319231D38D6F000F64761 /* LeftViewController.m */; };
+		2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AA319241D38D6F000F64761 /* LeftViewController.xib */; };
+		2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319321D38D7F400F64761 /* MMDrawerBarButtonItem.m */; };
+		2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319351D38D7F400F64761 /* MMDrawerController.m */; };
+		2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */; };
+		2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */; };
+		D75685C243CB51AEF9C937BE /* libPods-MiMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		25D78BDFD5E059D472AFA63D /* Pods-MiMi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiMi.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiMi/Pods-MiMi.release.xcconfig"; sourceTree = "<group>"; };
+		2AA318FD1D38D5D600F64761 /* MiMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AA319011D38D5D600F64761 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2AA319031D38D5D600F64761 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2AA319041D38D5D600F64761 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2AA3190C1D38D5D600F64761 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AA3190F1D38D5D600F64761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2AA319111D38D5D600F64761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AA3191F1D38D6E200F64761 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
+		2AA319201D38D6E200F64761 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
+		2AA319221D38D6F000F64761 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		2AA319231D38D6F000F64761 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		2AA319241D38D6F000F64761 /* LeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
+		2AA319311D38D7F400F64761 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		2AA319321D38D7F400F64761 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		2AA319331D38D7F400F64761 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		2AA319341D38D7F400F64761 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		2AA319351D38D7F400F64761 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		2AA319361D38D7F400F64761 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		2AA319381D38D7F400F64761 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiMi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98182F824C2EE4B496CF22F /* Pods-MiMi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiMi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiMi/Pods-MiMi.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AA318FA1D38D5D600F64761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75685C243CB51AEF9C937BE /* libPods-MiMi.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AA318F41D38D5D600F64761 = {
+			isa = PBXGroup;
+			children = (
+				2AA318FF1D38D5D600F64761 /* MiMi */,
+				2AA318FE1D38D5D600F64761 /* Products */,
+				62F156475CCD5FE2173BD5FD /* Pods */,
+				3C8A63763184D59EF7CB2127 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2AA318FE1D38D5D600F64761 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AA318FD1D38D5D600F64761 /* MiMi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AA318FF1D38D5D600F64761 /* MiMi */ = {
+			isa = PBXGroup;
+			children = (
+				2AA319181D38D5F800F64761 /* Main */,
+				2AA319191D38D60D00F64761 /* Found */,
+				2AA3191A1D38D63800F64761 /* Messge */,
+				2AA3191B1D38D65500F64761 /* Seting */,
+				2AA319171D38D5EE00F64761 /* Other */,
+				2AA319031D38D5D600F64761 /* AppDelegate.h */,
+				2AA319041D38D5D600F64761 /* AppDelegate.m */,
+				2AA3190C1D38D5D600F64761 /* Assets.xcassets */,
+				2AA3190E1D38D5D600F64761 /* LaunchScreen.storyboard */,
+				2AA319111D38D5D600F64761 /* Info.plist */,
+				2AA319001D38D5D600F64761 /* Supporting Files */,
+			);
+			path = MiMi;
+			sourceTree = "<group>";
+		};
+		2AA319001D38D5D600F64761 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AA319011D38D5D600F64761 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2AA319171D38D5EE00F64761 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2AA319301D38D7F400F64761 /* MMDrawerController */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		2AA319181D38D5F800F64761 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2AA3191C1D38D68D00F64761 /* Model */,
+				2AA3191D1D38D69800F64761 /* View */,
+				2AA3191E1D38D6A000F64761 /* Controller */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		2AA319191D38D60D00F64761 /* Found */ = {
+			isa = PBXGroup;
+			children = (
+				2AA319291D38D73C00F64761 /* Model */,
+				2AA319281D38D73300F64761 /* View */,
+				2AA319271D38D72700F64761 /* Controller */,
+			);
+			name = Found;
+			sourceTree = "<group>";
+		};
+		2AA3191A1D38D63800F64761 /* Messge */ = {
+			isa = PBXGroup;
+			children = (
+				2AA3192A1D38D75E00F64761 /* Model */,
+				2AA3192C1D38D77700F64761 /* View */,
+				2AA3192B1D38D76800F64761 /* Controller */,
+			);
+			name = Messge;
+			sourceTree = "<group>";
+		};
+		2AA3191B1D38D65500F64761 /* Seting */ = {
+			isa = PBXGroup;
+			children = (
+				2AA3192F1D38D7A400F64761 /* Model */,
+				2AA3192E1D38D79B00F64761 /* View */,
+				2AA3192D1D38D78B00F64761 /* Controller */,
+			);
+			name = Seting;
+			sourceTree = "<group>";
+		};
+		2AA3191C1D38D68D00F64761 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2AA3191D1D38D69800F64761 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2AA3191E1D38D6A000F64761 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2AA3191F1D38D6E200F64761 /* CenterViewController.h */,
+				2AA319201D38D6E200F64761 /* CenterViewController.m */,
+				2AA319221D38D6F000F64761 /* LeftViewController.h */,
+				2AA319231D38D6F000F64761 /* LeftViewController.m */,
+				2AA319241D38D6F000F64761 /* LeftViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2AA319271D38D72700F64761 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2AA319281D38D73300F64761 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2AA319291D38D73C00F64761 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2AA3192A1D38D75E00F64761 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2AA3192B1D38D76800F64761 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2AA3192C1D38D77700F64761 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2AA3192D1D38D78B00F64761 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2AA3192E1D38D79B00F64761 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2AA3192F1D38D7A400F64761 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2AA319301D38D7F400F64761 /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				2AA319311D38D7F400F64761 /* MMDrawerBarButtonItem.h */,
+				2AA319321D38D7F400F64761 /* MMDrawerBarButtonItem.m */,
+				2AA319331D38D7F400F64761 /* MMDrawerController+Subclass.h */,
+				2AA319341D38D7F400F64761 /* MMDrawerController.h */,
+				2AA319351D38D7F400F64761 /* MMDrawerController.m */,
+				2AA319361D38D7F400F64761 /* MMDrawerVisualState.h */,
+				2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */,
+				2AA319381D38D7F400F64761 /* UIViewController+MMDrawerController.h */,
+				2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */,
+			);
+			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		3C8A63763184D59EF7CB2127 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62F156475CCD5FE2173BD5FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E98182F824C2EE4B496CF22F /* Pods-MiMi.debug.xcconfig */,
+				25D78BDFD5E059D472AFA63D /* Pods-MiMi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AA318FC1D38D5D600F64761 /* MiMi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AA319141D38D5D600F64761 /* Build configuration list for PBXNativeTarget "MiMi" */;
+			buildPhases = (
+				C2F847F6526CA16AB868A310 /* [CP] Check Pods Manifest.lock */,
+				2AA318F91D38D5D600F64761 /* Sources */,
+				2AA318FA1D38D5D600F64761 /* Frameworks */,
+				2AA318FB1D38D5D600F64761 /* Resources */,
+				45F480E77E1BCB77B1738486 /* [CP] Embed Pods Frameworks */,
+				28E11FE6BD5C9A7DDE439B9E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiMi;
+			productName = MiMi;
+			productReference = 2AA318FD1D38D5D600F64761 /* MiMi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AA318F51D38D5D600F64761 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = LLQ;
+				TargetAttributes = {
+					2AA318FC1D38D5D600F64761 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = GXJMB867PL;
+					};
+				};
+			};
+			buildConfigurationList = 2AA318F81D38D5D600F64761 /* Build configuration list for PBXProject "MiMi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AA318F41D38D5D600F64761;
+			productRefGroup = 2AA318FE1D38D5D600F64761 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AA318FC1D38D5D600F64761 /* MiMi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AA318FB1D38D5D600F64761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */,
+				2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */,
+				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28E11FE6BD5C9A7DDE439B9E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiMi/Pods-MiMi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45F480E77E1BCB77B1738486 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiMi/Pods-MiMi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2F847F6526CA16AB868A310 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AA318F91D38D5D600F64761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AA319051D38D5D600F64761 /* AppDelegate.m in Sources */,
+				2AA319251D38D6F000F64761 /* LeftViewController.m in Sources */,
+				2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */,
+				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
+				2AA319021D38D5D600F64761 /* main.m in Sources */,
+				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
+				2AA319211D38D6E200F64761 /* CenterViewController.m in Sources */,
+				2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2AA3190E1D38D5D600F64761 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AA3190F1D38D5D600F64761 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AA319121D38D5D600F64761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2AA319131D38D5D600F64761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2AA319151D38D5D600F64761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E98182F824C2EE4B496CF22F /* Pods-MiMi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MiMi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Quan.com.MiMi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2AA319161D38D5D600F64761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D78BDFD5E059D472AFA63D /* Pods-MiMi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MiMi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Quan.com.MiMi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AA318F81D38D5D600F64761 /* Build configuration list for PBXProject "MiMi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AA319121D38D5D600F64761 /* Debug */,
+				2AA319131D38D5D600F64761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AA319141D38D5D600F64761 /* Build configuration list for PBXNativeTarget "MiMi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AA319151D38D5D600F64761 /* Debug */,
+				2AA319161D38D5D600F64761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AA318F51D38D5D600F64761 /* Project object */;
+}
