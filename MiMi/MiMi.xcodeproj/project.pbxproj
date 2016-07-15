@@ -19,6 +19,8 @@
 		2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */; };
 		2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */; };
 		D75685C243CB51AEF9C937BE /* libPods-MiMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */; };
+		F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FC7C71D39144200A0AE0F /* FoundController.m */; };
+		F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08FC7C81D39144200A0AE0F /* FoundController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,9 @@
 		2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiMi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98182F824C2EE4B496CF22F /* Pods-MiMi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiMi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiMi/Pods-MiMi.debug.xcconfig"; sourceTree = "<group>"; };
+		F08FC7C61D39144200A0AE0F /* FoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundController.h; sourceTree = "<group>"; };
+		F08FC7C71D39144200A0AE0F /* FoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundController.m; sourceTree = "<group>"; };
+		F08FC7C81D39144200A0AE0F /* FoundController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +186,9 @@
 		2AA319271D38D72700F64761 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F08FC7C61D39144200A0AE0F /* FoundController.h */,
+				F08FC7C71D39144200A0AE0F /* FoundController.m */,
+				F08FC7C81D39144200A0AE0F /* FoundController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -335,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */,
 				2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */,
 				2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */,
 				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
@@ -398,6 +407,7 @@
 			files = (
 				2AA319051D38D5D600F64761 /* AppDelegate.m in Sources */,
 				2AA319251D38D6F000F64761 /* LeftViewController.m in Sources */,
+				F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */,
 				2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */,
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
 				2AA319021D38D5D600F64761 /* main.m in Sources */,
