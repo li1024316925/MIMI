@@ -26,6 +26,7 @@
     self.window = window;
     [self.window makeKeyAndVisible];
     
+    
     //创建根视图控制器
     CenterViewController *centerVC = [[CenterViewController alloc] init];
     centerVC.view.backgroundColor = [UIColor yellowColor];
