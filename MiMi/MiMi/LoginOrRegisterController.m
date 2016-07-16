@@ -38,8 +38,6 @@
 //判断是否已保存用户
 - (void)getUserMsg
 {
-    NSLog(@"%@,%@",[[NSUserDefaults standardUserDefaults] objectForKey:kUserName],[[NSUserDefaults standardUserDefaults] objectForKey:kPassword]);
-    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:kUserName] && [[NSUserDefaults standardUserDefaults] objectForKey:kPassword]) {
         
         self.email.text = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
@@ -102,7 +100,7 @@
     [BmobUser loginWithUsernameInBackground:self.email.text password:self.password.text block:^(BmobUser *user, NSError *error) {
        
         if (user) {
-           
+                       
             [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"登陆成功,欢迎%@",user.username]];
             
             //保存用户信息,到本地化字典
@@ -110,8 +108,6 @@
             
             [[NSUserDefaults standardUserDefaults] setObject:self.password.text forKey:kPassword];
             
-            NSLog(@"%@,%@",[[NSUserDefaults standardUserDefaults] objectForKey:kUserName],[[NSUserDefaults standardUserDefaults] objectForKey:kPassword]);
-
             [self dismissViewControllerAnimated:YES completion:nil];
             
             //4.

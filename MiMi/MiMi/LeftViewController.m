@@ -8,6 +8,11 @@
 
 #import "LeftViewController.h"
 #import "LoginOrRegisterController.h"
+#import <BmobSDK/Bmob.h>
+#import <SVProgressHUD.h>
+
+#define kUserName @"userName"
+#define kPassword @"password"
 
 @interface LeftViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *homeBtn;
@@ -24,7 +29,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //安全判断 ->登录
+    [self autoLogin];
+
 }
+
 - (IBAction)homeAction:(UIButton *)sender {
 }
 - (IBAction)foundAction:(UIButton *)sender {
@@ -42,12 +52,31 @@
     //5.
     [loginVC setSendMessgae:^(NSString *userName) {
         
-        self.unLoginBtn.backgroundColor = [UIColor clearColor];
-        
         [self.unLoginBtn setTitle:userName forState:UIControlStateNormal];
     }];
     
     [self presentViewController:loginVC animated:YES completion:nil];
+}
+
+- (void)autoLogin
+{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:kUserName] && [[NSUserDefaults standardUserDefaults] objectForKey:kPassword]) {
+        
+        NSString *email = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
+        
+        NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:kPassword];
+        
+        //自动登录
+        [BmobUser loginWithUsernameInBackground:email password:password block:^(BmobUser *user, NSError *error) {
+
+            if (user) {
+                
+                [self.unLoginBtn setTitle:user.username forState:UIControlStateNormal];
+
+                [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"欢迎回来%@",user.username]];
+            }
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
