@@ -34,6 +34,7 @@
 		C6E9AB2A1D3A25F600A15CC1 /* WNXSetingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB291D3A25F600A15CC1 /* WNXSetingView.m */; };
 		C6E9AB301D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB2D1D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m */; };
 		C6E9AB311D3A29CE00A15CC1 /* UIImage+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB2F1D3A29CE00A15CC1 /* UIImage+Size.m */; };
+		C6E9AB341D3A314F00A15CC1 /* MessageData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6E9AB331D3A314F00A15CC1 /* MessageData.plist */; };
 		D75685C243CB51AEF9C937BE /* libPods-MiMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */; };
 		F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FC7C71D39144200A0AE0F /* FoundController.m */; };
 		F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08FC7C81D39144200A0AE0F /* FoundController.xib */; };
@@ -96,6 +97,7 @@
 		C6E9AB2D1D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WNXBarButtonItem.m"; sourceTree = "<group>"; };
 		C6E9AB2E1D3A29CE00A15CC1 /* UIImage+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Size.h"; sourceTree = "<group>"; };
 		C6E9AB2F1D3A29CE00A15CC1 /* UIImage+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Size.m"; sourceTree = "<group>"; };
+		C6E9AB331D3A314F00A15CC1 /* MessageData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MessageData.plist; sourceTree = "<group>"; };
 		DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiMi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98182F824C2EE4B496CF22F /* Pods-MiMi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiMi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiMi/Pods-MiMi.debug.xcconfig"; sourceTree = "<group>"; };
 		F08FC7C61D39144200A0AE0F /* FoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundController.h; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		2AA319181D38D5F800F64761 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C6E9AB321D3A312600A15CC1 /* Plist */,
 				2AA3191C1D38D68D00F64761 /* Model */,
 				2AA3191D1D38D69800F64761 /* View */,
 				2AA3191E1D38D6A000F64761 /* Controller */,
@@ -377,6 +380,14 @@
 			name = Coustom;
 			sourceTree = "<group>";
 		};
+		C6E9AB321D3A312600A15CC1 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				C6E9AB331D3A314F00A15CC1 /* MessageData.plist */,
+			);
+			name = Plist;
+			sourceTree = "<group>";
+		};
 		F0E86D511D3A1254009EA5CF /* 注册登录 */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +463,7 @@
 			files = (
 				F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */,
 				2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */,
+				C6E9AB341D3A314F00A15CC1 /* MessageData.plist in Resources */,
 				C6E9AB1A1D3A250A00A15CC1 /* WNXNoHaveMessageView.xib in Resources */,
 				2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */,
 				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
