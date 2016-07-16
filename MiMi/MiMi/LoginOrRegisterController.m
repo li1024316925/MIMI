@@ -7,8 +7,15 @@
 //
 
 #import "LoginOrRegisterController.h"
+#import "CCCheckInput.h"
+#import <BmobSDK/Bmob.h>
+#import <SVProgressHUD.h>
 
 @interface LoginOrRegisterController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *email;
+
+@property (weak, nonatomic) IBOutlet UITextField *password;
 
 @end
 
@@ -16,22 +23,65 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+}
+
+//取消按钮
+- (IBAction)cancleAction:(UIBarButtonItem *)sender {
+    
+    //关闭页面
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//注册按钮
+- (IBAction)registerAction:(UIButton *)sender {
+    
+    //判断是否合格
+    if ([CCCheckInput isValidateEmail:self.email.text]) {
+        
+        BmobUser *bUser = [[BmobUser alloc] init];
+
+        [bUser setUsername:self.email.text];
+        
+        [bUser setEmail:self.email.text];
+        
+        [bUser setPassword:self.password.text];
+        
+        [bUser signUpInBackgroundWithBlock:^ (BOOL isSuccessful, NSError *error){
+            
+            if (isSuccessful){
+                
+                [SVProgressHUD showSuccessWithStatus:@"注册成功,用户名即邮箱名,请激活邮箱"];
+                
+                //保存至本地缓存
+                [BmobUser loginInbackgroundWithAccount:self.email.text andPassword:self.password.text block:^(BmobUser *user, NSError *error) {
+                    
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+                
+            } else {
+                
+                NSLog(@"%@",error.userInfo);
+                
+                if ([error.userInfo objectForKey:NSLocalizedDescriptionKey]) {
+                    
+                    [SVProgressHUD showErrorWithStatus:@"邮箱已注册,请登录"];
+
+                }else{
+                    
+                    [SVProgressHUD showErrorWithStatus:@"注册失败,请重试"];
+                }
+            }
+        }];
+    }
+}
+
+//登录按钮
+- (IBAction)loginAction:(UIButton *)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

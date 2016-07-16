@@ -24,6 +24,7 @@
 		F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08FC7C81D39144200A0AE0F /* FoundController.xib */; };
 		F0E86D551D3A126F009EA5CF /* LoginOrRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D531D3A126E009EA5CF /* LoginOrRegisterController.m */; };
 		F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D541D3A126F009EA5CF /* LoginOrRegisterController.xib */; };
+		F0E86D591D3A1A4E009EA5CF /* CCCheckInput.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D581D3A1A4E009EA5CF /* CCCheckInput.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,8 @@
 		F0E86D521D3A126E009EA5CF /* LoginOrRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginOrRegisterController.h; sourceTree = "<group>"; };
 		F0E86D531D3A126E009EA5CF /* LoginOrRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginOrRegisterController.m; sourceTree = "<group>"; };
 		F0E86D541D3A126F009EA5CF /* LoginOrRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginOrRegisterController.xib; sourceTree = "<group>"; };
+		F0E86D571D3A1A4E009EA5CF /* CCCheckInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCheckInput.h; sourceTree = "<group>"; };
+		F0E86D581D3A1A4E009EA5CF /* CCCheckInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCheckInput.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +302,8 @@
 				F0E86D521D3A126E009EA5CF /* LoginOrRegisterController.h */,
 				F0E86D531D3A126E009EA5CF /* LoginOrRegisterController.m */,
 				F0E86D541D3A126F009EA5CF /* LoginOrRegisterController.xib */,
+				F0E86D571D3A1A4E009EA5CF /* CCCheckInput.h */,
+				F0E86D581D3A1A4E009EA5CF /* CCCheckInput.m */,
 			);
 			name = "注册登录";
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AA319051D38D5D600F64761 /* AppDelegate.m in Sources */,
+				F0E86D591D3A1A4E009EA5CF /* CCCheckInput.m in Sources */,
 				2AA319251D38D6F000F64761 /* LeftViewController.m in Sources */,
 				F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */,
 				2A2437601D39C8D700F8FA31 /* MainViewController.m in Sources */,
