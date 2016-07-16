@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "MMDrawerController.h"
-
+#import "LLQNavigationController.h"
 #import "LeftViewController.h"
 #import "MainViewController.h"
 
@@ -31,9 +31,10 @@
     //创建根视图控制器
     MainViewController *mainVC = [[MainViewController alloc] init];
     mainVC.view.backgroundColor = [UIColor yellowColor];
+    LLQNavigationController *naviVC = [[LLQNavigationController alloc] initWithRootViewController:mainVC];
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     
-    MMDrawerController *rootVC = [[MMDrawerController alloc] initWithCenterViewController:mainVC leftDrawerViewController:leftVC];
+    MMDrawerController *rootVC = [[MMDrawerController alloc] initWithCenterViewController:naviVC leftDrawerViewController:leftVC];
     rootVC.maximumLeftDrawerWidth = 330;
     rootVC.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
     rootVC.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
