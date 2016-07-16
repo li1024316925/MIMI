@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2437601D39C8D700F8FA31 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24375F1D39C8D700F8FA31 /* MainViewController.m */; };
 		2AA319021D38D5D600F64761 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319011D38D5D600F64761 /* main.m */; };
 		2AA319051D38D5D600F64761 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319041D38D5D600F64761 /* AppDelegate.m */; };
 		2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AA3190C1D38D5D600F64761 /* Assets.xcassets */; };
 		2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA3190E1D38D5D600F64761 /* LaunchScreen.storyboard */; };
-		2AA319211D38D6E200F64761 /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319201D38D6E200F64761 /* CenterViewController.m */; };
 		2AA319251D38D6F000F64761 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319231D38D6F000F64761 /* LeftViewController.m */; };
 		2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AA319241D38D6F000F64761 /* LeftViewController.xib */; };
 		2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319321D38D7F400F64761 /* MMDrawerBarButtonItem.m */; };
@@ -25,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		25D78BDFD5E059D472AFA63D /* Pods-MiMi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiMi.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiMi/Pods-MiMi.release.xcconfig"; sourceTree = "<group>"; };
+		2A24375E1D39C8D700F8FA31 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		2A24375F1D39C8D700F8FA31 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2AA318FD1D38D5D600F64761 /* MiMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA319011D38D5D600F64761 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2AA319031D38D5D600F64761 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,8 +34,6 @@
 		2AA3190C1D38D5D600F64761 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AA3190F1D38D5D600F64761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AA319111D38D5D600F64761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2AA3191F1D38D6E200F64761 /* CenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterViewController.h; sourceTree = "<group>"; };
-		2AA319201D38D6E200F64761 /* CenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterViewController.m; sourceTree = "<group>"; };
 		2AA319221D38D6F000F64761 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		2AA319231D38D6F000F64761 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		2AA319241D38D6F000F64761 /* LeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
@@ -174,8 +174,8 @@
 		2AA3191E1D38D6A000F64761 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2AA3191F1D38D6E200F64761 /* CenterViewController.h */,
-				2AA319201D38D6E200F64761 /* CenterViewController.m */,
+				2A24375E1D39C8D700F8FA31 /* MainViewController.h */,
+				2A24375F1D39C8D700F8FA31 /* MainViewController.m */,
 				2AA319221D38D6F000F64761 /* LeftViewController.h */,
 				2AA319231D38D6F000F64761 /* LeftViewController.m */,
 				2AA319241D38D6F000F64761 /* LeftViewController.xib */,
@@ -408,11 +408,11 @@
 				2AA319051D38D5D600F64761 /* AppDelegate.m in Sources */,
 				2AA319251D38D6F000F64761 /* LeftViewController.m in Sources */,
 				F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */,
+				2A2437601D39C8D700F8FA31 /* MainViewController.m in Sources */,
 				2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */,
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
 				2AA319021D38D5D600F64761 /* main.m in Sources */,
 				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
-				2AA319211D38D6E200F64761 /* CenterViewController.m in Sources */,
 				2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

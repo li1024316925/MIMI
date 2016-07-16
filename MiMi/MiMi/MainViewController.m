@@ -1,18 +1,18 @@
 //
-//  CenterViewController.m
+//  MainViewController.m
 //  MiMi
 //
-//  Created by LLQ on 16/7/15.
+//  Created by LLQ on 16/7/16.
 //  Copyright © 2016年 LLQ. All rights reserved.
 //
 
-#import "CenterViewController.h"
+#import "MainViewController.h"
 
-@interface CenterViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation CenterViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
