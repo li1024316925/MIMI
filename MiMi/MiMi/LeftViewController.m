@@ -37,7 +37,17 @@
 //注册登录
 - (IBAction)loginOrRegister:(UIButton *)sender {
     
-    [self presentViewController:[[LoginOrRegisterController alloc]init] animated:YES completion:nil];
+    LoginOrRegisterController *loginVC = [[LoginOrRegisterController alloc]init];
+    
+    //5.
+    [loginVC setSendMessgae:^(NSString *userName) {
+        
+        self.unLoginBtn.backgroundColor = [UIColor clearColor];
+        
+        [self.unLoginBtn setTitle:userName forState:UIControlStateNormal];
+    }];
+    
+    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

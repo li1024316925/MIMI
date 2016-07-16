@@ -11,6 +11,9 @@
 #import <BmobSDK/Bmob.h>
 #import <SVProgressHUD.h>
 
+#define kUserName @"userName"
+#define kPassword @"password"
+
 @interface LoginOrRegisterController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *email;
@@ -23,6 +26,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self getUserMsg];
+}
+
+//判断是否已保存用户
+- (void)getUserMsg
+{
+    NSLog(@"%@,%@",[[NSUserDefaults standardUserDefaults] objectForKey:kUserName],[[NSUserDefaults standardUserDefaults] objectForKey:kPassword]);
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:kUserName] && [[NSUserDefaults standardUserDefaults] objectForKey:kPassword]) {
+        
+        self.email.text = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
+        
+        self.password.text = [[NSUserDefaults standardUserDefaults] objectForKey:kPassword];
+    }
 }
 
 //取消按钮
@@ -82,7 +105,20 @@
            
             [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"登陆成功,欢迎%@",user.username]];
             
+            //保存用户信息,到本地化字典
+            [[NSUserDefaults standardUserDefaults] setObject:user.username forKey:kUserName];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:self.password.text forKey:kPassword];
+            
+            NSLog(@"%@,%@",[[NSUserDefaults standardUserDefaults] objectForKey:kUserName],[[NSUserDefaults standardUserDefaults] objectForKey:kPassword]);
+
             [self dismissViewControllerAnimated:YES completion:nil];
+            
+            //4.
+            if (_sendMessgae) {
+                
+                _sendMessgae(user.username);
+            }
         }
     }];
 }
