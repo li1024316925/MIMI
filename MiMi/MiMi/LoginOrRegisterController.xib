@@ -8,7 +8,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginOrRegisterController">
             <connections>
                 <outlet property="email" destination="sVR-vT-bsD" id="Sxc-Kr-xxK"/>
+                <outlet property="emailCheck" destination="bdg-MV-tIk" id="5EE-ln-gbX"/>
                 <outlet property="password" destination="TKw-NE-2fD" id="uDs-IF-BX4"/>
+                <outlet property="passwordCheck" destination="chF-1h-ihT" id="JDh-Jm-RLl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -97,16 +99,49 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="chF-1h-ihT" userLabel="密码 check">
+                    <rect key="frame" x="332" y="192" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="K6x-DT-CsH"/>
+                        <constraint firstAttribute="width" constant="35" id="eug-4i-aOn"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="bdg-MV-tIk" userLabel="用户名 check">
+                    <rect key="frame" x="332" y="149" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="PWb-9D-Pt9"/>
+                        <constraint firstAttribute="height" constant="35" id="fL9-2Q-box"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.72410656490552805" green="0.96512318801504138" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="nPK-6k-mDh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="144" id="3fr-gG-V9l"/>
+                <constraint firstItem="chF-1h-ihT" firstAttribute="bottom" secondItem="TKw-NE-2fD" secondAttribute="bottom" constant="-6" id="B0F-aR-Bsb"/>
                 <constraint firstAttribute="trailing" secondItem="Li5-f5-0b0" secondAttribute="trailing" id="Odv-sC-Sf8"/>
+                <constraint firstItem="chF-1h-ihT" firstAttribute="leading" secondItem="nPK-6k-mDh" secondAttribute="trailing" id="PR6-sI-t9U"/>
                 <constraint firstItem="nPK-6k-mDh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Sd9-9m-3nq"/>
+                <constraint firstItem="bdg-MV-tIk" firstAttribute="bottom" secondItem="sVR-vT-bsD" secondAttribute="bottom" constant="-4" id="YWD-ij-Lys"/>
                 <constraint firstItem="Li5-f5-0b0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YiV-S3-Ve6"/>
+                <constraint firstItem="bdg-MV-tIk" firstAttribute="leading" secondItem="nPK-6k-mDh" secondAttribute="trailing" id="nIa-23-OWe"/>
                 <constraint firstItem="Li5-f5-0b0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="of3-5B-NCy"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
         </view>
     </objects>
+    <resources>
+        <image name="right" width="131" height="146"/>
+    </resources>
 </document>

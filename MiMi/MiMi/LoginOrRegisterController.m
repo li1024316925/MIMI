@@ -14,11 +14,15 @@
 #define kUserName @"userName"
 #define kPassword @"password"
 
-@interface LoginOrRegisterController ()
+@interface LoginOrRegisterController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *email;
 
 @property (weak, nonatomic) IBOutlet UITextField *password;
+
+@property (weak, nonatomic) IBOutlet UIImageView *emailCheck;
+
+@property (weak, nonatomic) IBOutlet UIImageView *passwordCheck;
 
 @end
 
@@ -31,6 +35,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    self.email.delegate = self;
+    
+    self.password.delegate = self;
+    
+    self.emailCheck.hidden = YES;
+    
+    self.passwordCheck.hidden = YES;
     
     [self getUserMsg];
 }
@@ -58,6 +70,8 @@
     
     //判断是否合格
     if ([CCCheckInput isValidateEmail:self.email.text]) {
+        
+        [self textFieldDidEndEditing:self.email];
         
         BmobUser *bUser = [[BmobUser alloc] init];
 
@@ -117,6 +131,66 @@
             }
         }
     }];
+}
+
+//点击控制器调用
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
+#pragma -mark UITextField
+
+//开始编辑
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField.text.length > 0) {
+        
+        [self textFieldDidEndEditing:textField];
+    }
+}
+
+//清除按钮
+- (BOOL)textFieldShouldClear:(UITextField *)textField
+{
+    self.emailCheck.hidden = YES;
+    
+    self.passwordCheck.hidden = YES;
+    
+    return YES;
+}
+
+//结束编辑
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField == self.email) {
+        
+        if ([CCCheckInput isValidateEmail:self.email.text]) {
+            
+            self.emailCheck.image = [UIImage imageNamed:@"right"];
+            
+            self.emailCheck.hidden = NO;
+        }else{
+            
+            self.emailCheck.hidden = NO;
+
+            self.emailCheck.image = [UIImage imageNamed:@"wrong"];
+        }
+        
+    }else if (textField == self.password){
+        
+        if ([CCCheckInput isValidatePassword:self.password.text]) {
+            
+            self.passwordCheck.image = [UIImage imageNamed:@"right"];
+
+            self.passwordCheck.hidden = NO;
+        }else{
+            
+            self.passwordCheck.hidden = NO;
+            
+            self.passwordCheck.image = [UIImage imageNamed:@"wrong"];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
