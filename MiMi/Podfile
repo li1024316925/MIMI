@@ -5,4 +5,10 @@ target:MiMi do
 pod 'SDWebImage'
 pod 'BmobSDK'
 pod 'SVProgressHUD'
+
+pod 'MJExtension'
+
+pod 'Masonry'
+
+pod 'MJRefresh'
 end

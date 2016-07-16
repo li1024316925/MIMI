@@ -1,0 +1,30 @@
+//
+//  Mypch.pch
+//  MiMi
+//
+//  Created by BEVER on 16/7/16.
+//  Copyright © 2016年 LLQ. All rights reserved.
+//
+
+#ifndef Mypch_pch
+#define Mypch_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//背景的灰色
+#define WNXBackgroundGrayColor WNXColor(51, 52, 53)
+//全局的绿色主题
+#define WNXColor(r, g, b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1]
+#define WNXGolbalGreen WNXColor(33, 197, 180)
+//抽屉顶部距离 底部一样
+#define WNXScaleTopMargin 35
+//抽屉拉出来右边剩余比例
+#define WNXZoomScaleRight 0.14
+//app的高度
+#define WNXAppWidth ([UIScreen mainScreen].bounds.size.width)
+//app的宽度
+#define WNXAppHeight ([UIScreen mainScreen].bounds.size.height)
+
+
+#endif /* Mypch_pch */

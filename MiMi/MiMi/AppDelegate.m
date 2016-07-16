@@ -36,6 +36,7 @@
     LLQNavigationController *naviVC = [[LLQNavigationController alloc] initWithRootViewController:mainVC];
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     
+    
     MMDrawerController *rootVC = [[MMDrawerController alloc] initWithCenterViewController:naviVC leftDrawerViewController:leftVC];
     rootVC.maximumLeftDrawerWidth = 330;
     rootVC.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;

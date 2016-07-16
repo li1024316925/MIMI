@@ -19,6 +19,21 @@
 		2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319351D38D7F400F64761 /* MMDrawerController.m */; };
 		2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */; };
 		2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */; };
+		C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */; };
+		C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */; };
+		C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB0C1D3A250A00A15CC1 /* WNXMessageDeleteButton.m */; };
+		C6E9AB161D3A250A00A15CC1 /* WNXMessageRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB0E1D3A250A00A15CC1 /* WNXMessageRefreshHeader.m */; };
+		C6E9AB171D3A250A00A15CC1 /* WNXMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB101D3A250A00A15CC1 /* WNXMessageCell.m */; };
+		C6E9AB181D3A250A00A15CC1 /* WNXMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6E9AB111D3A250A00A15CC1 /* WNXMessageCell.xib */; };
+		C6E9AB191D3A250A00A15CC1 /* WNXNoHaveMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB131D3A250A00A15CC1 /* WNXNoHaveMessageView.m */; };
+		C6E9AB1A1D3A250A00A15CC1 /* WNXNoHaveMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6E9AB141D3A250A00A15CC1 /* WNXNoHaveMessageView.xib */; };
+		C6E9AB1F1D3A252B00A15CC1 /* WNXMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB1C1D3A252B00A15CC1 /* WNXMessageViewController.m */; };
+		C6E9AB201D3A252B00A15CC1 /* WNXMessagePushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB1E1D3A252B00A15CC1 /* WNXMessagePushViewController.m */; };
+		C6E9AB231D3A259100A15CC1 /* WNXMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB221D3A259100A15CC1 /* WNXMessageModel.m */; };
+		C6E9AB271D3A25EA00A15CC1 /* WNXSetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB261D3A25EA00A15CC1 /* WNXSetingViewController.m */; };
+		C6E9AB2A1D3A25F600A15CC1 /* WNXSetingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB291D3A25F600A15CC1 /* WNXSetingView.m */; };
+		C6E9AB301D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB2D1D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m */; };
+		C6E9AB311D3A29CE00A15CC1 /* UIImage+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB2F1D3A29CE00A15CC1 /* UIImage+Size.m */; };
 		D75685C243CB51AEF9C937BE /* libPods-MiMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */; };
 		F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FC7C71D39144200A0AE0F /* FoundController.m */; };
 		F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08FC7C81D39144200A0AE0F /* FoundController.xib */; };
@@ -52,6 +67,35 @@
 		2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		2AA319381D38D7F400F64761 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMenuButton.h; sourceTree = "<group>"; };
+		C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMenuButton.m; sourceTree = "<group>"; };
+		C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
+		C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetingViewController.m; sourceTree = "<group>"; };
+		C6E9AB0B1D3A250A00A15CC1 /* WNXMessageDeleteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMessageDeleteButton.h; sourceTree = "<group>"; };
+		C6E9AB0C1D3A250A00A15CC1 /* WNXMessageDeleteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMessageDeleteButton.m; sourceTree = "<group>"; };
+		C6E9AB0D1D3A250A00A15CC1 /* WNXMessageRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMessageRefreshHeader.h; sourceTree = "<group>"; };
+		C6E9AB0E1D3A250A00A15CC1 /* WNXMessageRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMessageRefreshHeader.m; sourceTree = "<group>"; };
+		C6E9AB0F1D3A250A00A15CC1 /* WNXMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMessageCell.h; sourceTree = "<group>"; };
+		C6E9AB101D3A250A00A15CC1 /* WNXMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMessageCell.m; sourceTree = "<group>"; };
+		C6E9AB111D3A250A00A15CC1 /* WNXMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WNXMessageCell.xib; sourceTree = "<group>"; };
+		C6E9AB121D3A250A00A15CC1 /* WNXNoHaveMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXNoHaveMessageView.h; sourceTree = "<group>"; };
+		C6E9AB131D3A250A00A15CC1 /* WNXNoHaveMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXNoHaveMessageView.m; sourceTree = "<group>"; };
+		C6E9AB141D3A250A00A15CC1 /* WNXNoHaveMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WNXNoHaveMessageView.xib; sourceTree = "<group>"; };
+		C6E9AB1B1D3A252B00A15CC1 /* WNXMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMessageViewController.h; sourceTree = "<group>"; };
+		C6E9AB1C1D3A252B00A15CC1 /* WNXMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMessageViewController.m; sourceTree = "<group>"; };
+		C6E9AB1D1D3A252B00A15CC1 /* WNXMessagePushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMessagePushViewController.h; sourceTree = "<group>"; };
+		C6E9AB1E1D3A252B00A15CC1 /* WNXMessagePushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMessagePushViewController.m; sourceTree = "<group>"; };
+		C6E9AB211D3A259100A15CC1 /* WNXMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMessageModel.h; sourceTree = "<group>"; };
+		C6E9AB221D3A259100A15CC1 /* WNXMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMessageModel.m; sourceTree = "<group>"; };
+		C6E9AB241D3A25A600A15CC1 /* Mypch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mypch.pch; sourceTree = "<group>"; };
+		C6E9AB251D3A25EA00A15CC1 /* WNXSetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXSetingViewController.h; sourceTree = "<group>"; };
+		C6E9AB261D3A25EA00A15CC1 /* WNXSetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXSetingViewController.m; sourceTree = "<group>"; };
+		C6E9AB281D3A25F600A15CC1 /* WNXSetingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXSetingView.h; sourceTree = "<group>"; };
+		C6E9AB291D3A25F600A15CC1 /* WNXSetingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXSetingView.m; sourceTree = "<group>"; };
+		C6E9AB2C1D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WNXBarButtonItem.h"; sourceTree = "<group>"; };
+		C6E9AB2D1D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WNXBarButtonItem.m"; sourceTree = "<group>"; };
+		C6E9AB2E1D3A29CE00A15CC1 /* UIImage+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Size.h"; sourceTree = "<group>"; };
+		C6E9AB2F1D3A29CE00A15CC1 /* UIImage+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Size.m"; sourceTree = "<group>"; };
 		DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiMi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98182F824C2EE4B496CF22F /* Pods-MiMi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiMi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiMi/Pods-MiMi.debug.xcconfig"; sourceTree = "<group>"; };
 		F08FC7C61D39144200A0AE0F /* FoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundController.h; sourceTree = "<group>"; };
@@ -116,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				2AA319011D38D5D600F64761 /* main.m */,
+				C6E9AB241D3A25A600A15CC1 /* Mypch.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -123,6 +168,7 @@
 		2AA319171D38D5EE00F64761 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				C6E9AB2B1D3A29A500A15CC1 /* Coustom */,
 				2AA319301D38D7F400F64761 /* MMDrawerController */,
 			);
 			name = Other;
@@ -178,6 +224,8 @@
 		2AA3191D1D38D69800F64761 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */,
+				C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -185,6 +233,8 @@
 		2AA3191E1D38D6A000F64761 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */,
+				C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */,
 				F0E86D511D3A1254009EA5CF /* 注册登录 */,
 				2A2437611D39D83E00F8FA31 /* LLQNavigationController.h */,
 				2A2437621D39D83E00F8FA31 /* LLQNavigationController.m */,
@@ -224,6 +274,8 @@
 		2AA3192A1D38D75E00F64761 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6E9AB211D3A259100A15CC1 /* WNXMessageModel.h */,
+				C6E9AB221D3A259100A15CC1 /* WNXMessageModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -231,6 +283,10 @@
 		2AA3192B1D38D76800F64761 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C6E9AB1B1D3A252B00A15CC1 /* WNXMessageViewController.h */,
+				C6E9AB1C1D3A252B00A15CC1 /* WNXMessageViewController.m */,
+				C6E9AB1D1D3A252B00A15CC1 /* WNXMessagePushViewController.h */,
+				C6E9AB1E1D3A252B00A15CC1 /* WNXMessagePushViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -238,6 +294,16 @@
 		2AA3192C1D38D77700F64761 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C6E9AB0B1D3A250A00A15CC1 /* WNXMessageDeleteButton.h */,
+				C6E9AB0C1D3A250A00A15CC1 /* WNXMessageDeleteButton.m */,
+				C6E9AB0D1D3A250A00A15CC1 /* WNXMessageRefreshHeader.h */,
+				C6E9AB0E1D3A250A00A15CC1 /* WNXMessageRefreshHeader.m */,
+				C6E9AB0F1D3A250A00A15CC1 /* WNXMessageCell.h */,
+				C6E9AB101D3A250A00A15CC1 /* WNXMessageCell.m */,
+				C6E9AB111D3A250A00A15CC1 /* WNXMessageCell.xib */,
+				C6E9AB121D3A250A00A15CC1 /* WNXNoHaveMessageView.h */,
+				C6E9AB131D3A250A00A15CC1 /* WNXNoHaveMessageView.m */,
+				C6E9AB141D3A250A00A15CC1 /* WNXNoHaveMessageView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -245,6 +311,8 @@
 		2AA3192D1D38D78B00F64761 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C6E9AB251D3A25EA00A15CC1 /* WNXSetingViewController.h */,
+				C6E9AB261D3A25EA00A15CC1 /* WNXSetingViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -252,6 +320,8 @@
 		2AA3192E1D38D79B00F64761 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C6E9AB281D3A25F600A15CC1 /* WNXSetingView.h */,
+				C6E9AB291D3A25F600A15CC1 /* WNXSetingView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -294,6 +364,17 @@
 				25D78BDFD5E059D472AFA63D /* Pods-MiMi.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C6E9AB2B1D3A29A500A15CC1 /* Coustom */ = {
+			isa = PBXGroup;
+			children = (
+				C6E9AB2C1D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.h */,
+				C6E9AB2D1D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m */,
+				C6E9AB2E1D3A29CE00A15CC1 /* UIImage+Size.h */,
+				C6E9AB2F1D3A29CE00A15CC1 /* UIImage+Size.m */,
+			);
+			name = Coustom;
 			sourceTree = "<group>";
 		};
 		F0E86D511D3A1254009EA5CF /* 注册登录 */ = {
@@ -342,7 +423,7 @@
 				TargetAttributes = {
 					2AA318FC1D38D5D600F64761 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = GXJMB867PL;
+						DevelopmentTeam = XV5U4BTA2P;
 					};
 				};
 			};
@@ -371,9 +452,11 @@
 			files = (
 				F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */,
 				2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */,
+				C6E9AB1A1D3A250A00A15CC1 /* WNXNoHaveMessageView.xib in Resources */,
 				2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */,
 				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
 				F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */,
+				C6E9AB181D3A250A00A15CC1 /* WNXMessageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,13 +519,26 @@
 				F0E86D591D3A1A4E009EA5CF /* CCCheckInput.m in Sources */,
 				2AA319251D38D6F000F64761 /* LeftViewController.m in Sources */,
 				F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */,
+				C6E9AB231D3A259100A15CC1 /* WNXMessageModel.m in Sources */,
+				C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */,
 				2A2437601D39C8D700F8FA31 /* MainViewController.m in Sources */,
+				C6E9AB301D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m in Sources */,
+				C6E9AB1F1D3A252B00A15CC1 /* WNXMessageViewController.m in Sources */,
+				C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */,
+				C6E9AB191D3A250A00A15CC1 /* WNXNoHaveMessageView.m in Sources */,
+				C6E9AB171D3A250A00A15CC1 /* WNXMessageCell.m in Sources */,
+				C6E9AB201D3A252B00A15CC1 /* WNXMessagePushViewController.m in Sources */,
 				2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */,
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
 				2AA319021D38D5D600F64761 /* main.m in Sources */,
 				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
 				2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */,
 				2A2437631D39D83E00F8FA31 /* LLQNavigationController.m in Sources */,
+				C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */,
+				C6E9AB2A1D3A25F600A15CC1 /* WNXSetingView.m in Sources */,
+				C6E9AB161D3A250A00A15CC1 /* WNXMessageRefreshHeader.m in Sources */,
+				C6E9AB311D3A29CE00A15CC1 /* UIImage+Size.m in Sources */,
+				C6E9AB271D3A25EA00A15CC1 /* WNXSetingViewController.m in Sources */,
 				F0E86D551D3A126F009EA5CF /* LoginOrRegisterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,10 +644,15 @@
 			baseConfigurationReference = E98182F824C2EE4B496CF22F /* Pods-MiMi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MiMi/Mypch.pch";
 				INFOPLIST_FILE = MiMi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Quan.com.MiMi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -560,10 +661,15 @@
 			baseConfigurationReference = 25D78BDFD5E059D472AFA63D /* Pods-MiMi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MiMi/Mypch.pch";
 				INFOPLIST_FILE = MiMi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Quan.com.MiMi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
