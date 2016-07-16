@@ -13,7 +13,6 @@
 #import "MainViewController.h"
 #import <BmobSDK/Bmob.h>
 
-
 #define kApplication @"1c7018c7e597db7c7da31b2d7d400793"
 
 @interface AppDelegate ()

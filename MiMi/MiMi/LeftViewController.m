@@ -11,6 +11,8 @@
 #import <BmobSDK/Bmob.h>
 #import "WNXMessageViewController.h"
 #import "WNXSetingViewController.h"
+#import "FoundController.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface LeftViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *homeBtn;
@@ -30,19 +32,29 @@
     
     //安全判断 ->登录
     [self autoLogin];
-
 }
 
 - (IBAction)homeAction:(UIButton *)sender {
+    
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+
 }
 - (IBAction)foundAction:(UIButton *)sender {
+    
+    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    
+    [self presentViewController:[[FoundController alloc]init] animated:YES completion:nil];
 }
 - (IBAction)messgeAction:(UIButton *)sender {
     
+    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+
     [self presentViewController:[[WNXMessageViewController alloc]init] animated:YES completion:nil];
 }
 - (IBAction)setingAction:(UIButton *)sender {
     
+    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+
     [self presentViewController:[[WNXSetingViewController alloc]init] animated:YES completion:nil];
 }
 

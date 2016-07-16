@@ -41,6 +41,17 @@
 		F0E86D551D3A126F009EA5CF /* LoginOrRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D531D3A126E009EA5CF /* LoginOrRegisterController.m */; };
 		F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D541D3A126F009EA5CF /* LoginOrRegisterController.xib */; };
 		F0E86D591D3A1A4E009EA5CF /* CCCheckInput.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D581D3A1A4E009EA5CF /* CCCheckInput.m */; };
+		F0E86D5D1D3A59FC009EA5CF /* FoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D5B1D3A59FC009EA5CF /* FoundCell.m */; };
+		F0E86D5E1D3A59FC009EA5CF /* FoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D5C1D3A59FC009EA5CF /* FoundCell.xib */; };
+		F0E86D621D3A5C98009EA5CF /* PresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D601D3A5C98009EA5CF /* PresentController.m */; };
+		F0E86D631D3A5C98009EA5CF /* PresentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D611D3A5C98009EA5CF /* PresentController.xib */; };
+		F0E86D6C1D3A61C6009EA5CF /* blurData.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D651D3A61C6009EA5CF /* blurData.plist */; };
+		F0E86D6D1D3A61C6009EA5CF /* CellDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D661D3A61C6009EA5CF /* CellDatas.plist */; };
+		F0E86D6E1D3A61C6009EA5CF /* detailJson in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D671D3A61C6009EA5CF /* detailJson */; };
+		F0E86D6F1D3A61C6009EA5CF /* foundData.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D681D3A61C6009EA5CF /* foundData.plist */; };
+		F0E86D701D3A61C6009EA5CF /* HomeDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D691D3A61C6009EA5CF /* HomeDatas.plist */; };
+		F0E86D711D3A61C6009EA5CF /* infoDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D6A1D3A61C6009EA5CF /* infoDatas.plist */; };
+		F0E86D751D3A641C009EA5CF /* FoundModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D741D3A641C009EA5CF /* FoundModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +119,20 @@
 		F0E86D541D3A126F009EA5CF /* LoginOrRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginOrRegisterController.xib; sourceTree = "<group>"; };
 		F0E86D571D3A1A4E009EA5CF /* CCCheckInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCheckInput.h; sourceTree = "<group>"; };
 		F0E86D581D3A1A4E009EA5CF /* CCCheckInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCCheckInput.m; sourceTree = "<group>"; };
+		F0E86D5A1D3A59FC009EA5CF /* FoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundCell.h; sourceTree = "<group>"; };
+		F0E86D5B1D3A59FC009EA5CF /* FoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundCell.m; sourceTree = "<group>"; };
+		F0E86D5C1D3A59FC009EA5CF /* FoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundCell.xib; sourceTree = "<group>"; };
+		F0E86D5F1D3A5C98009EA5CF /* PresentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentController.h; sourceTree = "<group>"; };
+		F0E86D601D3A5C98009EA5CF /* PresentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentController.m; sourceTree = "<group>"; };
+		F0E86D611D3A5C98009EA5CF /* PresentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresentController.xib; sourceTree = "<group>"; };
+		F0E86D651D3A61C6009EA5CF /* blurData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = blurData.plist; path = CustomPlist/blurData.plist; sourceTree = "<group>"; };
+		F0E86D661D3A61C6009EA5CF /* CellDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CellDatas.plist; path = CustomPlist/CellDatas.plist; sourceTree = "<group>"; };
+		F0E86D671D3A61C6009EA5CF /* detailJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = detailJson; path = CustomPlist/detailJson; sourceTree = "<group>"; };
+		F0E86D681D3A61C6009EA5CF /* foundData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = foundData.plist; path = CustomPlist/foundData.plist; sourceTree = "<group>"; };
+		F0E86D691D3A61C6009EA5CF /* HomeDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = HomeDatas.plist; path = CustomPlist/HomeDatas.plist; sourceTree = "<group>"; };
+		F0E86D6A1D3A61C6009EA5CF /* infoDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = infoDatas.plist; path = CustomPlist/infoDatas.plist; sourceTree = "<group>"; };
+		F0E86D731D3A641C009EA5CF /* FoundModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundModel.h; sourceTree = "<group>"; };
+		F0E86D741D3A641C009EA5CF /* FoundModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +281,9 @@
 				F08FC7C61D39144200A0AE0F /* FoundController.h */,
 				F08FC7C71D39144200A0AE0F /* FoundController.m */,
 				F08FC7C81D39144200A0AE0F /* FoundController.xib */,
+				F0E86D5F1D3A5C98009EA5CF /* PresentController.h */,
+				F0E86D601D3A5C98009EA5CF /* PresentController.m */,
+				F0E86D611D3A5C98009EA5CF /* PresentController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -263,6 +291,9 @@
 		2AA319281D38D73300F64761 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F0E86D5A1D3A59FC009EA5CF /* FoundCell.h */,
+				F0E86D5B1D3A59FC009EA5CF /* FoundCell.m */,
+				F0E86D5C1D3A59FC009EA5CF /* FoundCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -270,6 +301,8 @@
 		2AA319291D38D73C00F64761 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0E86D731D3A641C009EA5CF /* FoundModel.h */,
+				F0E86D741D3A641C009EA5CF /* FoundModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -383,6 +416,12 @@
 		C6E9AB321D3A312600A15CC1 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				F0E86D651D3A61C6009EA5CF /* blurData.plist */,
+				F0E86D661D3A61C6009EA5CF /* CellDatas.plist */,
+				F0E86D671D3A61C6009EA5CF /* detailJson */,
+				F0E86D681D3A61C6009EA5CF /* foundData.plist */,
+				F0E86D691D3A61C6009EA5CF /* HomeDatas.plist */,
+				F0E86D6A1D3A61C6009EA5CF /* infoDatas.plist */,
 				C6E9AB331D3A314F00A15CC1 /* MessageData.plist */,
 			);
 			name = Plist;
@@ -463,12 +502,20 @@
 			files = (
 				F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */,
 				2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */,
+				F0E86D711D3A61C6009EA5CF /* infoDatas.plist in Resources */,
 				C6E9AB341D3A314F00A15CC1 /* MessageData.plist in Resources */,
 				C6E9AB1A1D3A250A00A15CC1 /* WNXNoHaveMessageView.xib in Resources */,
 				2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */,
 				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
 				F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */,
+				F0E86D631D3A5C98009EA5CF /* PresentController.xib in Resources */,
+				F0E86D5E1D3A59FC009EA5CF /* FoundCell.xib in Resources */,
+				F0E86D6E1D3A61C6009EA5CF /* detailJson in Resources */,
 				C6E9AB181D3A250A00A15CC1 /* WNXMessageCell.xib in Resources */,
+				F0E86D6D1D3A61C6009EA5CF /* CellDatas.plist in Resources */,
+				F0E86D6C1D3A61C6009EA5CF /* blurData.plist in Resources */,
+				F0E86D701D3A61C6009EA5CF /* HomeDatas.plist in Resources */,
+				F0E86D6F1D3A61C6009EA5CF /* foundData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,16 +586,19 @@
 				C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */,
 				C6E9AB191D3A250A00A15CC1 /* WNXNoHaveMessageView.m in Sources */,
 				C6E9AB171D3A250A00A15CC1 /* WNXMessageCell.m in Sources */,
+				F0E86D5D1D3A59FC009EA5CF /* FoundCell.m in Sources */,
 				C6E9AB201D3A252B00A15CC1 /* WNXMessagePushViewController.m in Sources */,
 				2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */,
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
 				2AA319021D38D5D600F64761 /* main.m in Sources */,
 				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
 				2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */,
+				F0E86D621D3A5C98009EA5CF /* PresentController.m in Sources */,
 				2A2437631D39D83E00F8FA31 /* LLQNavigationController.m in Sources */,
 				C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */,
 				C6E9AB2A1D3A25F600A15CC1 /* WNXSetingView.m in Sources */,
 				C6E9AB161D3A250A00A15CC1 /* WNXMessageRefreshHeader.m in Sources */,
+				F0E86D751D3A641C009EA5CF /* FoundModel.m in Sources */,
 				C6E9AB311D3A29CE00A15CC1 /* UIImage+Size.m in Sources */,
 				C6E9AB271D3A25EA00A15CC1 /* WNXSetingViewController.m in Sources */,
 				F0E86D551D3A126F009EA5CF /* LoginOrRegisterController.m in Sources */,
