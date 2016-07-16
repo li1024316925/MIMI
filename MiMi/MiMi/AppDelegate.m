@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
-
 #import "MMDrawerController.h"
 #import "LLQNavigationController.h"
 #import "LeftViewController.h"
 #import "MainViewController.h"
+#import <BmobSDK/Bmob.h>
+
+#define kApplication @"1c7018c7e597db7c7da31b2d7d400793"
 
 @interface AppDelegate ()
 
@@ -42,6 +44,8 @@
     //设置为根视图
     self.window.rootViewController = rootVC;
     
+    //注册 APP
+    [Bmob registerWithAppKey:kApplication];
     
     return YES;
 }

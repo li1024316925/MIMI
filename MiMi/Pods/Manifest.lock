@@ -1,14 +1,20 @@
 PODS:
+  - BmobSDK (1.7.1)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
+  - BmobSDK
   - SDWebImage
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
+  BmobSDK: ebc3cb46b90d746f23121e9ea058a3122b85861f
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: bf356a464b866ee0079c05c28d37766e82cd13cc
+PODFILE CHECKSUM: 56bb8caa1c55fdf45c05d39b88d6b7c7ed4e8c35
 
 COCOAPODS: 1.0.1

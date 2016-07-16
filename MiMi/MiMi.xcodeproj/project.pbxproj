@@ -22,6 +22,8 @@
 		D75685C243CB51AEF9C937BE /* libPods-MiMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */; };
 		F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FC7C71D39144200A0AE0F /* FoundController.m */; };
 		F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08FC7C81D39144200A0AE0F /* FoundController.xib */; };
+		F0E86D551D3A126F009EA5CF /* LoginOrRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D531D3A126E009EA5CF /* LoginOrRegisterController.m */; };
+		F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D541D3A126F009EA5CF /* LoginOrRegisterController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		F08FC7C61D39144200A0AE0F /* FoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundController.h; sourceTree = "<group>"; };
 		F08FC7C71D39144200A0AE0F /* FoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundController.m; sourceTree = "<group>"; };
 		F08FC7C81D39144200A0AE0F /* FoundController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundController.xib; sourceTree = "<group>"; };
+		F0E86D521D3A126E009EA5CF /* LoginOrRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginOrRegisterController.h; sourceTree = "<group>"; };
+		F0E86D531D3A126E009EA5CF /* LoginOrRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginOrRegisterController.m; sourceTree = "<group>"; };
+		F0E86D541D3A126F009EA5CF /* LoginOrRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginOrRegisterController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +182,7 @@
 		2AA3191E1D38D6A000F64761 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F0E86D511D3A1254009EA5CF /* 注册登录 */,
 				2A2437611D39D83E00F8FA31 /* LLQNavigationController.h */,
 				2A2437621D39D83E00F8FA31 /* LLQNavigationController.m */,
 				2A24375E1D39C8D700F8FA31 /* MainViewController.h */,
@@ -287,6 +293,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F0E86D511D3A1254009EA5CF /* 注册登录 */ = {
+			isa = PBXGroup;
+			children = (
+				F0E86D521D3A126E009EA5CF /* LoginOrRegisterController.h */,
+				F0E86D531D3A126E009EA5CF /* LoginOrRegisterController.m */,
+				F0E86D541D3A126F009EA5CF /* LoginOrRegisterController.xib */,
+			);
+			name = "注册登录";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,6 +368,7 @@
 				2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */,
 				2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */,
 				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
+				F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +437,7 @@
 				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
 				2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */,
 				2A2437631D39D83E00F8FA31 /* LLQNavigationController.m in Sources */,
+				F0E86D551D3A126F009EA5CF /* LoginOrRegisterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
