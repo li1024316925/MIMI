@@ -60,8 +60,6 @@
                 
             } else {
                 
-                NSLog(@"%@",error.userInfo);
-                
                 if ([error.userInfo objectForKey:NSLocalizedDescriptionKey]) {
                     
                     [SVProgressHUD showErrorWithStatus:@"邮箱已注册,请登录"];
@@ -78,6 +76,15 @@
 //登录按钮
 - (IBAction)loginAction:(UIButton *)sender {
     
+    [BmobUser loginWithUsernameInBackground:self.email.text password:self.password.text block:^(BmobUser *user, NSError *error) {
+       
+        if (user) {
+           
+            [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"登陆成功,欢迎%@",user.username]];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
