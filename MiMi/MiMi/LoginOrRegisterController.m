@@ -8,11 +8,6 @@
 
 #import "LoginOrRegisterController.h"
 #import "CCCheckInput.h"
-#import <BmobSDK/Bmob.h>
-#import <SVProgressHUD.h>
-
-#define kUserName @"userName"
-#define kPassword @"password"
 
 @interface LoginOrRegisterController ()<UITextFieldDelegate>
 

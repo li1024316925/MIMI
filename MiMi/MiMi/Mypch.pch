@@ -26,5 +26,12 @@
 //app的宽度
 #define WNXAppHeight ([UIScreen mainScreen].bounds.size.height)
 
+#import <BmobSDK/Bmob.h>
+#import <SVProgressHUD.h>
+
+//key值
+#define kUserName @"userName"
+#define kPassword @"password"
+
 
 #endif /* Mypch_pch */

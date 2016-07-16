@@ -9,10 +9,8 @@
 #import "LeftViewController.h"
 #import "LoginOrRegisterController.h"
 #import <BmobSDK/Bmob.h>
-#import <SVProgressHUD.h>
-
-#define kUserName @"userName"
-#define kPassword @"password"
+#import "WNXMessageViewController.h"
+#import "WNXSetingViewController.h"
 
 @interface LeftViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *homeBtn;
@@ -40,8 +38,12 @@
 - (IBAction)foundAction:(UIButton *)sender {
 }
 - (IBAction)messgeAction:(UIButton *)sender {
+    
+    [self presentViewController:[[WNXMessageViewController alloc]init] animated:YES completion:nil];
 }
 - (IBAction)setingAction:(UIButton *)sender {
+    
+    [self presentViewController:[[WNXSetingViewController alloc]init] animated:YES completion:nil];
 }
 
 //注册登录
