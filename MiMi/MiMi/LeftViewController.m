@@ -76,12 +76,12 @@
 {
     if ([[NSUserDefaults standardUserDefaults] objectForKey:kUserName] && [[NSUserDefaults standardUserDefaults] objectForKey:kPassword]) {
         
-        NSString *email = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
+        NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
         
         NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:kPassword];
         
         //自动登录
-        [BmobUser loginWithUsernameInBackground:email password:password block:^(BmobUser *user, NSError *error) {
+        [BmobUser loginWithUsernameInBackground:userName password:password block:^(BmobUser *user, NSError *error) {
 
             if (user) {
                 
