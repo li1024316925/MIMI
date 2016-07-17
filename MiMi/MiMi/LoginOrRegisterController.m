@@ -69,6 +69,8 @@
 //发送验证码
 - (IBAction)sendAction:(UIButton *)sender {
     
+    
+    
     [self getSmsCodeFromPhone];
 }
 
@@ -169,6 +171,7 @@
                 
                 [SVProgressHUD showErrorWithStatus:@"发送失败,请重试"];
                 
+                NSLog(@"发送失败:%@",error);
             } else {
                 //获得smsID
                 NSLog(@"sms ID：%d",number);
@@ -200,6 +203,7 @@
             [SVProgressHUD showErrorWithStatus:@"请确认验证码是否正确"];
         }
     }];
+    
 }
 
 //已有账号
