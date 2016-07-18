@@ -9,8 +9,6 @@
 #import "LoginOrRegisterController.h"
 #import "CCCheckInput.h"
 
-
-
 @interface LoginOrRegisterController ()
 
 /** 注册框 */
@@ -51,6 +49,7 @@
 {
     [super viewWillAppear:animated];
     
+    //检查至本地化字典中的数据
     if ([[NSUserDefaults standardUserDefaults]objectForKey:kUserName]&&[[NSUserDefaults standardUserDefaults]objectForKey:kPassword]) {
         
         self.userName.text = [[NSUserDefaults standardUserDefaults]objectForKey:kUserName];
@@ -67,8 +66,6 @@
 
 //发送验证码
 - (IBAction)sendAction:(UIButton *)sender {
-    
-    
     
     [self getSmsCodeFromPhone];
 }
@@ -96,7 +93,8 @@
 
     [bUser setMobilePhoneNumber:self.phoneNumber.text];
     
-    [bUser signUpInBackgroundWithBlock:^ (BOOL isSuccessful, NSError *error){
+    //使用手机号进行注册
+    [bUser signUpOrLoginInbackgroundWithSMSCode:self.smsCode.text block:^(BOOL isSuccessful, NSError *error) {
         
         if (isSuccessful){
             
@@ -113,45 +111,16 @@
             
             [[NSUserDefaults standardUserDefaults]setObject:self.password.text forKey:kPassword];
             
+            //以后可以使用这个账号进行登录
+            [BmobUser loginInbackgroundWithAccount:self.phoneNumber.text andPassword:self.password.text block:nil];//手机号登录
+            
+            [BmobUser loginWithUsernameInBackground:self.userName.text password:self.password.text];
+            
         } else {
             
             NSLog(@"注册:%@",error);
             
             [SVProgressHUD showErrorWithStatus:@"注册失败,请重试"];
-        }
-    }];
-    
-    [self setPhoneNumberToUser];
-}
-
-//绑定手机号
-- (void)setPhoneNumberToUser
-{
-    //验证
-    [BmobSMS verifySMSCodeInBackgroundWithPhoneNumber:self.phoneNumber.text andSMSCode:self.smsCode.text resultBlock:^(BOOL isSuccessful, NSError *error) {
-        if (isSuccessful) {
-           
-            //修改绑定手机
-            BmobUser *buser = [BmobUser getCurrentUser];
-            
-            buser.mobilePhoneNumber = self.phoneNumber.text;
-            
-            [buser setObject:[NSNumber numberWithBool:YES] forKey:@"mobilePhoneNumberVerified"];
-            
-            [buser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-                
-                if (isSuccessful) {
-                    
-                    NSLog(@"%@",buser);
-                } else {
-                
-                    NSLog(@"%@",error);
-                }
-            }];
-            
-        } else {
-           
-            NSLog(@"%@",error);
         }
     }];
 }
@@ -202,7 +171,6 @@
             [SVProgressHUD showErrorWithStatus:@"请确认验证码是否正确"];
         }
     }];
-    
 }
 
 //已有账号
