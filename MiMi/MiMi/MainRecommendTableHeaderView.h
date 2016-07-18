@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MainRecommendGroupModel.h"
+
 @interface MainRecommendTableHeaderView : UITableViewHeaderFooterView
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
+
+@property(nonatomic, strong)MainRecommendGroupModel *model;
 
 @end

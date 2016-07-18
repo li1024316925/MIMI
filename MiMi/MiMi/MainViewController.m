@@ -132,9 +132,7 @@
     _mainTableView.dataSource = self;
     _mainTableView.rowHeight = 220;
     _mainTableView.sectionHeaderHeight = 60;
-    
-    //注册头尾视图
-    [_mainTableView registerClass:[MainRecommendTableHeaderView class] forHeaderFooterViewReuseIdentifier:@"tableHeaderView"];
+//    [_mainTableView registerNib:[UINib nibWithNibName:@"MainRecommendTableHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"tableHeaderView"];
     
     [self.view addSubview:_mainTableView];
     
@@ -154,6 +152,10 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
     MainRecommendTableHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"tableHeaderView"];
+    if (headerView == nil) {
+        headerView = [[[NSBundle mainBundle] loadNibNamed:@"MainRecommendTableHeaderView" owner:nil options:nil] lastObject];
+    }
+    headerView.model = _dataList[section];
     
     return headerView;
 }
