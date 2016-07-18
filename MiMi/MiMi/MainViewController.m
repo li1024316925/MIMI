@@ -10,10 +10,12 @@
 #import "MainNearbyView.h"
 #import "MainRecommendCellModel.h"
 #import "MainRecommendGroupModel.h"
+#import "MainRecommendCell.h"
 
-@interface MainViewController ()
+@interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UIView *_bgView;
+    UITableView *_mainTableView;
 }
 
 @end
@@ -31,6 +33,9 @@
     
     //加载数据
     [self loadData];
+    
+    //加载表视图
+    [self loadTableView];
     
 }
 
@@ -118,6 +123,52 @@
     
 }
 
+//加载表视图
+- (void)loadTableView{
+    
+    _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
+    _mainTableView.delegate = self;
+    _mainTableView.dataSource = self;
+    _mainTableView.rowHeight = 220;
+    
+    [self.view addSubview:_mainTableView];
+    
+}
 
+
+#pragma mark ------ UITableViewDataSource
+
+//返回组数
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return _dataList.count;
+    
+}
+
+//每组单元格个数
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    MainRecommendGroupModel *groupModel = _dataList[section];
+    
+    return groupModel.body.count;
+    
+}
+
+//返回单元格
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //单元格复用
+    MainRecommendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecommendCell"];
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"MainRecommendCell" owner:nil options:nil] lastObject];
+    }
+    
+    //数据
+    MainRecommendGroupModel *groupModel = _dataList[indexPath.section];
+    cell.model = groupModel.body[indexPath.row];
+    
+    return cell;
+    
+}
 
 @end

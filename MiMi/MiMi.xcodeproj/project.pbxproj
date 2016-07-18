@@ -24,6 +24,8 @@
 		2AE34CE21D3CB3DE004995BF /* BVBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CE11D3CB3DE004995BF /* BVBaseModel.m */; };
 		2AE34CE51D3CB450004995BF /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CE41D3CB450004995BF /* BaseModel.m */; };
 		2AE34CE81D3CB745004995BF /* MainRecommendCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CE71D3CB745004995BF /* MainRecommendCellModel.m */; };
+		2AE34CEF1D3CC15C004995BF /* MainRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CED1D3CC15C004995BF /* MainRecommendCell.m */; };
+		2AE34CF01D3CC15C004995BF /* MainRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE34CEE1D3CC15C004995BF /* MainRecommendCell.xib */; };
 		C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */; };
 		C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */; };
 		C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB0C1D3A250A00A15CC1 /* WNXMessageDeleteButton.m */; };
@@ -94,6 +96,9 @@
 		2AE34CE41D3CB450004995BF /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		2AE34CE61D3CB745004995BF /* MainRecommendCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRecommendCellModel.h; sourceTree = "<group>"; };
 		2AE34CE71D3CB745004995BF /* MainRecommendCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRecommendCellModel.m; sourceTree = "<group>"; };
+		2AE34CEC1D3CC15C004995BF /* MainRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRecommendCell.h; sourceTree = "<group>"; };
+		2AE34CED1D3CC15C004995BF /* MainRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRecommendCell.m; sourceTree = "<group>"; };
+		2AE34CEE1D3CC15C004995BF /* MainRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainRecommendCell.xib; sourceTree = "<group>"; };
 		C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMenuButton.h; sourceTree = "<group>"; };
 		C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMenuButton.m; sourceTree = "<group>"; };
 		C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
@@ -277,6 +282,9 @@
 				C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */,
 				2AE34CD91D3C8A7F004995BF /* MainNearbyView.h */,
 				2AE34CDA1D3C8A7F004995BF /* MainNearbyView.m */,
+				2AE34CEC1D3CC15C004995BF /* MainRecommendCell.h */,
+				2AE34CED1D3CC15C004995BF /* MainRecommendCell.m */,
+				2AE34CEE1D3CC15C004995BF /* MainRecommendCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -541,6 +549,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE34CF01D3CC15C004995BF /* MainRecommendCell.xib in Resources */,
 				F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */,
 				2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */,
 				F0E86D711D3A61C6009EA5CF /* infoDatas.plist in Resources */,
@@ -628,6 +637,7 @@
 				C6E9AB1F1D3A252B00A15CC1 /* WNXMessageViewController.m in Sources */,
 				C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */,
 				C6E9AB191D3A250A00A15CC1 /* WNXNoHaveMessageView.m in Sources */,
+				2AE34CEF1D3CC15C004995BF /* MainRecommendCell.m in Sources */,
 				C6E9AB171D3A250A00A15CC1 /* WNXMessageCell.m in Sources */,
 				F0E86D5D1D3A59FC009EA5CF /* FoundCell.m in Sources */,
 				C6E9AB201D3A252B00A15CC1 /* WNXMessagePushViewController.m in Sources */,
