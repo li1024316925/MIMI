@@ -20,7 +20,7 @@
     //导航条
     [self loadNavigationItem];
     
-//    self.navigationItem.leftBarButtonItem 
+ 
 }
 
 //设置导航条
