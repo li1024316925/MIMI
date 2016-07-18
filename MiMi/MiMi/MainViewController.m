@@ -12,6 +12,7 @@
 #import "MainRecommendGroupModel.h"
 #import "MainRecommendCell.h"
 #import "MainRecommendTableHeaderView.h"
+#import "SearchViewController.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -25,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:51/255.0 green:52/255.0 blue:53/255.0 alpha:1];
     
     //导航条
     [self loadNavigationItem];
@@ -105,6 +108,12 @@
     segment.selectedSegmentIndex = 0;
     self.navigationItem.titleView = segment;
     
+    //右边搜索按钮
+    UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [searchButton setImage:[UIImage imageNamed:@"search_icon_white_6P@2x"] forState:UIControlStateNormal];
+    [searchButton addTarget:self action:@selector(searchBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithCustomView:searchButton];
+    self.navigationItem.rightBarButtonItem = rightButton;
     
 }
 
@@ -124,15 +133,26 @@
     
 }
 
+//搜索按钮方法
+- (void)searchBtnAction:(UIButton *)button{
+    
+    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    
+    [self.navigationController pushViewController:searchVC animated:YES];
+    
+}
+
 //加载表视图
 - (void)loadTableView{
     
+    //创建表视图
     _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
     _mainTableView.delegate = self;
     _mainTableView.dataSource = self;
     _mainTableView.rowHeight = 220;
     _mainTableView.sectionHeaderHeight = 60;
-//    [_mainTableView registerNib:[UINib nibWithNibName:@"MainRecommendTableHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"tableHeaderView"];
+    _mainTableView.backgroundColor = [UIColor clearColor];
+    
     
     [self.view addSubview:_mainTableView];
     
@@ -151,10 +171,8 @@
 //返回组头视图
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
-    MainRecommendTableHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"tableHeaderView"];
-    if (headerView == nil) {
-        headerView = [[[NSBundle mainBundle] loadNibNamed:@"MainRecommendTableHeaderView" owner:nil options:nil] lastObject];
-    }
+    //创建组头视图
+    MainRecommendTableHeaderView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"MainRecommendTableHeaderView" owner:nil options:nil] lastObject];
     headerView.model = _dataList[section];
     
     return headerView;

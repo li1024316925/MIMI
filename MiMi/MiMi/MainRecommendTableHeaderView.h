@@ -10,7 +10,7 @@
 
 #import "MainRecommendGroupModel.h"
 
-@interface MainRecommendTableHeaderView : UITableViewHeaderFooterView
+@interface MainRecommendTableHeaderView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
 

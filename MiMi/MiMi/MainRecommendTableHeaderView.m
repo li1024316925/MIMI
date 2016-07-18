@@ -16,9 +16,8 @@
     
     _titleLabel.text = model.tag_name;
     _subTitleLabel.text = model.section_count;
-//    self.contentView.backgroundColor = [self colorWithHexString:model.color alpha:1];
-    self.contentView.backgroundColor = [UIColor redColor];
-    
+    self.backgroundColor = [self colorWithHexString:model.color alpha:1];
+
 }
 
 //颜色字符串转化为颜色

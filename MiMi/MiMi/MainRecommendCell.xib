@@ -77,6 +77,7 @@
                     <constraint firstItem="Z5w-HI-KOc" firstAttribute="top" secondItem="RXU-8X-7o0" secondAttribute="bottom" constant="8" id="yf0-SC-7f7"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="adress" destination="LBM-DT-BIw" id="4I4-dK-ifB"/>
                 <outlet property="backImageView" destination="5s1-SG-oTw" id="Ts5-GF-cWA"/>

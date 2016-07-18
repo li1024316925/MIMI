@@ -45,7 +45,6 @@
    
     //创建根视图控制器
     MainViewController *mainVC = [[MainViewController alloc] init];
-    mainVC.view.backgroundColor = [UIColor yellowColor];
     LLQNavigationController *naviVC = [[LLQNavigationController alloc] initWithRootViewController:mainVC];
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     

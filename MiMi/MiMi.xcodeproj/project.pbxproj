@@ -28,6 +28,7 @@
 		2AE34CF01D3CC15C004995BF /* MainRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE34CEE1D3CC15C004995BF /* MainRecommendCell.xib */; };
 		2AE34CF81D3CE7E1004995BF /* MainRecommendTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CF71D3CE7E1004995BF /* MainRecommendTableHeaderView.m */; };
 		2AE34CFA1D3CE833004995BF /* MainRecommendTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE34CF91D3CE833004995BF /* MainRecommendTableHeaderView.xib */; };
+		2AE34CFD1D3D127F004995BF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CFC1D3D127F004995BF /* SearchViewController.m */; };
 		C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */; };
 		C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */; };
 		C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB0C1D3A250A00A15CC1 /* WNXMessageDeleteButton.m */; };
@@ -104,6 +105,8 @@
 		2AE34CF61D3CE7E1004995BF /* MainRecommendTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRecommendTableHeaderView.h; sourceTree = "<group>"; };
 		2AE34CF71D3CE7E1004995BF /* MainRecommendTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRecommendTableHeaderView.m; sourceTree = "<group>"; };
 		2AE34CF91D3CE833004995BF /* MainRecommendTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainRecommendTableHeaderView.xib; sourceTree = "<group>"; };
+		2AE34CFB1D3D127F004995BF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		2AE34CFC1D3D127F004995BF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMenuButton.h; sourceTree = "<group>"; };
 		C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMenuButton.m; sourceTree = "<group>"; };
 		C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
@@ -306,6 +309,8 @@
 				2AA319221D38D6F000F64761 /* LeftViewController.h */,
 				2AA319231D38D6F000F64761 /* LeftViewController.m */,
 				2AA319241D38D6F000F64761 /* LeftViewController.xib */,
+				2AE34CFB1D3D127F004995BF /* SearchViewController.h */,
+				2AE34CFC1D3D127F004995BF /* SearchViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -655,6 +660,7 @@
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
 				2AE34CE21D3CB3DE004995BF /* BVBaseModel.m in Sources */,
 				2AE34CE51D3CB450004995BF /* BaseModel.m in Sources */,
+				2AE34CFD1D3D127F004995BF /* SearchViewController.m in Sources */,
 				2AA319021D38D5D600F64761 /* main.m in Sources */,
 				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
 				2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */,
