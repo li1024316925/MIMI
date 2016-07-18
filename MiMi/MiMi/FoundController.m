@@ -26,8 +26,9 @@ static NSString *identifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    [self addNavigation];
+    
+    //设置标题
+    self.title = @"发现";
     
     [self addCollectionView];
 }
@@ -35,28 +36,20 @@ static NSString *identifier = @"cell";
 /** 懒加载加载数据 */
 - (NSMutableArray *)dataList
 {
-    if (!_dataList) {
+    if (_dataList == nil) {
         
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"foundData" ofType:@"plist"];
+        _dataList = [NSMutableArray array];
         
-        NSArray *array = [NSArray arrayWithContentsOfFile:path];
-
-        for (NSArray *arr in array) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"foundData" ofType:@"plist"];
+        
+        NSArray *tmpArr = [NSMutableArray arrayWithContentsOfFile:path];
+        
+        for (NSArray *array in tmpArr) {
             
-            _dataList = [FoundModel mj_objectArrayWithKeyValuesArray:arr];
+            _dataList = [FoundModel mj_objectArrayWithKeyValuesArray:array];
         }
     }
     return _dataList;
-}
-
-//添加一个导航栏
-- (void)addNavigation
-{
-    LLQNavigationController *navigation = [[LLQNavigationController alloc]initWithRootViewController:self];
-    
-    self.title = @"发现";
-    
-    [UIApplication sharedApplication].keyWindow.rootViewController = navigation;
 }
 
 //添加集合试图

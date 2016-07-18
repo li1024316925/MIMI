@@ -11,12 +11,12 @@
 @interface FoundModel : NSObject
 
 /** 图片名 */
-@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy)NSString *icon;
 
 /** 标题 */
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy)NSString *title;
 
 /** 副标题 */
-@property (nonatomic, copy) NSString *subTitle;
+@property (nonatomic, strong)NSNumber *subTitle;
 
 @end

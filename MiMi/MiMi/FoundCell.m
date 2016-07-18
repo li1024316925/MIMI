@@ -24,17 +24,16 @@
 - (void)awakeFromNib {
 }
 
+//获取数据
 - (void)setModel:(FoundModel *)model
 {
     _model = model;
-    
-    NSLog(@"%@",model.icon);
     
     self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",model.icon]];
     
     self.label1.text = model.title;
     
-    self.label2.text = model.subTitle;
+    self.label2.text = [NSString stringWithFormat:@"%ld",[model.subTitle integerValue]];
 }
 
 @end

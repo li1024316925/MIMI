@@ -11,6 +11,7 @@
 
 @interface FoundCell : UICollectionViewCell
 
+//模型
 @property(nonatomic,strong)FoundModel *model;
 
 @end
