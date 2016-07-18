@@ -18,11 +18,30 @@
 {
     UIView *_bgView;
     UITableView *_mainTableView;
+    UISegmentedControl *_segment;
 }
 
 @end
 
 @implementation MainViewController
+
+//视图即将显示
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [self segmentAction:_segment];
+    NSLog(@"%ld",_segment.selectedSegmentIndex);
+    
+}
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [self segmentAction:_segment];
+    
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    
+    self.view.transform = CGAffineTransformIdentity;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -94,19 +113,19 @@
 - (void)loadNavigationItem{
     
     //创建按钮组
-    UISegmentedControl *segment = [[UISegmentedControl alloc] initWithItems:@[@"推荐",@"附近"]];
-    segment.tintColor = [UIColor colorWithRed:26/255.0 green:163/255.0 blue:146/255.0 alpha:1];
-    segment.frame = CGRectMake(0, 0, self.view.bounds.size.width/2, 30);
+    _segment = [[UISegmentedControl alloc] initWithItems:@[@"推荐",@"附近"]];
+    _segment.tintColor = [UIColor colorWithRed:26/255.0 green:163/255.0 blue:146/255.0 alpha:1];
+    _segment.frame = CGRectMake(0, 0, self.view.bounds.size.width/2, 30);
     //使用富文本属性修改文字
     NSMutableDictionary *attdic = [[NSMutableDictionary alloc] init];
     [attdic setObject:[UIFont boldSystemFontOfSize:16] forKey:NSFontAttributeName];
     [attdic setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
-    [segment setTitleTextAttributes:attdic forState:UIControlStateNormal];
-    [segment setTitleTextAttributes:attdic forState:UIControlStateSelected];
+    [_segment setTitleTextAttributes:attdic forState:UIControlStateNormal];
+    [_segment setTitleTextAttributes:attdic forState:UIControlStateSelected];
     //添加事件
-    [segment addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
-    segment.selectedSegmentIndex = 0;
-    self.navigationItem.titleView = segment;
+    [_segment addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
+    _segment.selectedSegmentIndex = 0;
+    self.navigationItem.titleView = _segment;
     
     //右边搜索按钮
     UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
