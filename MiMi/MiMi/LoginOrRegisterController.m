@@ -9,8 +9,7 @@
 #import "LoginOrRegisterController.h"
 #import "CCCheckInput.h"
 
-#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight  [UIScreen mainScreen].bounds.size.height
+
 
 @interface LoginOrRegisterController ()
 

@@ -22,9 +22,9 @@
 //抽屉拉出来右边剩余比例
 #define WNXZoomScaleRight 0.14
 //app的高度
-#define WNXAppWidth ([UIScreen mainScreen].bounds.size.width)
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 //app的宽度
-#define WNXAppHeight ([UIScreen mainScreen].bounds.size.height)
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
 #import <BmobSDK/Bmob.h>
 #import <SVProgressHUD.h>

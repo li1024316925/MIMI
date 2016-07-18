@@ -7,8 +7,14 @@
 //
 
 #import "MainViewController.h"
+#import "MainNearbyView.h"
+#import "MainRecommendCellModel.h"
+#import "MainRecommendGroupModel.h"
 
 @interface MainViewController ()
+{
+    UIView *_bgView;
+}
 
 @end
 
@@ -20,7 +26,59 @@
     //导航条
     [self loadNavigationItem];
     
- 
+    //附近视图
+    [self loadNearbyView];
+    
+    //加载数据
+    [self loadData];
+    
+}
+
+//数据数组懒加载
+- (NSMutableArray *)dataList{
+    
+    if (_dataList == nil) {
+        _dataList = [[NSMutableArray alloc] init];
+    }
+    
+    return _dataList;
+    
+}
+
+//加载数据
+- (void)loadData{
+    
+    //解析plist文件
+    NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"HomeDatas" ofType:@"plist"]];
+    
+    //组数据
+    for (NSDictionary *dic in array) {
+        
+        //行数据
+        NSArray *bodyArray = [dic objectForKey:@"body"];
+        NSMutableArray *bodyMutableArray = [[NSMutableArray alloc] init];
+        for (NSDictionary *bodyDic in bodyArray) {
+            //行数据解析为model
+            MainRecommendCellModel *bodyModel = [[MainRecommendCellModel alloc] initWithDataDic:bodyDic];
+            [bodyMutableArray addObject:bodyModel];
+        }
+        
+        NSMutableDictionary *groupDic = [NSMutableDictionary dictionaryWithDictionary:dic];
+        [groupDic setValue:bodyMutableArray forKey:@"body"];
+        //组数据解析为model
+        MainRecommendGroupModel *groupModel = [[MainRecommendGroupModel alloc] initWithDataDic:groupDic];
+        [self.dataList addObject:groupModel];
+        
+    }
+    
+}
+
+//添加附近视图
+- (void)loadNearbyView{
+    
+    MainNearbyView *nearbyView = [[MainNearbyView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, kScreenHeight)];
+    [self.view addSubview:nearbyView];
+    
 }
 
 //设置导航条
@@ -37,7 +95,7 @@
     [segment setTitleTextAttributes:attdic forState:UIControlStateNormal];
     [segment setTitleTextAttributes:attdic forState:UIControlStateSelected];
     //添加事件
-    [segment addTarget:segment action:@selector(segmentAction:) forControlEvents:UIControlEventTouchUpInside];
+    [segment addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
     segment.selectedSegmentIndex = 0;
     self.navigationItem.titleView = segment;
     
@@ -47,23 +105,19 @@
 //导航栏标题按钮组点击方法
 - (void)segmentAction:(UISegmentedControl *)segment{
     
+    //左右滑动以达到切换页面效果
+    if (segment.selectedSegmentIndex == 0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.view.transform = CGAffineTransformIdentity;
+        }];
+    }else if (segment.selectedSegmentIndex == 1){
+        [UIView animateWithDuration:0.3 animations:^{
+            self.view.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
+        }];
+    }
     
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

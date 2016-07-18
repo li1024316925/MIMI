@@ -20,7 +20,7 @@
 + (instancetype)noHaveMessageView
 {
     WNXNoHaveMessageView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
-    view.frame = CGRectMake((WNXAppWidth - 200) / 2, 150, 200, 210);
+    view.frame = CGRectMake((kScreenWidth - 200) / 2, 150, 200, 210);
     return view;
 }
 

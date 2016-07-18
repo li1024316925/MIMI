@@ -10,4 +10,6 @@
 
 @interface MainViewController : UIViewController
 
+@property(nonatomic, strong)NSMutableArray *dataList;
+
 @end

@@ -42,15 +42,15 @@
     self.navigationItem.rightBarButtonItem = nil;
     self.view.backgroundColor = [UIColor grayColor];
     
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, WNXAppWidth, WNXAppHeight - 64)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64)];
     //设置scrollView没有contentSize时候也可以上下弹簧滚动
     self.scrollView.alwaysBounceVertical = YES;
     self.scrollView.backgroundColor = self.view.backgroundColor;
     [self.view addSubview:self.scrollView];
     
     //添加view
-    CGFloat viewW = WNXAppWidth * 0.88;
-    CGFloat viewX = WNXAppWidth * 0.12 / 2;
+    CGFloat viewW = kScreenWidth * 0.88;
+    CGFloat viewX = kScreenWidth * 0.12 / 2;
     CGFloat viewH = 50;
     CGFloat viewY = 40;
     

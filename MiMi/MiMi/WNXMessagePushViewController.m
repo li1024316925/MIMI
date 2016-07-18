@@ -37,7 +37,7 @@
     
     CGFloat W = 300;
     CGFloat H = 100;
-    CGFloat X = (WNXAppWidth - W) / 2;
+    CGFloat X = (kScreenWidth - W) / 2;
     CGFloat y = center.y + 50;
     label.frame = CGRectMake(X, y, W, H);
     [self.view addSubview:label];

@@ -82,7 +82,7 @@ static const CGFloat deleteBtnHeight = 50.0;
     [self.view addSubview:noMsg];
     
     //初始化tableView
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WNXAppWidth, WNXAppHeight - 64)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 64)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = self.view.backgroundColor;
@@ -100,7 +100,7 @@ static const CGFloat deleteBtnHeight = 50.0;
     self.tableView.mj_header = header;
     
     //初始化底部删除按钮
-    self.deleteAllBtn = [[WNXMessageDeleteButton alloc] initWithFrame:CGRectMake(0, WNXAppHeight - 64, WNXAppWidth, deleteBtnHeight)];
+    self.deleteAllBtn = [[WNXMessageDeleteButton alloc] initWithFrame:CGRectMake(0, kScreenHeight - 64, kScreenWidth, deleteBtnHeight)];
     [self.deleteAllBtn addTarget:self action:@selector(deleteAllBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.deleteAllBtn];
 }

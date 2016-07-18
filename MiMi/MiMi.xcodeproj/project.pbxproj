@@ -19,6 +19,11 @@
 		2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319351D38D7F400F64761 /* MMDrawerController.m */; };
 		2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */; };
 		2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */; };
+		2AE34CDB1D3C8A7F004995BF /* MainNearbyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CDA1D3C8A7F004995BF /* MainNearbyView.m */; };
+		2AE34CDE1D3CB310004995BF /* MainRecommendGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CDD1D3CB310004995BF /* MainRecommendGroupModel.m */; };
+		2AE34CE21D3CB3DE004995BF /* BVBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CE11D3CB3DE004995BF /* BVBaseModel.m */; };
+		2AE34CE51D3CB450004995BF /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CE41D3CB450004995BF /* BaseModel.m */; };
+		2AE34CE81D3CB745004995BF /* MainRecommendCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CE71D3CB745004995BF /* MainRecommendCellModel.m */; };
 		C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */; };
 		C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */; };
 		C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB0C1D3A250A00A15CC1 /* WNXMessageDeleteButton.m */; };
@@ -79,6 +84,16 @@
 		2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		2AA319381D38D7F400F64761 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		2AE34CD91D3C8A7F004995BF /* MainNearbyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNearbyView.h; sourceTree = "<group>"; };
+		2AE34CDA1D3C8A7F004995BF /* MainNearbyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNearbyView.m; sourceTree = "<group>"; };
+		2AE34CDC1D3CB310004995BF /* MainRecommendGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRecommendGroupModel.h; sourceTree = "<group>"; };
+		2AE34CDD1D3CB310004995BF /* MainRecommendGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRecommendGroupModel.m; sourceTree = "<group>"; };
+		2AE34CE01D3CB3DE004995BF /* BVBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BVBaseModel.h; sourceTree = "<group>"; };
+		2AE34CE11D3CB3DE004995BF /* BVBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVBaseModel.m; sourceTree = "<group>"; };
+		2AE34CE31D3CB450004995BF /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		2AE34CE41D3CB450004995BF /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		2AE34CE61D3CB745004995BF /* MainRecommendCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRecommendCellModel.h; sourceTree = "<group>"; };
+		2AE34CE71D3CB745004995BF /* MainRecommendCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRecommendCellModel.m; sourceTree = "<group>"; };
 		C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMenuButton.h; sourceTree = "<group>"; };
 		C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMenuButton.m; sourceTree = "<group>"; };
 		C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
@@ -168,6 +183,8 @@
 		2AA318FF1D38D5D600F64761 /* MiMi */ = {
 			isa = PBXGroup;
 			children = (
+				2AE34CDF1D3CB34F004995BF /* Base */,
+				C6E9AB321D3A312600A15CC1 /* Plist */,
 				2AA319181D38D5F800F64761 /* Main */,
 				2AA319191D38D60D00F64761 /* Found */,
 				2AA3191A1D38D63800F64761 /* Messge */,
@@ -195,6 +212,7 @@
 		2AA319171D38D5EE00F64761 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				2AE34CD51D3C87C4004995BF /* LLQNavigationController */,
 				C6E9AB2B1D3A29A500A15CC1 /* Coustom */,
 				2AA319301D38D7F400F64761 /* MMDrawerController */,
 			);
@@ -204,7 +222,6 @@
 		2AA319181D38D5F800F64761 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				C6E9AB321D3A312600A15CC1 /* Plist */,
 				2AA3191C1D38D68D00F64761 /* Model */,
 				2AA3191D1D38D69800F64761 /* View */,
 				2AA3191E1D38D6A000F64761 /* Controller */,
@@ -245,6 +262,10 @@
 		2AA3191C1D38D68D00F64761 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2AE34CE61D3CB745004995BF /* MainRecommendCellModel.h */,
+				2AE34CE71D3CB745004995BF /* MainRecommendCellModel.m */,
+				2AE34CDC1D3CB310004995BF /* MainRecommendGroupModel.h */,
+				2AE34CDD1D3CB310004995BF /* MainRecommendGroupModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -254,6 +275,8 @@
 			children = (
 				C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */,
 				C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */,
+				2AE34CD91D3C8A7F004995BF /* MainNearbyView.h */,
+				2AE34CDA1D3C8A7F004995BF /* MainNearbyView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -261,11 +284,7 @@
 		2AA3191E1D38D6A000F64761 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */,
-				C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */,
 				F0E86D511D3A1254009EA5CF /* 注册登录 */,
-				2A2437611D39D83E00F8FA31 /* LLQNavigationController.h */,
-				2A2437621D39D83E00F8FA31 /* LLQNavigationController.m */,
 				2A24375E1D39C8D700F8FA31 /* MainViewController.h */,
 				2A24375F1D39C8D700F8FA31 /* MainViewController.m */,
 				2AA319221D38D6F000F64761 /* LeftViewController.h */,
@@ -383,6 +402,28 @@
 				2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */,
 			);
 			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		2AE34CD51D3C87C4004995BF /* LLQNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				2A2437611D39D83E00F8FA31 /* LLQNavigationController.h */,
+				2A2437621D39D83E00F8FA31 /* LLQNavigationController.m */,
+			);
+			name = LLQNavigationController;
+			sourceTree = "<group>";
+		};
+		2AE34CDF1D3CB34F004995BF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2AE34CE01D3CB3DE004995BF /* BVBaseModel.h */,
+				2AE34CE11D3CB3DE004995BF /* BVBaseModel.m */,
+				2AE34CE31D3CB450004995BF /* BaseModel.h */,
+				2AE34CE41D3CB450004995BF /* BaseModel.m */,
+				C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */,
+				C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		3C8A63763184D59EF7CB2127 /* Frameworks */ = {
@@ -575,9 +616,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AA319051D38D5D600F64761 /* AppDelegate.m in Sources */,
+				2AE34CE81D3CB745004995BF /* MainRecommendCellModel.m in Sources */,
 				F0E86D591D3A1A4E009EA5CF /* CCCheckInput.m in Sources */,
 				2AA319251D38D6F000F64761 /* LeftViewController.m in Sources */,
 				F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */,
+				2AE34CDB1D3C8A7F004995BF /* MainNearbyView.m in Sources */,
 				C6E9AB231D3A259100A15CC1 /* WNXMessageModel.m in Sources */,
 				C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */,
 				2A2437601D39C8D700F8FA31 /* MainViewController.m in Sources */,
@@ -590,6 +633,8 @@
 				C6E9AB201D3A252B00A15CC1 /* WNXMessagePushViewController.m in Sources */,
 				2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */,
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
+				2AE34CE21D3CB3DE004995BF /* BVBaseModel.m in Sources */,
+				2AE34CE51D3CB450004995BF /* BaseModel.m in Sources */,
 				2AA319021D38D5D600F64761 /* main.m in Sources */,
 				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
 				2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */,
@@ -598,6 +643,7 @@
 				C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */,
 				C6E9AB2A1D3A25F600A15CC1 /* WNXSetingView.m in Sources */,
 				C6E9AB161D3A250A00A15CC1 /* WNXMessageRefreshHeader.m in Sources */,
+				2AE34CDE1D3CB310004995BF /* MainRecommendGroupModel.m in Sources */,
 				F0E86D751D3A641C009EA5CF /* FoundModel.m in Sources */,
 				C6E9AB311D3A29CE00A15CC1 /* UIImage+Size.m in Sources */,
 				C6E9AB271D3A25EA00A15CC1 /* WNXSetingViewController.m in Sources */,
