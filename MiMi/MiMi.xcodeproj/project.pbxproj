@@ -46,6 +46,9 @@
 		C6E9AB311D3A29CE00A15CC1 /* UIImage+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB2F1D3A29CE00A15CC1 /* UIImage+Size.m */; };
 		C6E9AB341D3A314F00A15CC1 /* MessageData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6E9AB331D3A314F00A15CC1 /* MessageData.plist */; };
 		D75685C243CB51AEF9C937BE /* libPods-MiMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */; };
+		F05F156F1D3D010400DE454E /* PushFoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F05F156D1D3D010400DE454E /* PushFoundCell.m */; };
+		F05F15701D3D010400DE454E /* PushFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F05F156E1D3D010400DE454E /* PushFoundCell.xib */; };
+		F05F15731D3D04E700DE454E /* PushFoundModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F05F15721D3D04E700DE454E /* PushFoundModel.m */; };
 		F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08FC7C71D39144200A0AE0F /* FoundController.m */; };
 		F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08FC7C81D39144200A0AE0F /* FoundController.xib */; };
 		F0E86D551D3A126F009EA5CF /* LoginOrRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D531D3A126E009EA5CF /* LoginOrRegisterController.m */; };
@@ -54,7 +57,6 @@
 		F0E86D5D1D3A59FC009EA5CF /* FoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D5B1D3A59FC009EA5CF /* FoundCell.m */; };
 		F0E86D5E1D3A59FC009EA5CF /* FoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D5C1D3A59FC009EA5CF /* FoundCell.xib */; };
 		F0E86D621D3A5C98009EA5CF /* PresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E86D601D3A5C98009EA5CF /* PresentController.m */; };
-		F0E86D631D3A5C98009EA5CF /* PresentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D611D3A5C98009EA5CF /* PresentController.xib */; };
 		F0E86D6C1D3A61C6009EA5CF /* blurData.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D651D3A61C6009EA5CF /* blurData.plist */; };
 		F0E86D6D1D3A61C6009EA5CF /* CellDatas.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D661D3A61C6009EA5CF /* CellDatas.plist */; };
 		F0E86D6E1D3A61C6009EA5CF /* detailJson in Resources */ = {isa = PBXBuildFile; fileRef = F0E86D671D3A61C6009EA5CF /* detailJson */; };
@@ -139,6 +141,11 @@
 		C6E9AB331D3A314F00A15CC1 /* MessageData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MessageData.plist; sourceTree = "<group>"; };
 		DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MiMi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98182F824C2EE4B496CF22F /* Pods-MiMi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiMi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiMi/Pods-MiMi.debug.xcconfig"; sourceTree = "<group>"; };
+		F05F156C1D3D010400DE454E /* PushFoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushFoundCell.h; sourceTree = "<group>"; };
+		F05F156D1D3D010400DE454E /* PushFoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushFoundCell.m; sourceTree = "<group>"; };
+		F05F156E1D3D010400DE454E /* PushFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PushFoundCell.xib; sourceTree = "<group>"; };
+		F05F15711D3D04E700DE454E /* PushFoundModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushFoundModel.h; sourceTree = "<group>"; };
+		F05F15721D3D04E700DE454E /* PushFoundModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushFoundModel.m; sourceTree = "<group>"; };
 		F08FC7C61D39144200A0AE0F /* FoundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundController.h; sourceTree = "<group>"; };
 		F08FC7C71D39144200A0AE0F /* FoundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundController.m; sourceTree = "<group>"; };
 		F08FC7C81D39144200A0AE0F /* FoundController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundController.xib; sourceTree = "<group>"; };
@@ -152,7 +159,6 @@
 		F0E86D5C1D3A59FC009EA5CF /* FoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoundCell.xib; sourceTree = "<group>"; };
 		F0E86D5F1D3A5C98009EA5CF /* PresentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentController.h; sourceTree = "<group>"; };
 		F0E86D601D3A5C98009EA5CF /* PresentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentController.m; sourceTree = "<group>"; };
-		F0E86D611D3A5C98009EA5CF /* PresentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PresentController.xib; sourceTree = "<group>"; };
 		F0E86D651D3A61C6009EA5CF /* blurData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = blurData.plist; path = CustomPlist/blurData.plist; sourceTree = "<group>"; };
 		F0E86D661D3A61C6009EA5CF /* CellDatas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CellDatas.plist; path = CustomPlist/CellDatas.plist; sourceTree = "<group>"; };
 		F0E86D671D3A61C6009EA5CF /* detailJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = detailJson; path = CustomPlist/detailJson; sourceTree = "<group>"; };
@@ -323,7 +329,6 @@
 				F08FC7C81D39144200A0AE0F /* FoundController.xib */,
 				F0E86D5F1D3A5C98009EA5CF /* PresentController.h */,
 				F0E86D601D3A5C98009EA5CF /* PresentController.m */,
-				F0E86D611D3A5C98009EA5CF /* PresentController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -334,6 +339,9 @@
 				F0E86D5A1D3A59FC009EA5CF /* FoundCell.h */,
 				F0E86D5B1D3A59FC009EA5CF /* FoundCell.m */,
 				F0E86D5C1D3A59FC009EA5CF /* FoundCell.xib */,
+				F05F156C1D3D010400DE454E /* PushFoundCell.h */,
+				F05F156D1D3D010400DE454E /* PushFoundCell.m */,
+				F05F156E1D3D010400DE454E /* PushFoundCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -343,6 +351,8 @@
 			children = (
 				F0E86D731D3A641C009EA5CF /* FoundModel.h */,
 				F0E86D741D3A641C009EA5CF /* FoundModel.m */,
+				F05F15711D3D04E700DE454E /* PushFoundModel.h */,
+				F05F15721D3D04E700DE454E /* PushFoundModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -566,12 +576,12 @@
 				F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */,
 				2AA319101D38D5D600F64761 /* LaunchScreen.storyboard in Resources */,
 				F0E86D711D3A61C6009EA5CF /* infoDatas.plist in Resources */,
+				F05F15701D3D010400DE454E /* PushFoundCell.xib in Resources */,
 				C6E9AB341D3A314F00A15CC1 /* MessageData.plist in Resources */,
 				C6E9AB1A1D3A250A00A15CC1 /* WNXNoHaveMessageView.xib in Resources */,
 				2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */,
 				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
 				F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */,
-				F0E86D631D3A5C98009EA5CF /* PresentController.xib in Resources */,
 				F0E86D5E1D3A59FC009EA5CF /* FoundCell.xib in Resources */,
 				F0E86D6E1D3A61C6009EA5CF /* detailJson in Resources */,
 				2AE34CFA1D3CE833004995BF /* MainRecommendTableHeaderView.xib in Resources */,
@@ -640,6 +650,7 @@
 			files = (
 				2AA319051D38D5D600F64761 /* AppDelegate.m in Sources */,
 				2AE34CE81D3CB745004995BF /* MainRecommendCellModel.m in Sources */,
+				F05F156F1D3D010400DE454E /* PushFoundCell.m in Sources */,
 				F0E86D591D3A1A4E009EA5CF /* CCCheckInput.m in Sources */,
 				2AA319251D38D6F000F64761 /* LeftViewController.m in Sources */,
 				F08FC7C91D39144200A0AE0F /* FoundController.m in Sources */,
@@ -655,6 +666,7 @@
 				2AE34CEF1D3CC15C004995BF /* MainRecommendCell.m in Sources */,
 				C6E9AB171D3A250A00A15CC1 /* WNXMessageCell.m in Sources */,
 				F0E86D5D1D3A59FC009EA5CF /* FoundCell.m in Sources */,
+				F05F15731D3D04E700DE454E /* PushFoundModel.m in Sources */,
 				C6E9AB201D3A252B00A15CC1 /* WNXMessagePushViewController.m in Sources */,
 				2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */,
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
