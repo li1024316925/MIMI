@@ -11,6 +11,7 @@
 #import "MainRecommendCellModel.h"
 #import "MainRecommendGroupModel.h"
 #import "MainRecommendCell.h"
+#import "MainRecommendTableHeaderView.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -130,6 +131,10 @@
     _mainTableView.delegate = self;
     _mainTableView.dataSource = self;
     _mainTableView.rowHeight = 220;
+    _mainTableView.sectionHeaderHeight = 60;
+    
+    //注册头尾视图
+    [_mainTableView registerClass:[MainRecommendTableHeaderView class] forHeaderFooterViewReuseIdentifier:@"tableHeaderView"];
     
     [self.view addSubview:_mainTableView];
     
@@ -143,6 +148,14 @@
     
     return _dataList.count;
     
+}
+
+//返回组头视图
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    MainRecommendTableHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"tableHeaderView"];
+    
+    return headerView;
 }
 
 //每组单元格个数
