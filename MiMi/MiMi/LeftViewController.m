@@ -9,12 +9,16 @@
 #import "LeftViewController.h"
 #import "LoginOrRegisterController.h"
 #import <BmobSDK/Bmob.h>
-#import "WNXMessageViewController.h"
-#import "WNXSetingViewController.h"
-#import "FoundController.h"
+#import "LLQNavigationController.h"
+#import "MMDrawerController.h"
 #import "UIViewController+MMDrawerController.h"
+#import "AppDelegate.h"
 
 @interface LeftViewController ()
+{
+    //保存全局的AppDelegate对象
+    AppDelegate *_appDelegate;
+}
 @property (weak, nonatomic) IBOutlet UIButton *homeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *foundBtn;
 @property (weak, nonatomic) IBOutlet UIButton *unLoginBtn;
@@ -22,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *weixinBtn;
 @property (weak, nonatomic) IBOutlet UIButton *messgeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *setingBtn;
+
 
 @end
 
@@ -32,30 +37,46 @@
     
     //安全判断 ->登录
     [self autoLogin];
+    
+    //获取全局的AppDelegate
+    _appDelegate = [UIApplication sharedApplication].delegate;
 }
 
+//主页按钮
 - (IBAction)homeAction:(UIButton *)sender {
     
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    [self chengeRootVCWithIndex:0];
 
 }
+//发现按钮
 - (IBAction)foundAction:(UIButton *)sender {
     
-    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    [self chengeRootVCWithIndex:1];
     
-    [self presentViewController:[[FoundController alloc]init] animated:YES completion:nil];
 }
+//消息按钮
 - (IBAction)messgeAction:(UIButton *)sender {
     
-    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-
-    [self presentViewController:[[WNXMessageViewController alloc]init] animated:YES completion:nil];
+    [self chengeRootVCWithIndex:2];
+    
 }
+//设置按钮
 - (IBAction)setingAction:(UIButton *)sender {
     
-    //[self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    [self chengeRootVCWithIndex:3];
+    
+}
 
-    [self presentViewController:[[WNXSetingViewController alloc]init] animated:YES completion:nil];
+//切换控制器方法
+- (void)chengeRootVCWithIndex:(NSInteger)index{
+    
+    //通过AppDelegate取到控制器数组与抽屉控制器
+    LLQNavigationController *rootVC = _appDelegate.viewControllers[index];
+    MMDrawerController *mmdrawerVC = _appDelegate.drawerVC;
+    
+    //切换控制器
+    [mmdrawerVC setCenterViewController:rootVC withCloseAnimation:YES completion:nil];
+    
 }
 
 //注册登录

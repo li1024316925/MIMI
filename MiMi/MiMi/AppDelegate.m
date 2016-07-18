@@ -12,6 +12,9 @@
 #import "LeftViewController.h"
 #import "MainViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "FoundController.h"
+#import "WNXMessageViewController.h"
+#import "WNXSetingViewController.h"
 
 #define kApplication @"1c7018c7e597db7c7da31b2d7d400793"
 
@@ -21,6 +24,16 @@
 
 @implementation AppDelegate
 
+//复写get方法，懒加载
+- (NSMutableArray *)viewControllers{
+    
+    if (_viewControllers == nil) {
+        _viewControllers = [[NSMutableArray alloc] init];
+    }
+    
+    return _viewControllers;
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -37,16 +50,31 @@
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     
     
-    MMDrawerController *rootVC = [[MMDrawerController alloc] initWithCenterViewController:naviVC leftDrawerViewController:leftVC];
-    rootVC.maximumLeftDrawerWidth = 330;
-    rootVC.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
-    rootVC.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
+    _drawerVC = [[MMDrawerController alloc] initWithCenterViewController:naviVC leftDrawerViewController:leftVC];
+    _drawerVC.maximumLeftDrawerWidth = 330;
+    _drawerVC.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
+    _drawerVC.closeDrawerGestureModeMask = MMCloseDrawerGestureModeAll;
     
     //设置为根视图
-    self.window.rootViewController = rootVC;
+    self.window.rootViewController = _drawerVC;
     
     //注册 APP
     [Bmob registerWithAppKey:kApplication];
+    
+    //创建各页面视图控制器，存入数组
+    FoundController *foundVC = [[FoundController alloc] init];
+    LLQNavigationController *naviVC2 = [[LLQNavigationController alloc] initWithRootViewController:foundVC];
+    
+    WNXMessageViewController *messageVC = [[WNXMessageViewController alloc] init];
+    LLQNavigationController *naviVC3 = [[LLQNavigationController alloc] initWithRootViewController:messageVC];
+    
+    WNXSetingViewController *setingVC = [[WNXSetingViewController alloc] init];
+    LLQNavigationController *naviVC4 = [[LLQNavigationController alloc] initWithRootViewController:setingVC];
+    
+    [self.viewControllers addObject:naviVC];
+    [self.viewControllers addObject:naviVC2];
+    [self.viewControllers addObject:naviVC3];
+    [self.viewControllers addObject:naviVC4];
     
     return YES;
 }

@@ -27,7 +27,7 @@ static NSString *identifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self addNavigation];
+//    [self addNavigation];
     
     [self addCollectionView];
 }
@@ -68,7 +68,7 @@ static NSString *identifier = @"cell";
     
     layout.headerReferenceSize =CGSizeMake(0, 64);
 
-    UICollectionView *collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64) collectionViewLayout:layout];
+    UICollectionView *collection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-64) collectionViewLayout:layout];
     
     collection.backgroundColor = [UIColor clearColor];
     
