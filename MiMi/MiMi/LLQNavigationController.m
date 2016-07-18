@@ -45,7 +45,7 @@
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     [button setImage:[UIImage imageNamed:@"artcleList_btn_info_6P"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(naviLeftBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(naviLeftBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
     return leftItem;
@@ -53,10 +53,9 @@
 }
 
 //导航栏左侧按钮点击事件
-- (void)naviLeftBtnAction{
-    
-    
-    
+- (void)naviLeftBtnAction:(UIButton *)btn{
+    //发送通知关闭抽屉
+    [[NSNotificationCenter defaultCenter] postNotificationName:kOpenOrCloseDrawer object:self];
 }
 
 - (void)didReceiveMemoryWarning {

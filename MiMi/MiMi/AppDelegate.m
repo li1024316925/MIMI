@@ -76,7 +76,23 @@
     [self.viewControllers addObject:naviVC3];
     [self.viewControllers addObject:naviVC4];
     
+    //设置通知监听
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeDrawer) name:kOpenOrCloseDrawer object:nil];
+    
     return YES;
+}
+
+//接收通知后调用的方法
+- (void)closeDrawer{
+    
+    if (self.drawerVC.openSide == MMDrawerSideNone) {
+        //打开
+        [self.drawerVC openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+    }else if (self.drawerVC.openSide == MMDrawerSideLeft){
+        //关闭
+        [self.drawerVC closeDrawerAnimated:YES completion:nil];
+    }
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

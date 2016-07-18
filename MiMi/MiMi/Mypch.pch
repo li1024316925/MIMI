@@ -33,5 +33,9 @@
 #define kUserName @"userName"
 #define kPassword @"password"
 
+//通知名
+//打开或者关闭抽屉
+#define kOpenOrCloseDrawer @"OpenOrCloseDrawer"
+
 
 #endif /* Mypch_pch */
