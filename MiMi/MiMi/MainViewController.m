@@ -26,22 +26,6 @@
 
 @implementation MainViewController
 
-//视图已经显示
-- (void)viewDidAppear:(BOOL)animated{
-    
-    //重新修改根视图的滑动位置
-//    [self rootViewSlideWithIndex:_segment.selectedSegmentIndex withAnimation:NO];
-    
-}
-
-//视图已经消失，此时还原根视图所有形变
-- (void)viewDidDisappear:(BOOL)animated{
-
-    //还原
-//    self.view.transform = CGAffineTransformIdentity;
-    
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
