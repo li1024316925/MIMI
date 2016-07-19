@@ -11,6 +11,9 @@
 #import "WNXMenuButton.h"
 #import "AppDelegate.h"
 #import <SDWebImageManager.h>
+#import <BmobSDK/BmobUser.h>
+#import "LoginOrRegisterController.h"
+#import <SVProgressHUD.h>
 
 #define WNXCachesPath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
 
@@ -92,7 +95,6 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewClick:)];
     [view addGestureRecognizer:tap];
     [self.scrollView addSubview:view];
-    
 }
 
 //view被点击
@@ -186,17 +188,25 @@
 //退出登录
 - (void)logoutButtonClick
 {
-//    self.logoutButton.hidden = YES;
+    //退出登录
+    [BmobUser logout];
+    
+    [SVProgressHUD showSuccessWithStatus:@"用户已退出"];
     
     [self.logoutButton setTitle:@"重新登录" forState:UIControlStateNormal];
-    [self.logoutButton addTarget:self action:@selector(relogin) forControlEvents:UIControlEventTouchUpInside];
     
+    [self.logoutButton addTarget:self action:@selector(relogin) forControlEvents:UIControlEventTouchUpInside];
 }
+
 //这里可以推出一个登陆界面,前期由于测试没有添加,,可后期加上.
 - (void)relogin
 {
+    //弹出登录界面
+    LoginOrRegisterController *loginVC = [[LoginOrRegisterController alloc]init];
+    
+    [self presentViewController:loginVC animated:YES completion:nil];
+    
     [self.logoutButton setTitle:@"退出登录" forState:UIControlStateNormal];
-
 }
 
 //计算单个文件夹的大小
@@ -207,6 +217,7 @@
     if([fileManager fileExistsAtPath:path]){
         
         long long size=[fileManager attributesOfItemAtPath:path error:nil].fileSize;
+        
         return size/1024.0/1024.0;
     }
     return 0;
