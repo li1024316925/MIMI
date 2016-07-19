@@ -13,9 +13,13 @@
 #import "UIViewController+MMDrawerController.h"
 #import "AppDelegate.h"
 #import <UIImageView+WebCache.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface LeftViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface LeftViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate>
 {
+    //地理位置
+    UILabel *_locationLabel;
+    
     //头像
     UIImageView *_imageView;
     
@@ -30,6 +34,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *messgeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *setingBtn;
 
+/** 定位服务 */
+@property(nonatomic,strong)CLLocationManager *locationManager;
+
+/** 反地理编码 */
+@property(nonatomic,strong)CLGeocoder *geocoder;
+
 @end
 
 @implementation LeftViewController
@@ -37,11 +47,67 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //定位服务
+    [self setLocationServers];
+    
     //安全判断 ->登录
     [self autoLogin];
     
     //获取全局的AppDelegate
     _appDelegate = [UIApplication sharedApplication].delegate;
+}
+
+/** 懒加载定位管家 */
+-(CLLocationManager *)locationManager{
+    
+    if (!_locationManager) {
+        
+        _locationManager = [[CLLocationManager alloc]init];
+        
+        _locationManager.delegate = self;
+    }
+    return _locationManager;
+}
+
+/** 懒加载反地理编码 */
+-(CLGeocoder *)geocoder{
+    
+    if (!_geocoder) {
+        
+        _geocoder = [[CLGeocoder alloc]init];
+    }
+    return _geocoder;
+}
+
+//设置定位服务
+- (void)setLocationServers
+{
+    //安全判断
+    if (![CLLocationManager locationServicesEnabled]) {
+        
+        [SVProgressHUD showSuccessWithStatus:@"硬件定位服务未开启"];
+        
+        return;
+    }
+    //请求用户开启定位服务
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        
+        // 发出授权请求
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+            
+            // 授权请求需要对应不同的info设置
+            [self.locationManager requestAlwaysAuthorization];
+            // NSLocationAlwaysUsageDescription
+        }
+    }
+    // 设置定位精度
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    
+    // 设置定位距离，避免定位过于频繁,每隔多少米定位一次
+    self.locationManager.distanceFilter = 10;
+    
+    // 开始定位
+    [self.locationManager startUpdatingLocation];
 }
 
 //主页按钮
@@ -87,7 +153,7 @@
     //5.
     [loginVC setSendMessgae:^(NSString *userName) {
 
-        [self setUserMsg];
+        [self setUserMsgWithName:userName];
     }];
     //弹出模态试图
     [self presentViewController:loginVC animated:YES completion:nil];
@@ -107,7 +173,7 @@
 
             if (user) {
                 
-                [self setUserMsg];
+                [self setUserMsgWithName:user.username];
                 
                 //设置头像
                 if ([[NSUserDefaults standardUserDefaults]objectForKey:@"imageUrl"]) {
@@ -122,7 +188,7 @@
 }
 
 //设置用户信息
-- (void)setUserMsg
+- (void)setUserMsgWithName:(NSString *)userName
 {
     //添加一个新的View显示
     UIView *loginView = [[UIView alloc]initWithFrame:self.unLoginBtn.bounds];
@@ -153,9 +219,16 @@
     
     label.textColor = [UIColor whiteColor];
     
-    label.text = @"zmx";
+    label.text = userName;
     
     [loginView addSubview:label];
+    
+    //添加一个现实地理位置的 Label
+    _locationLabel = [[UILabel alloc]initWithFrame:CGRectMake(180, 10, 80, 40)];
+    
+    _locationLabel.textColor = [UIColor whiteColor];
+    
+    [loginView addSubview:_locationLabel];
     
     [self.unLoginBtn addSubview:loginView];
 }
@@ -233,6 +306,36 @@
     } withProgressBlock:^(CGFloat progress) {
        
         NSLog(@"++++%f",progress);
+    }];
+}
+
+#pragma -mark CLLocationManagerDelegate
+
+//位置发生变化时,就会调用这个方法
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    
+    CLLocation *location = locations[0];
+    
+    //反地理编码
+    [self changeLocationWithLatitude:location.coordinate.latitude WithLongitude:location.coordinate.longitude];
+    
+    // 停止定位服务
+    [self.locationManager stopUpdatingLocation];
+}
+
+//经纬度转化成地址名称
+- (void)changeLocationWithLatitude:(CGFloat )latitude WithLongitude:(CGFloat )longitude{
+    
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+    
+    [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        if (error) return;
+        
+        for (CLPlacemark *pm in placemarks) {
+            
+            _locationLabel.text = pm.locality;
+        }
     }];
 }
 
