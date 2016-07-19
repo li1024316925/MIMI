@@ -119,8 +119,15 @@
                 [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"欢迎回来%@",user.username]];
             } else{
                 
+                [SVProgressHUD showErrorWithStatus:@"用户名不存在,请完成注册"];
+                
                 //注册用户
                 [self registerUseMsgWithUser:bUser];
+            }
+            
+            if (error) {
+                
+                [SVProgressHUD showErrorWithStatus:@"用户名或密码错误,请重试"];
             }
         }];
     }
