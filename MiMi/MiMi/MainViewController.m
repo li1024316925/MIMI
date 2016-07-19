@@ -25,20 +25,18 @@
 
 @implementation MainViewController
 
-//视图即将显示
-- (void)viewWillAppear:(BOOL)animated{
-    
-    [self segmentAction:_segment];
-    NSLog(@"%ld",_segment.selectedSegmentIndex);
-    
-}
+//视图已经显示
 - (void)viewDidAppear:(BOOL)animated{
     
-    [self segmentAction:_segment];
+    //重新修改根视图的滑动位置
+    [self rootViewSlideWithIndex:_segment.selectedSegmentIndex withAnimation:NO];
     
 }
+
+//视图已经消失，此时还原根视图所有形变
 - (void)viewDidDisappear:(BOOL)animated{
     
+    //还原
     self.view.transform = CGAffineTransformIdentity;
     
 }
@@ -139,17 +137,31 @@
 //导航栏标题按钮组点击方法
 - (void)segmentAction:(UISegmentedControl *)segment{
     
-    //左右滑动以达到切换页面效果
-    if (segment.selectedSegmentIndex == 0) {
-        [UIView animateWithDuration:0.3 animations:^{
-            self.view.transform = CGAffineTransformIdentity;
-        }];
-    }else if (segment.selectedSegmentIndex == 1){
-        [UIView animateWithDuration:0.3 animations:^{
-            self.view.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
-        }];
-    }
+    [self rootViewSlideWithIndex:segment.selectedSegmentIndex withAnimation:YES];
     
+}
+
+//根视图滑动方法
+- (void)rootViewSlideWithIndex:(NSInteger)index withAnimation:(BOOL)animation{
+    
+    //左右滑动以达到切换页面效果
+    if (index == 0) {
+        if (animation == YES) {
+            [UIView animateWithDuration:0.3 animations:^{
+                self.view.transform = CGAffineTransformIdentity;
+            }];
+        }else{
+            self.view.transform = CGAffineTransformIdentity;
+        }
+    }else if (index == 1){
+        if (animation == YES) {
+            [UIView animateWithDuration:0.3 animations:^{
+                self.view.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
+            }];
+        }else{
+            self.view.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
+        }
+    }
 }
 
 //搜索按钮方法
