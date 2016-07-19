@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="KGk-i7-Jjw" customClass="SearchTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchList_btn_delete_6P" translatesAutoresizingMaskIntoConstraints="NO" id="ItQ-vR-kuM">
+                        <rect key="frame" x="386" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="nYN-N8-AE1"/>
+                            <constraint firstAttribute="width" constant="20" id="wUw-5w-c4p"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28C-9D-YT6">
+                        <rect key="frame" x="8" y="9" width="53" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="LO1-Dh-JSf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48U-DL-LxN">
+                        <rect key="frame" x="386" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="U4R-JT-ws7"/>
+                            <constraint firstAttribute="width" constant="20" id="xf6-mV-4Vl"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="searchList_btn_delete_6P"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ItQ-vR-kuM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="BXK-h5-864"/>
+                    <constraint firstItem="ItQ-vR-kuM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JAF-kv-j4Q"/>
+                    <constraint firstItem="28C-9D-YT6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="L7j-N8-HMo"/>
+                    <constraint firstItem="48U-DL-LxN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="RTY-J4-wvq"/>
+                    <constraint firstItem="28C-9D-YT6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="goT-Dx-IAe"/>
+                    <constraint firstItem="48U-DL-LxN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iDO-Sm-txf"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="ItQ-vR-kuM"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="deleteBtn" destination="48U-DL-LxN" id="yFt-5X-4w1"/>
+                <outlet property="titleLabel" destination="28C-9D-YT6" id="Rec-pK-UNm"/>
+            </connections>
+            <point key="canvasLocation" x="254" y="318"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="searchList_btn_delete_6P" width="33" height="33"/>
+    </resources>
+</document>

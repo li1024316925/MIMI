@@ -18,6 +18,8 @@
 		2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319351D38D7F400F64761 /* MMDrawerController.m */; };
 		2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */; };
 		2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */; };
+		2ACD31D71D3DD048006A1B89 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */; };
+		2ACD31D81D3DD048006A1B89 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */; };
 		2AE34CDB1D3C8A7F004995BF /* MainNearbyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CDA1D3C8A7F004995BF /* MainNearbyView.m */; };
 		2AE34CDE1D3CB310004995BF /* MainRecommendGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CDD1D3CB310004995BF /* MainRecommendGroupModel.m */; };
 		2AE34CE21D3CB3DE004995BF /* BVBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CE11D3CB3DE004995BF /* BVBaseModel.m */; };
@@ -89,6 +91,9 @@
 		2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		2AA319381D38D7F400F64761 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		2AE34CD91D3C8A7F004995BF /* MainNearbyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNearbyView.h; sourceTree = "<group>"; };
 		2AE34CDA1D3C8A7F004995BF /* MainNearbyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNearbyView.m; sourceTree = "<group>"; };
 		2AE34CDC1D3CB310004995BF /* MainRecommendGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRecommendGroupModel.h; sourceTree = "<group>"; };
@@ -299,6 +304,9 @@
 				2AE34CF61D3CE7E1004995BF /* MainRecommendTableHeaderView.h */,
 				2AE34CF71D3CE7E1004995BF /* MainRecommendTableHeaderView.m */,
 				2AE34CF91D3CE833004995BF /* MainRecommendTableHeaderView.xib */,
+				2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */,
+				2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */,
+				2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -580,6 +588,7 @@
 				F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */,
 				F0E86D5E1D3A59FC009EA5CF /* FoundCell.xib in Resources */,
 				F0E86D6E1D3A61C6009EA5CF /* detailJson in Resources */,
+				2ACD31D81D3DD048006A1B89 /* SearchTableViewCell.xib in Resources */,
 				2AE34CFA1D3CE833004995BF /* MainRecommendTableHeaderView.xib in Resources */,
 				C6E9AB181D3A250A00A15CC1 /* WNXMessageCell.xib in Resources */,
 				F0E86D6D1D3A61C6009EA5CF /* CellDatas.plist in Resources */,
@@ -655,6 +664,7 @@
 				C6E9AB231D3A259100A15CC1 /* WNXMessageModel.m in Sources */,
 				C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */,
 				2A2437601D39C8D700F8FA31 /* MainViewController.m in Sources */,
+				2ACD31D71D3DD048006A1B89 /* SearchTableViewCell.m in Sources */,
 				C6E9AB301D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m in Sources */,
 				C6E9AB1F1D3A252B00A15CC1 /* WNXMessageViewController.m in Sources */,
 				C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */,

@@ -7,12 +7,32 @@
 //
 
 #import "SearchViewController.h"
+#import "SearchTableViewCell.h"
 
-@interface SearchViewController ()<UITextFieldDelegate>
+@interface SearchViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView *_searchTableView;
+}
+@property(nonatomic, strong)NSMutableArray *dataList;
 
 @end
 
 @implementation SearchViewController
+
+//懒加载
+- (NSMutableArray *)dataList{
+    if (_dataList == nil) {
+        _dataList = [[NSMutableArray alloc] init];
+        //存储历史记录
+        NSMutableArray *historyArr = [[NSMutableArray alloc] init];
+        [_dataList addObject:historyArr];
+        //存储热门
+        NSMutableArray *hotArr = [[NSMutableArray alloc] init];
+        [_dataList addObject:hotArr];
+    }
+    
+    return _dataList;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,7 +42,24 @@
     //加载导航栏控件
     [self loadNaviItem];
     
-    ///fghj
+    //加载表视图
+    [self loadTableView];
+    
+}
+
+//加载表视图
+- (void)loadTableView{
+    
+    //创建表视图
+    _searchTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
+    _searchTableView.delegate = self;
+    _searchTableView.dataSource = self;
+    _searchTableView.sectionHeaderHeight = 50;
+    //注册头视图
+    [_searchTableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"headerView"];
+    
+    [self.view addSubview:_searchTableView];
+    
 }
 
 //修改导航栏
@@ -62,6 +99,98 @@
     
     //返回根视图控制器
     [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
+
+#pragma mark ------ UITextFieldDelegate
+
+//点击return时调用
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    //添加数据
+    NSMutableArray *historyArr = self.dataList[0];
+    [historyArr addObject:textField.text];
+    
+    //清空输入框
+    textField.text = @"";
+    
+    //刷新表视图
+    [_searchTableView reloadData];
+    
+    return YES;
+    
+}
+
+
+#pragma mark ------ UITableViewDataSource和UITableViewDelegate
+
+//返回组数
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return self.dataList.count;
+    
+}
+
+//返回每组单元格数
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    NSMutableArray *array = _dataList[section];
+    
+    return array.count;
+    
+}
+
+//返回单元格
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //单元格复用
+    SearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell"];
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"SearchTableViewCell" owner:nil options:nil] lastObject];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.deleteBtn addTarget:self action:@selector(cellDeleteBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    //属性赋值
+    NSMutableArray *array = self.dataList[indexPath.section];
+    cell.titleLabel.text = array[indexPath.row];
+    cell.deleteBtn.tag = 100 + indexPath.row;
+    
+    return cell;
+    
+}
+
+//返回组头视图
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    //头视图复用
+    UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"headerView"];
+    if (section == 0) {
+        headerView.textLabel.text = @"历史";
+    }else if (section == 1){
+        headerView.textLabel.text = @"热门";
+    }
+    
+    return headerView;
+    
+}
+
+
+#pragma mark ------ 单元格删除按钮点击方法
+
+- (void)cellDeleteBtnAction:(UIButton *)btn{
+    
+    //通过tag值删除数据数组中的数据
+    NSMutableArray *array = _dataList[0];
+    if (btn.tag-100<array.count) {
+        [array removeObjectAtIndex:btn.tag-100];
+        //删除单元格
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:btn.tag-100 inSection:0];
+        [_searchTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }
+    //刷新第0组表视图
+    [_searchTableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
     
 }
 
