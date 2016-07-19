@@ -19,6 +19,7 @@
     UIView *_bgView;
     UITableView *_mainTableView;
     UISegmentedControl *_segment;
+    MainNearbyView *_nearbyView;
 }
 
 @end
@@ -29,7 +30,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     
     //重新修改根视图的滑动位置
-    [self rootViewSlideWithIndex:_segment.selectedSegmentIndex withAnimation:NO];
+//    [self rootViewSlideWithIndex:_segment.selectedSegmentIndex withAnimation:NO];
     
 }
 
@@ -37,7 +38,7 @@
 - (void)viewDidDisappear:(BOOL)animated{
 
     //还原
-    self.view.transform = CGAffineTransformIdentity;
+//    self.view.transform = CGAffineTransformIdentity;
     
 }
 
@@ -102,8 +103,9 @@
 //添加附近视图
 - (void)loadNearbyView{
     
-    MainNearbyView *nearbyView = [[MainNearbyView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kScreenWidth, kScreenHeight)];
-    [self.view addSubview:nearbyView];
+    //创建附近视图并将它添加到tableView的下一层
+    _nearbyView = [[MainNearbyView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    [self.view addSubview:_nearbyView];
     
 }
 
@@ -144,22 +146,51 @@
 //根视图滑动方法
 - (void)rootViewSlideWithIndex:(NSInteger)index withAnimation:(BOOL)animation{
     
-    //左右滑动以达到切换页面效果
+    //切换页面
     if (index == 0) {
+        
         if (animation == YES) {
-            [UIView animateWithDuration:0.3 animations:^{
-                self.view.transform = CGAffineTransformIdentity;
+            
+            //设置左下角为锚点，并定位在根视图的左下角
+            _nearbyView.layer.anchorPoint = CGPointMake(0, 1);
+            _nearbyView.layer.position = CGPointMake(0, kScreenHeight);
+            [UIView animateWithDuration:0.5 animations:^{
+                _nearbyView.transform = CGAffineTransformRotate(_nearbyView.transform, -M_PI/4);
+                _nearbyView.alpha = 0;
+            } completion:^(BOOL finished) {
+                //还原所有改变，把表视图拿到最上层
+                _nearbyView.alpha = 1;
+                _nearbyView.transform = CGAffineTransformIdentity;
+                [self.view bringSubviewToFront:_mainTableView];
             }];
+            
         }else{
-            self.view.transform = CGAffineTransformIdentity;
+            
+            [self.view bringSubviewToFront:_mainTableView];
+            
         }
+        
     }else if (index == 1){
+        
         if (animation == YES) {
-            [UIView animateWithDuration:0.3 animations:^{
-                self.view.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
+            
+            //设置右下角为锚点，并将定位点设置在根视图右下角
+            _mainTableView.layer.anchorPoint = CGPointMake(1, 1);
+            _mainTableView.layer.position = CGPointMake(kScreenWidth, kScreenHeight-64);
+            [UIView animateWithDuration:0.5 animations:^{
+                _mainTableView.transform = CGAffineTransformRotate(_mainTableView.transform, M_PI/4);
+                _mainTableView.alpha = 0;
+            } completion:^(BOOL finished) {
+                //还原所有改变，把附近视图拿到最上层
+                _mainTableView.alpha = 1;
+                _mainTableView.transform = CGAffineTransformIdentity;
+                [self.view bringSubviewToFront:_nearbyView];
             }];
+            
         }else{
-            self.view.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
+            
+            [self.view bringSubviewToFront:_nearbyView];
+            
         }
     }
 }
@@ -182,8 +213,10 @@
     _mainTableView.dataSource = self;
     _mainTableView.rowHeight = 220;
     _mainTableView.sectionHeaderHeight = 60;
-    _mainTableView.backgroundColor = [UIColor clearColor];
-    
+    _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _mainTableView.backgroundColor = [UIColor colorWithRed:51/255.0 green:52/255.0 blue:53/255.0 alpha:1];
+    //添加到附近视图的上面
+    [self.view bringSubviewToFront:_mainTableView];
     
     [self.view addSubview:_mainTableView];
     
