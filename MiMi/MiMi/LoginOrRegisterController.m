@@ -8,9 +8,13 @@
 
 #import "LoginOrRegisterController.h"
 #import "CCCheckInput.h"
+#import <BmobSDK/BmobUser.h>
 
 @interface LoginOrRegisterController ()
-
+{
+    //监听用户是否点击了注册按钮
+    BOOL _isSelected;
+}
 /** 注册框 */
 @property (weak, nonatomic) IBOutlet UIView *registerView;
 
@@ -93,6 +97,38 @@
 
     [bUser setMobilePhoneNumber:self.phoneNumber.text];
     
+    //如果已有账号,直接登录
+    if (!_isSelected) {
+        
+        [BmobUser loginWithUsernameInBackground:self.userName.text password:self.password.text block:^(BmobUser *user, NSError *error) {
+            
+            if (user) {
+                
+                //保存至本地化字典
+                //4.
+                if (_sendMessgae) {
+                    
+                    _sendMessgae(user.username);
+                }
+                
+                //保存到本地化字典中
+                [[NSUserDefaults standardUserDefaults]setObject:self.userName.text forKey:kUserName];
+                
+                [[NSUserDefaults standardUserDefaults]setObject:self.password.text forKey:kPassword];
+                
+                [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"欢迎回来%@",user.username]];
+            } else{
+                
+                //注册用户
+                [self registerUseMsgWithUser:bUser];
+            }
+        }];
+    }
+}
+
+//注册用户
+- (void)registerUseMsgWithUser:(BmobUser *)bUser
+{
     //使用手机号进行注册
     [bUser signUpOrLoginInbackgroundWithSMSCode:self.smsCode.text block:^(BOOL isSuccessful, NSError *error) {
         
@@ -124,6 +160,7 @@
         }
     }];
 }
+
 
 //请求验证码
 - (void)getSmsCodeFromPhone
@@ -177,6 +214,8 @@
 - (IBAction)haveNumber:(UIButton *)sender {
     
     sender.selected = !sender.selected;
+    
+    _isSelected = !sender.selected;
     
     sender.selected?[self moveRegisterViewWithDistance:-kScreenWidth+80]:[self moveRegisterViewWithDistance:0];
 }
