@@ -35,7 +35,7 @@
 
 //视图已经消失，此时还原根视图所有形变
 - (void)viewDidDisappear:(BOOL)animated{
-    
+
     //还原
     self.view.transform = CGAffineTransformIdentity;
     

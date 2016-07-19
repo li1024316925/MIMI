@@ -29,6 +29,8 @@ static NSString *identifier = @"cell";
     
     //设置标题
     self.title = @"发现";
+    //修改标题颜色
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:20]}];
     
     [self addCollectionView];
 }
@@ -99,7 +101,7 @@ static NSString *identifier = @"cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PresentController *presentVC = [[PresentController alloc]init];
-    
+    presentVC.view.backgroundColor = [UIColor whiteColor];
     //推出新的控制器
     [self.navigationController pushViewController:presentVC animated:YES];
 }

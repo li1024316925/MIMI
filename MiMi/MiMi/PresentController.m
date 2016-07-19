@@ -8,11 +8,12 @@
 
 #import "PresentController.h"
 #import "PushFoundCell.h"
+#import "MainRecommendCell.h"
 #import "PushFoundModel.h"
 #import <MJExtension.h>
 #import <MJRefresh.h>
 
-static NSString *identifier = @"foundCell";
+static NSString *identifier = @"RecommendCell";
 
 @interface PresentController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -32,15 +33,24 @@ static NSString *identifier = @"foundCell";
     
     self.title = @"美食";
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(naviLeftBtnAction)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    
     [self createTableView];
     
     [self getRefresh];
 }
 
+//导航栏左按钮点击方法
+- (void)naviLeftBtnAction{
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
 //刷新
 - (void)getRefresh
 {
-    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(getData)];
     
     NSMutableArray *images = [NSMutableArray array];
     
@@ -52,13 +62,16 @@ static NSString *identifier = @"foundCell";
         
         [images addObject:image];
     }
-    [header setImages:images duration:3 forState:MJRefreshStatePulling];
     
-    [header beginRefreshing];
+    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(getData)];
+    
+    [header setImages:images duration:3 forState:MJRefreshStatePulling];
     
     self.header = header;
     
-    [self .tableView addSubview:header];
+    [self.tableView addSubview:header];
+    
+    [header beginRefreshing];
 }
 
 //获取数据
@@ -108,7 +121,7 @@ static NSString *identifier = @"foundCell";
     
     tabelView.dataSource = self;
     
-    [tabelView registerClass:[PushFoundCell class] forCellReuseIdentifier:identifier];
+    [tabelView registerClass:[MainRecommendCell class] forCellReuseIdentifier:identifier];
     
     self.tableView = tabelView;
     
@@ -120,7 +133,7 @@ static NSString *identifier = @"foundCell";
 //单元格高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 200;
+    return 220;
 }
 
 #pragma -mark UITableViewDataSource
@@ -134,7 +147,7 @@ static NSString *identifier = @"foundCell";
 //单元格内容
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PushFoundCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"PushFoundCell" owner:self options:nil] firstObject];
+    MainRecommendCell *cell = [[[NSBundle mainBundle]loadNibNamed:@"MainRecommendCell" owner:nil options:nil] firstObject];
     
     cell.model = self.dataList[indexPath.row];
     
