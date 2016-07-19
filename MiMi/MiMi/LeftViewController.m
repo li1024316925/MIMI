@@ -8,7 +8,6 @@
 
 #import "LeftViewController.h"
 #import "LoginOrRegisterController.h"
-#import <BmobSDK/Bmob.h>
 #import "LLQNavigationController.h"
 #import "MMDrawerController.h"
 #import "UIViewController+MMDrawerController.h"

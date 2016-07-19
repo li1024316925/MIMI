@@ -110,7 +110,6 @@
                     
                     _sendMessgae(user.username);
                 }
-                
                 //保存到本地化字典中
                 [[NSUserDefaults standardUserDefaults]setObject:self.userName.text forKey:kUserName];
                 
@@ -148,7 +147,6 @@
                 
                 _sendMessgae(self.userName.text);
             }
-            
             //保存到本地化字典中
             [[NSUserDefaults standardUserDefaults]setObject:self.userName.text forKey:kUserName];
             
@@ -167,7 +165,6 @@
         }
     }];
 }
-
 
 //请求验证码
 - (void)getSmsCodeFromPhone
@@ -209,7 +206,6 @@
             
             //滑出登录页面
             [self moveRegisterViewWithDistance:-kScreenWidth+80];
-            
         } else {
             
             [SVProgressHUD showErrorWithStatus:@"请确认验证码是否正确"];

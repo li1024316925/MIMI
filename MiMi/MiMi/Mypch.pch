@@ -37,5 +37,7 @@
 //打开或者关闭抽屉
 #define kOpenOrCloseDrawer @"OpenOrCloseDrawer"
 
+//发送是否退出登陆的通知
+#define kLoginOutNotification @"loginOut"
 
 #endif /* Mypch_pch */
