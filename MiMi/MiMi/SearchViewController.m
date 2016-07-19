@@ -21,6 +21,8 @@
     
     //加载导航栏控件
     [self loadNaviItem];
+    
+    ///fghj
 }
 
 //修改导航栏
