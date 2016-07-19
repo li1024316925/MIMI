@@ -15,13 +15,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchList_btn_delete_6P" translatesAutoresizingMaskIntoConstraints="NO" id="ItQ-vR-kuM">
-                        <rect key="frame" x="386" y="12" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="nYN-N8-AE1"/>
-                            <constraint firstAttribute="width" constant="20" id="wUw-5w-c4p"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28C-9D-YT6">
                         <rect key="frame" x="8" y="9" width="53" height="25"/>
                         <constraints>
@@ -41,18 +34,11 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ItQ-vR-kuM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="BXK-h5-864"/>
-                    <constraint firstItem="ItQ-vR-kuM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JAF-kv-j4Q"/>
                     <constraint firstItem="28C-9D-YT6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="L7j-N8-HMo"/>
                     <constraint firstItem="48U-DL-LxN" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="RTY-J4-wvq"/>
                     <constraint firstItem="28C-9D-YT6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="goT-Dx-IAe"/>
                     <constraint firstItem="48U-DL-LxN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iDO-Sm-txf"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="subviews">
-                        <exclude reference="ItQ-vR-kuM"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="deleteBtn" destination="48U-DL-LxN" id="yFt-5X-4w1"/>

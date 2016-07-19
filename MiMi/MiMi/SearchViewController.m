@@ -19,6 +19,27 @@
 
 @implementation SearchViewController
 
+//视图即将显示
+- (void)viewWillAppear:(BOOL)animated{
+    //从本地查询
+    NSError *error;
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/searchHistory.json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    if (data) {
+        self.dataList = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    }
+}
+
+//视图即将消失
+- (void)viewWillDisappear:(BOOL)animated{
+    //数据本地化
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:self.dataList options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/searchHistory.json"];
+    //存储到本地
+    [data writeToFile:filePath atomically:YES];
+}
+
 //懒加载
 - (NSMutableArray *)dataList{
     if (_dataList == nil) {
