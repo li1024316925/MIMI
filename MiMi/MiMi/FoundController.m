@@ -33,7 +33,7 @@ static NSString *identifier = @"cell";
     [self addCollectionView];
 }
 
-/** 懒加载加载数据 */
+/** 懒加载加载数据 + */
 - (NSMutableArray *)dataList
 {
     if (_dataList == nil) {
@@ -44,12 +44,21 @@ static NSString *identifier = @"cell";
         
         NSArray *tmpArr = [NSMutableArray arrayWithContentsOfFile:path];
         
-        for (NSArray *array in tmpArr) {
-            
-            _dataList = [FoundModel mj_objectArrayWithKeyValuesArray:array];
-        }
+        _dataList = [self analysisArray:tmpArr];
+        
     }
     return _dataList;
+}
+
+// + 解析数据
+-(NSMutableArray*)analysisArray:(NSArray *)array{
+
+    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    
+    [arr addObject:[FoundModel mj_objectArrayWithKeyValuesArray:array[0]]];
+    [arr addObject:[FoundModel mj_objectArrayWithKeyValuesArray:array[1]]];
+    
+    return arr;
 }
 
 //添加集合试图
@@ -121,7 +130,8 @@ static NSString *identifier = @"cell";
 {
     FoundCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    cell.model = self.dataList[indexPath.row];
+    NSArray *arr = self.dataList[indexPath.section];
+    cell.model = arr[indexPath.row];
     
     return cell;
 }
@@ -153,8 +163,7 @@ static NSString *identifier = @"cell";
     return nil;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+
+
 
 @end
