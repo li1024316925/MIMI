@@ -175,13 +175,10 @@
                 
                 [self setUserMsgWithName:user.username];
                 
-                //设置头像
-                if ([[NSUserDefaults standardUserDefaults]objectForKey:@"imageUrl"]) {
-                    
-                    [_imageView sd_setImageWithURL:[[NSUserDefaults standardUserDefaults] objectForKey:@"imageUrl"]];
-                }
+                //从服务器拿到头像
+                [self getImageUrlFromServers];
                 
-                 //设置显示时间,默认是5秒
+                //设置显示时间,默认是5秒
                 [SVProgressHUD setMinimumDismissTimeInterval:2.0];
 
                 [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"欢迎回来%@",user.username]];
@@ -234,6 +231,28 @@
     [loginView addSubview:_locationLabel];
     
     [self.unLoginBtn addSubview:loginView];
+}
+
+//从服务器拿到头像的URL
+- (void)getImageUrlFromServers
+{
+    BmobQuery *query = [BmobQuery queryWithClassName:@"_User"];
+    
+    [query getObjectInBackgroundWithId:@"d2d4ebba70" block:^(BmobObject *object, NSError *error) {
+       
+        if (error) {
+            
+            NSLog(@"%@",error);
+            
+            return ;
+        }
+        if (object) {
+            
+            NSString *url = [object objectForKey:@"imageUrl"];
+            
+            [_imageView sd_setImageWithURL:[NSURL URLWithString:url]];
+        }
+    }];
 }
 
 //弹出系统相册
@@ -299,16 +318,50 @@
             
             [SVProgressHUD showSuccessWithStatus:@"头像保存成功"];
             
-            //保存至用户设置
-            [[NSUserDefaults standardUserDefaults]setObject:file.url forKey:@"imageUrl"];
+            //把图片的URL上传到服务器 imageUrl
+            [self saveImageUrlWithURL:file.url];
             
         }else {
+            
+            [SVProgressHUD showErrorWithStatus:@"保存失败,请重试"];
+            
             NSLog(@"%@",error);
         }
         
     } withProgressBlock:^(CGFloat progress) {
        
         NSLog(@"++++%f",progress);
+    }];
+}
+
+//保存头像的URL到服务器
+- (void)saveImageUrlWithURL:(NSString *)url
+{
+    BmobQuery *query = [BmobQuery queryWithClassName:@"_User"];
+    
+    [query getObjectInBackgroundWithId:@"d2d4ebba70" block:^(BmobObject *object, NSError *error) {
+       
+        if (!error) {
+            
+            if (object) {
+                
+                BmobObject *obj = [BmobObject objectWithoutDataWithClassName:object.className objectId:object.objectId];
+                
+                [obj setObject:url forKey:@"imageUrl"];
+                
+                [obj updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+                   
+                    if (error) {
+                        
+                        NSLog(@"aaa%@",error);
+                    }else{
+                        NSLog(@"success");
+                    }
+                }];
+            }
+        }else{
+            NSLog(@"error:%@",error);
+        }
     }];
 }
 

@@ -99,7 +99,7 @@
     [bUser setPassword:self.password.text];
 
     [bUser setMobilePhoneNumber:self.phoneNumber.text];
-    
+        
     //如果已有账号,直接登录
     if (!_isSelected) {
         

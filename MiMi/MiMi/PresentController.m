@@ -54,9 +54,9 @@ static NSString *identifier = @"RecommendCell";
     
     NSMutableArray *images = [NSMutableArray array];
     
-    for (int i = 0; i < 96; i ++) {
+    for (int i = 50; i < 96; i ++) {
         
-        NSString *imgaeName = [NSString stringWithFormat:@"loading_0%.2d",i];
+        NSString *imgaeName = [NSString stringWithFormat:@"loading_0%02d",i];
         
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",imgaeName]];
         
@@ -65,7 +65,7 @@ static NSString *identifier = @"RecommendCell";
     
     MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(getData)];
     
-    [header setImages:images duration:3 forState:MJRefreshStatePulling];
+    [header setImages:images duration:3 forState:MJRefreshStateRefreshing];
     
     self.header = header;
     
