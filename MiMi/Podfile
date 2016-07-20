@@ -11,4 +11,6 @@ pod 'MJExtension'
 pod 'Masonry'
 
 pod 'MJRefresh'
+
+pod 'WeiboSDK'
 end

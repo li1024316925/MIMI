@@ -42,4 +42,6 @@
 //发送是否退出登陆的通知
 #define kLoginOutNotification @"loginOut"
 
+#define kLoginBySine @"sine"
+
 #endif /* Mypch_pch */

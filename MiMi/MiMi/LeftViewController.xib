@@ -62,13 +62,16 @@
                         <constraint firstAttribute="height" constant="22" id="DfS-dc-MoR"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ0-yi-mle">
+                <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZ0-yi-mle">
                     <rect key="frame" x="57" y="355" width="254" height="70"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="bCn-Y1-1Ho"/>
                         <constraint firstAttribute="width" constant="254" id="mLp-wp-OYc"/>
                     </constraints>
                     <state key="normal" backgroundImage="sina"/>
+                    <connections>
+                        <action selector="sinaAction:" destination="-1" eventType="touchUpInside" id="Sa3-RI-THr"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm4-qK-KyZ">
                     <rect key="frame" x="57" y="435" width="254" height="70"/>
@@ -76,6 +79,9 @@
                         <constraint firstAttribute="height" constant="70" id="1IP-sO-ll1"/>
                     </constraints>
                     <state key="normal" backgroundImage="weixin"/>
+                    <connections>
+                        <action selector="weiChatAction:" destination="-1" eventType="touchUpInside" id="vw5-pP-9Ls"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iL7-al-mXK">
                     <rect key="frame" x="57" y="537" width="254" height="70"/>

@@ -14,6 +14,20 @@
 #import "AppDelegate.h"
 #import <UIImageView+WebCache.h>
 #import <CoreLocation/CoreLocation.h>
+#import <WeiboSDK.h>
+
+#define kAccess_token @"2.00M935ME6g1qHD3c197ec663dyLXcB"
+
+#define kUid @"3847653548"
+
+#define kApplication @"1c7018c7e597db7c7da31b2d7d400793"
+
+#define kSineAppKey @"2864305413"
+
+#define kSineAppSecret @"6c3d4131394d5338381f3a4b2d1acba8"
+
+//回调网址
+#define kRedirectUrl @"http://www.baidu.com"
 
 @interface LeftViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate>
 {
@@ -63,6 +77,8 @@
     
     //接收通知
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(logoutNotification:) name:kLoginOutNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loginBySine:) name:kLoginBySine object:nil];
 }
 
 /** 懒加载定位管家 */
@@ -142,6 +158,43 @@
     [self chengeRootVCWithIndex:3];
 }
 
+//========
+//第三方登录
+- (IBAction)sinaAction:(UIButton *)sender {
+    
+    sender.enabled = YES;
+    
+    //=====认证
+    //1.初始化一个oauth请求
+    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+    
+    //2.设置授权回调页
+    request.redirectURI = kRedirectUrl;
+    
+    //3.设置授权范围
+    request.scope = @"all";
+    
+    //4.用户信息
+    request.userInfo = nil;
+    
+    //5.发送请求
+    NSLog(@"%d",[WeiboSDK sendRequest:request]);
+}
+
+//设置用户名
+- (void)loginBySine:(NSNotification *)note
+{
+    self.weiboBtn.enabled = NO;
+    
+    [self setUserMsgWithName:[note.userInfo objectForKey:@"userName"]];
+}
+
+//微信登录
+- (IBAction)weiChatAction:(UIButton *)sender {
+
+}
+//========
+
 //切换控制器方法
 - (void)chengeRootVCWithIndex:(NSInteger)index{
     
@@ -180,6 +233,7 @@
 //账号自动登录
 - (void)autoLogin
 {
+    //微博登录的没有密码
     if ([[NSUserDefaults standardUserDefaults] objectForKey:kUserName] && [[NSUserDefaults standardUserDefaults] objectForKey:kPassword]) {
         
         NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
