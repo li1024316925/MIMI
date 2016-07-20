@@ -20,6 +20,8 @@
 		2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */; };
 		2ACD31D71D3DD048006A1B89 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */; };
 		2ACD31D81D3DD048006A1B89 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */; };
+		2ADEBEA11D3F6156001EE6BE /* MainCellPushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEBEA01D3F6156001EE6BE /* MainCellPushController.m */; };
+		2ADEBEA41D3F74E8001EE6BE /* LLQNavigationHiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEBEA31D3F74E8001EE6BE /* LLQNavigationHiddenViewController.m */; };
 		2AE34CDB1D3C8A7F004995BF /* MainNearbyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CDA1D3C8A7F004995BF /* MainNearbyView.m */; };
 		2AE34CDE1D3CB310004995BF /* MainRecommendGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CDD1D3CB310004995BF /* MainRecommendGroupModel.m */; };
 		2AE34CE21D3CB3DE004995BF /* BVBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CE11D3CB3DE004995BF /* BVBaseModel.m */; };
@@ -97,6 +99,10 @@
 		2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
 		2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		2ADEBE9F1D3F6156001EE6BE /* MainCellPushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCellPushController.h; sourceTree = "<group>"; };
+		2ADEBEA01D3F6156001EE6BE /* MainCellPushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCellPushController.m; sourceTree = "<group>"; };
+		2ADEBEA21D3F74E8001EE6BE /* LLQNavigationHiddenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQNavigationHiddenViewController.h; sourceTree = "<group>"; };
+		2ADEBEA31D3F74E8001EE6BE /* LLQNavigationHiddenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQNavigationHiddenViewController.m; sourceTree = "<group>"; };
 		2AE34CD91D3C8A7F004995BF /* MainNearbyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNearbyView.h; sourceTree = "<group>"; };
 		2AE34CDA1D3C8A7F004995BF /* MainNearbyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNearbyView.m; sourceTree = "<group>"; };
 		2AE34CDC1D3CB310004995BF /* MainRecommendGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRecommendGroupModel.h; sourceTree = "<group>"; };
@@ -330,6 +336,8 @@
 				2AA319241D38D6F000F64761 /* LeftViewController.xib */,
 				2AE34CFB1D3D127F004995BF /* SearchViewController.h */,
 				2AE34CFC1D3D127F004995BF /* SearchViewController.m */,
+				2ADEBE9F1D3F6156001EE6BE /* MainCellPushController.h */,
+				2ADEBEA01D3F6156001EE6BE /* MainCellPushController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -470,6 +478,8 @@
 				2AE34CE41D3CB450004995BF /* BaseModel.m */,
 				C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */,
 				C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */,
+				2ADEBEA21D3F74E8001EE6BE /* LLQNavigationHiddenViewController.h */,
+				2ADEBEA31D3F74E8001EE6BE /* LLQNavigationHiddenViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -713,9 +723,11 @@
 				C6E9AB161D3A250A00A15CC1 /* WNXMessageRefreshHeader.m in Sources */,
 				2AE34CDE1D3CB310004995BF /* MainRecommendGroupModel.m in Sources */,
 				F0E86D751D3A641C009EA5CF /* FoundModel.m in Sources */,
+				2ADEBEA11D3F6156001EE6BE /* MainCellPushController.m in Sources */,
 				C6E9AB311D3A29CE00A15CC1 /* UIImage+Size.m in Sources */,
 				C6E9AB271D3A25EA00A15CC1 /* WNXSetingViewController.m in Sources */,
 				F0E86D551D3A126F009EA5CF /* LoginOrRegisterController.m in Sources */,
+				2ADEBEA41D3F74E8001EE6BE /* LLQNavigationHiddenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

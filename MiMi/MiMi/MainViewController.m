@@ -13,6 +13,7 @@
 #import "MainRecommendCell.h"
 #import "MainRecommendTableHeaderView.h"
 #import "SearchViewController.h"
+#import "MainCellPushController.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -250,6 +251,14 @@
     
     return cell;
     
+}
+
+//单元格点击方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MainCellPushController *pushController = [[MainCellPushController alloc] initWithRootNavigationController:self.navigationController];
+    pushController.view.backgroundColor = [UIColor yellowColor];
+    [self.navigationController pushViewController:pushController animated:YES];
 }
 
 @end
