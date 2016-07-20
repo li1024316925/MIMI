@@ -12,6 +12,7 @@
 #import "PushFoundModel.h"
 #import <MJExtension.h>
 #import <MJRefresh.h>
+#import "CCSegementView.h"
 
 static NSString *identifier = @"RecommendCell";
 
@@ -23,6 +24,8 @@ static NSString *identifier = @"RecommendCell";
 @property(nonatomic,strong)UITableView *tableView;
 
 @property(nonatomic,strong)MJRefreshGifHeader *header;
+
+@property(nonatomic,strong)CCSegementView *segementView;
 
 @end
 
@@ -39,19 +42,19 @@ static NSString *identifier = @"RecommendCell";
     [self createTableView];
     
     [self getRefresh];
+    
+    [self addSegemnetView];
 }
 
 //导航栏左按钮点击方法
 - (void)naviLeftBtnAction{
     
     [self.navigationController popToRootViewControllerAnimated:YES];
-    
 }
 
 //刷新
 - (void)getRefresh
 {
-    
     NSMutableArray *images = [NSMutableArray array];
     
     for (int i = 50; i < 96; i ++) {
@@ -77,12 +80,22 @@ static NSString *identifier = @"RecommendCell";
 //获取数据
 - (void)getData
 {
+    [UIView animateWithDuration:.5 animations:^{
+       
+        self.segementView.alpha = 0;
+    }];
+
     //刷新表视图
     [self.tableView reloadData];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [self.header endRefreshing];
+       
+        [UIView animateWithDuration:.5 animations:^{
+            
+            self.segementView.alpha = 0.7;
+        }];
     });
 }
 
@@ -105,9 +118,18 @@ static NSString *identifier = @"RecommendCell";
 //添加一个分页控制器
 - (void)addSegemnetView
 {
+    //从Nib文件加载
+    CCSegementView *segementView = [[[NSBundle mainBundle]loadNibNamed:@"CCSegementView" owner:self options:nil] firstObject];
     
+    [segementView layoutIfNeeded];
     
+    segementView.frame = CGRectMake((kScreenWidth-300)/2, 20, 300, 44);
     
+    [segementView layoutIfNeeded];
+
+    self.segementView = segementView;
+    
+    [self.tableView addSubview:segementView];
 }
 
 //创建表视图
@@ -134,6 +156,13 @@ static NSString *identifier = @"RecommendCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 220;
+}
+
+//单元格点击事件
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
 }
 
 #pragma -mark UITableViewDataSource

@@ -30,6 +30,9 @@
 		2AE34CF81D3CE7E1004995BF /* MainRecommendTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CF71D3CE7E1004995BF /* MainRecommendTableHeaderView.m */; };
 		2AE34CFA1D3CE833004995BF /* MainRecommendTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AE34CF91D3CE833004995BF /* MainRecommendTableHeaderView.xib */; };
 		2AE34CFD1D3D127F004995BF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CFC1D3D127F004995BF /* SearchViewController.m */; };
+		513A7D1F1D3F5E9500480BF4 /* CCSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 513A7D1E1D3F5E9500480BF4 /* CCSegementView.m */; };
+		513A7D211D3F5F3900480BF4 /* CCSegementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513A7D201D3F5F3900480BF4 /* CCSegementView.xib */; };
+		513A7D271D3F63E800480BF4 /* UIView+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 513A7D261D3F63E800480BF4 /* UIView+XMGExtension.m */; };
 		C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */; };
 		C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */; };
 		C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB0C1D3A250A00A15CC1 /* WNXMessageDeleteButton.m */; };
@@ -112,6 +115,11 @@
 		2AE34CF91D3CE833004995BF /* MainRecommendTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainRecommendTableHeaderView.xib; sourceTree = "<group>"; };
 		2AE34CFB1D3D127F004995BF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		2AE34CFC1D3D127F004995BF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		513A7D1D1D3F5E9500480BF4 /* CCSegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSegementView.h; sourceTree = "<group>"; };
+		513A7D1E1D3F5E9500480BF4 /* CCSegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSegementView.m; sourceTree = "<group>"; };
+		513A7D201D3F5F3900480BF4 /* CCSegementView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSegementView.xib; sourceTree = "<group>"; };
+		513A7D251D3F63E800480BF4 /* UIView+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XMGExtension.h"; sourceTree = "<group>"; };
+		513A7D261D3F63E800480BF4 /* UIView+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XMGExtension.m"; sourceTree = "<group>"; };
 		C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMenuButton.h; sourceTree = "<group>"; };
 		C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMenuButton.m; sourceTree = "<group>"; };
 		C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
@@ -347,6 +355,9 @@
 				F05F156C1D3D010400DE454E /* PushFoundCell.h */,
 				F05F156D1D3D010400DE454E /* PushFoundCell.m */,
 				F05F156E1D3D010400DE454E /* PushFoundCell.xib */,
+				513A7D1D1D3F5E9500480BF4 /* CCSegementView.h */,
+				513A7D1E1D3F5E9500480BF4 /* CCSegementView.m */,
+				513A7D201D3F5F3900480BF4 /* CCSegementView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -452,6 +463,7 @@
 		2AE34CDF1D3CB34F004995BF /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				513A7D241D3F63E800480BF4 /* 位置信息类目 */,
 				2AE34CE01D3CB3DE004995BF /* BVBaseModel.h */,
 				2AE34CE11D3CB3DE004995BF /* BVBaseModel.m */,
 				2AE34CE31D3CB450004995BF /* BaseModel.h */,
@@ -468,6 +480,15 @@
 				DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		513A7D241D3F63E800480BF4 /* 位置信息类目 */ = {
+			isa = PBXGroup;
+			children = (
+				513A7D251D3F63E800480BF4 /* UIView+XMGExtension.h */,
+				513A7D261D3F63E800480BF4 /* UIView+XMGExtension.m */,
+			);
+			path = "位置信息类目";
 			sourceTree = "<group>";
 		};
 		62F156475CCD5FE2173BD5FD /* Pods */ = {
@@ -580,6 +601,7 @@
 				2AE34CF01D3CC15C004995BF /* MainRecommendCell.xib in Resources */,
 				F08FC7CA1D39144200A0AE0F /* FoundController.xib in Resources */,
 				F0E86D711D3A61C6009EA5CF /* infoDatas.plist in Resources */,
+				513A7D211D3F5F3900480BF4 /* CCSegementView.xib in Resources */,
 				F05F15701D3D010400DE454E /* PushFoundCell.xib in Resources */,
 				C6E9AB341D3A314F00A15CC1 /* MessageData.plist in Resources */,
 				C6E9AB1A1D3A250A00A15CC1 /* WNXNoHaveMessageView.xib in Resources */,
@@ -663,6 +685,7 @@
 				2AE34CDB1D3C8A7F004995BF /* MainNearbyView.m in Sources */,
 				C6E9AB231D3A259100A15CC1 /* WNXMessageModel.m in Sources */,
 				C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */,
+				513A7D271D3F63E800480BF4 /* UIView+XMGExtension.m in Sources */,
 				2A2437601D39C8D700F8FA31 /* MainViewController.m in Sources */,
 				2ACD31D71D3DD048006A1B89 /* SearchTableViewCell.m in Sources */,
 				C6E9AB301D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m in Sources */,
@@ -673,6 +696,7 @@
 				C6E9AB171D3A250A00A15CC1 /* WNXMessageCell.m in Sources */,
 				F0E86D5D1D3A59FC009EA5CF /* FoundCell.m in Sources */,
 				F05F15731D3D04E700DE454E /* PushFoundModel.m in Sources */,
+				513A7D1F1D3F5E9500480BF4 /* CCSegementView.m in Sources */,
 				C6E9AB201D3A252B00A15CC1 /* WNXMessagePushViewController.m in Sources */,
 				2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */,
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,

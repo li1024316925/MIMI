@@ -33,6 +33,8 @@
 #define kUserName @"userName"
 #define kPassword @"password"
 
+#import "UIView+XMGExtension.h"
+
 //通知名
 //打开或者关闭抽屉
 #define kOpenOrCloseDrawer @"OpenOrCloseDrawer"
