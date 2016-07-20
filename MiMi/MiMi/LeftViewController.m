@@ -256,20 +256,29 @@
 {
     BmobQuery *query = [BmobQuery queryWithClassName:@"_User"];
     
-    [query getObjectInBackgroundWithId:name block:^(BmobObject *object, NSError *error) {
-       
-        if (error) {
+    //子查询
+    [query whereKey:@"username" containedIn:@[name]];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        
+        NSLog(@"%@",[array[0] objectForKey:@"objectId"]);
+        
+        [query getObjectInBackgroundWithId:[array[0] objectForKey:@"objectId"] block:^(BmobObject *object, NSError *error) {
             
-            NSLog(@"%@",error);
-            
-            return ;
-        }
-        if (object) {
-            
-            NSString *url = [object objectForKey:@"imageUrl"];
-            
-            [_imageView sd_setImageWithURL:[NSURL URLWithString:url]];
-        }
+            if (error) {
+                
+                NSLog(@"%@",error);
+                
+                return ;
+            }
+            if (object) {
+                
+                NSString *url = [object objectForKey:@"imageUrl"];
+                
+                [_imageView sd_setImageWithURL:[NSURL URLWithString:url]];
+            }
+        }];
+
     }];
 }
 
