@@ -44,6 +44,11 @@
 
 @implementation LeftViewController
 
+//状态栏颜色
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
