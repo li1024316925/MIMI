@@ -162,6 +162,8 @@
     [loginVC setSendMessgae:^(NSString *userName) {
 
         [self setUserMsgWithName:userName];
+        
+        [self getImageUrlFromServersWithName:userName];
     }];
     //弹出模态试图
     [self presentViewController:loginVC animated:YES completion:nil];
@@ -251,7 +253,7 @@
     [self.unLoginBtn addSubview:loginView];
 }
 
-//从服务器拿到头像的URL
+//从服务器拿到头像的URL ->并加载头像
 - (void)getImageUrlFromServersWithName:(NSString *)name
 {
     BmobQuery *query = [BmobQuery queryWithClassName:@"_User"];
@@ -260,8 +262,6 @@
     [query whereKey:@"username" containedIn:@[name]];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        
-        NSLog(@"%@",[array[0] objectForKey:@"objectId"]);
         
         [query getObjectInBackgroundWithId:[array[0] objectForKey:@"objectId"] block:^(BmobObject *object, NSError *error) {
             
@@ -420,6 +420,13 @@
             _locationLabel.text = pm.locality;
         }
     }];
+}
+
+//控制器销毁时调用
+- (void)dealloc
+{
+    //销毁通知
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

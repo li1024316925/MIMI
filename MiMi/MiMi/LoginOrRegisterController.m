@@ -120,7 +120,7 @@
                 [[NSUserDefaults standardUserDefaults]setObject:self.userName.text forKey:kUserName];
                 
                 [[NSUserDefaults standardUserDefaults]setObject:self.password.text forKey:kPassword];
-                
+            
                 [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"欢迎回来%@",user.username]];
                 
                 //退出控制器
