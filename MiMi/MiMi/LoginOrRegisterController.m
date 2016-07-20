@@ -89,6 +89,9 @@
 //登录相关
 - (void)loginMsg
 {
+    //设置显示时间,默认是5秒
+    [SVProgressHUD setMinimumDismissTimeInterval:2.0];
+    
     BmobUser *bUser = [[BmobUser alloc] init];
     
     [bUser setUsername:self.userName.text];
@@ -116,6 +119,10 @@
                 [[NSUserDefaults standardUserDefaults]setObject:self.password.text forKey:kPassword];
                 
                 [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"欢迎回来%@",user.username]];
+                
+                //退出控制器
+                [self dismissViewControllerAnimated:YES completion:nil];
+                
             } else{
                 
                 [SVProgressHUD showErrorWithStatus:@"用户名不存在,请完成注册"];
@@ -135,6 +142,9 @@
 //注册用户
 - (void)registerUseMsgWithUser:(BmobUser *)bUser
 {
+    //设置显示时间,默认是5秒
+    [SVProgressHUD setMinimumDismissTimeInterval:2.0];
+    
     //使用手机号进行注册
     [bUser signUpOrLoginInbackgroundWithSMSCode:self.smsCode.text block:^(BOOL isSuccessful, NSError *error) {
         
@@ -197,6 +207,9 @@
 //验证验证码
 - (void)isOk
 {
+    //设置显示时间,默认是5秒
+    [SVProgressHUD setMinimumDismissTimeInterval:2.0];
+    
     //验证
     [BmobSMS verifySMSCodeInBackgroundWithPhoneNumber:self.phoneNumber.text andSMSCode:self.smsCode.text resultBlock:^(BOOL isSuccessful, NSError *error) {
         

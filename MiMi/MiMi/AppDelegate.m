@@ -11,7 +11,6 @@
 #import "LLQNavigationController.h"
 #import "LeftViewController.h"
 #import "MainViewController.h"
-#import <BmobSDK/Bmob.h>
 #import "FoundController.h"
 #import "WNXMessageViewController.h"
 #import "WNXSetingViewController.h"

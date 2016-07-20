@@ -181,6 +181,9 @@
                     [_imageView sd_setImageWithURL:[[NSUserDefaults standardUserDefaults] objectForKey:@"imageUrl"]];
                 }
                 
+                 //设置显示时间,默认是5秒
+                [SVProgressHUD setMinimumDismissTimeInterval:2.0];
+
                 [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"欢迎回来%@",user.username]];
             }
         }];

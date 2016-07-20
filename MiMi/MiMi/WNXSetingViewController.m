@@ -150,8 +150,6 @@
                                 NSString *absolutePath=[path stringByAppendingPathComponent:fileName];
                                 //清理缓存
                                 [fileManager removeItemAtPath:absolutePath error:nil];
-                                
-                      
                         }
                             
                     }
@@ -182,12 +180,14 @@
         default:
             break;
     }
-    
 }
 
 //退出登录
 - (void)logoutButtonClick
 {
+    //设置显示时间,默认是5秒
+    [SVProgressHUD setMinimumDismissTimeInterval:2.0];
+    
     //退出登录
     [BmobUser logout];
     
