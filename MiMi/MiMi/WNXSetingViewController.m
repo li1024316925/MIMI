@@ -193,6 +193,9 @@
     
     [SVProgressHUD showSuccessWithStatus:@"用户已退出"];
     
+    //发出通知 ->退出登录
+    [[NSNotificationCenter defaultCenter]postNotificationName:kLoginOutNotification object:nil];
+    
     [self.logoutButton setTitle:@"重新登录" forState:UIControlStateNormal];
     
     [self.logoutButton addTarget:self action:@selector(relogin) forControlEvents:UIControlEventTouchUpInside];

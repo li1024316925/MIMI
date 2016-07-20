@@ -55,6 +55,9 @@
     
     //获取全局的AppDelegate
     _appDelegate = [UIApplication sharedApplication].delegate;
+    
+    //接收通知
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(logoutNotification:) name:kLoginOutNotification object:nil];
 }
 
 /** 懒加载定位管家 */
@@ -159,6 +162,14 @@
     [self presentViewController:loginVC animated:YES completion:nil];
 }
 
+//退出登录
+- (void)logoutNotification:(NSNotification *)note
+{
+    UIView *loginView = [self.unLoginBtn viewWithTag:102];
+    
+    [loginView removeFromSuperview];
+}
+
 //账号自动登录
 - (void)autoLogin
 {
@@ -176,7 +187,7 @@
                 [self setUserMsgWithName:user.username];
                 
                 //从服务器拿到头像
-                [self getImageUrlFromServers];
+                [self getImageUrlFromServersWithName:user.username];
                 
                 //设置显示时间,默认是5秒
                 [SVProgressHUD setMinimumDismissTimeInterval:2.0];
@@ -192,6 +203,8 @@
 {
     //添加一个新的View显示
     UIView *loginView = [[UIView alloc]initWithFrame:self.unLoginBtn.bounds];
+    
+    loginView.tag = 102;
     
     loginView.backgroundColor = [UIColor colorWithRed:41/255.0 green:42/255.0 blue:43/255.0 alpha:1.0];
     
@@ -234,11 +247,11 @@
 }
 
 //从服务器拿到头像的URL
-- (void)getImageUrlFromServers
+- (void)getImageUrlFromServersWithName:(NSString *)name
 {
     BmobQuery *query = [BmobQuery queryWithClassName:@"_User"];
     
-    [query getObjectInBackgroundWithId:@"d2d4ebba70" block:^(BmobObject *object, NSError *error) {
+    [query getObjectInBackgroundWithId:name block:^(BmobObject *object, NSError *error) {
        
         if (error) {
             
@@ -319,7 +332,7 @@
             [SVProgressHUD showSuccessWithStatus:@"头像保存成功"];
             
             //把图片的URL上传到服务器 imageUrl
-            [self saveImageUrlWithURL:file.url];
+            [self saveImageUrlWithURL:file.url WithID:obj.objectId];
             
         }else {
             
@@ -335,11 +348,11 @@
 }
 
 //保存头像的URL到服务器
-- (void)saveImageUrlWithURL:(NSString *)url
+- (void)saveImageUrlWithURL:(NSString *)url WithID:(NSString *)ID
 {
     BmobQuery *query = [BmobQuery queryWithClassName:@"_User"];
     
-    [query getObjectInBackgroundWithId:@"d2d4ebba70" block:^(BmobObject *object, NSError *error) {
+    [query getObjectInBackgroundWithId:ID block:^(BmobObject *object, NSError *error) {
        
         if (!error) {
             

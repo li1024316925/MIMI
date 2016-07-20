@@ -94,6 +94,9 @@
     
     BmobUser *bUser = [[BmobUser alloc] init];
     
+    //通过用户名设置ID
+    [bUser setObjectId:self.userName.text];
+    
     [bUser setUsername:self.userName.text];
     
     [bUser setPassword:self.password.text];
