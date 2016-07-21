@@ -46,6 +46,15 @@
     _cityName = cityName;
     
     NSLog(@"");
+    [self getWeatherMsgWithAreaid:@"101120101" With:cityName];
+}
+
+//请求数据
+- (void)getWeatherMsgWithAreaid:(NSString *)areaid With:(NSString *)cityName
+{
+    NSString *url = @"http://route.showapi.com/9-2";
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionary];
     
     [parameter setObject:kAppID forKey:@"showapi_appid"];
     
