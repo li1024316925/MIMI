@@ -16,16 +16,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import <WeiboSDK.h>
 
-#define kAccess_token @"2.00M935ME6g1qHD3c197ec663dyLXcB"
-
-#define kUid @"3847653548"
-
-#define kApplication @"1c7018c7e597db7c7da31b2d7d400793"
-
-#define kSineAppKey @"2864305413"
-
-#define kSineAppSecret @"6c3d4131394d5338381f3a4b2d1acba8"
-
 //回调网址
 #define kRedirectUrl @"http://www.baidu.com"
 
