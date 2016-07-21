@@ -83,6 +83,30 @@
         
     }
     
+    [self loadWebData];
+    
+}
+
+//加载网络数据库数据
+- (NSArray *)loadWebData{
+    
+    NSMutableArray *dataArray = [NSMutableArray array];
+    
+    BmobQuery *query = [BmobQuery queryWithClassName:@"MainGroup"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+       
+        for (BmobObject *obj in array) {
+            NSDictionary *dic = [NSDictionary dictionary];
+            [dic setValue:[obj objectForKey:@"tag_name"] forKey:@"tag_name"];
+            [dic setValue:[obj objectForKey:@"section_count"] forKey:@"section_count"];
+            [dic setValue:[obj objectForKey:@"color"] forKey:@"color"];
+            [dic setValue:[obj objectForKey:@"body"] forKey:@"body"];
+            [dataArray addObject:dic];
+        }
+        
+    }];
+    
+    return dataArray;
 }
 
 //添加附近视图
