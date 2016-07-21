@@ -9,6 +9,7 @@
 #ifndef Mypch_pch
 #define Mypch_pch
 
+#import <UIImageView+WebCache.h>
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
@@ -41,5 +42,7 @@
 
 //发送是否退出登陆的通知
 #define kLoginOutNotification @"loginOut"
+
+#define kLoginBySine @"sine"
 
 #endif /* Mypch_pch */

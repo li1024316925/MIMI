@@ -14,14 +14,16 @@
 #import "AppDelegate.h"
 #import <UIImageView+WebCache.h>
 #import <CoreLocation/CoreLocation.h>
+#import <WeiboSDK.h>
+#import "CCUserView.h"
+
+//回调网址
+#define kRedirectUrl @"http://www.baidu.com"
 
 @interface LeftViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate>
 {
-    //地理位置
-    UILabel *_locationLabel;
-    
-    //头像
-    UIImageView *_imageView;
+    /** 用于判断点击图片的次数 */
+    BOOL _isSelected;
     
     //保存全局的AppDelegate对象
     AppDelegate *_appDelegate;
@@ -39,6 +41,9 @@
 
 /** 反地理编码 */
 @property(nonatomic,strong)CLGeocoder *geocoder;
+
+/** 展示用户信息 */
+@property(nonatomic,strong)CCUserView *userView;
 
 @end
 
@@ -63,6 +68,8 @@
     
     //接收通知
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(logoutNotification:) name:kLoginOutNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loginBySine:) name:kLoginBySine object:nil];
 }
 
 /** 懒加载定位管家 */
@@ -142,6 +149,44 @@
     [self chengeRootVCWithIndex:3];
 }
 
+//========
+//第三方登录
+- (IBAction)sinaAction:(UIButton *)sender {
+    
+    sender.enabled = YES;
+    
+    //=====认证
+    //1.初始化一个oauth请求
+    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+    
+    //2.设置授权回调页
+    request.redirectURI = kRedirectUrl;
+    
+    //3.设置授权范围
+    request.scope = @"all";
+    
+    //4.用户信息
+    request.userInfo = nil;
+    
+    //5.发送请求
+    NSLog(@"%d",[WeiboSDK sendRequest:request]);
+}
+
+//设置用户名
+- (void)loginBySine:(NSNotification *)note
+{
+    self.weiboBtn.enabled = NO;
+    
+    [self setUserMsgWithName:[note.userInfo objectForKey:@"userName"]];
+}
+
+//微信登录 ->无法注册成为开发者
+- (IBAction)weiChatAction:(UIButton *)sender {
+
+    [SVProgressHUD showErrorWithStatus:@">_<!"];
+}
+//========
+
 //切换控制器方法
 - (void)chengeRootVCWithIndex:(NSInteger)index{
     
@@ -162,6 +207,8 @@
     [loginVC setSendMessgae:^(NSString *userName) {
 
         [self setUserMsgWithName:userName];
+        
+        [self getImageUrlFromServersWithName:userName];
     }];
     //弹出模态试图
     [self presentViewController:loginVC animated:YES completion:nil];
@@ -178,6 +225,7 @@
 //账号自动登录
 - (void)autoLogin
 {
+    //微博登录的没有密码
     if ([[NSUserDefaults standardUserDefaults] objectForKey:kUserName] && [[NSUserDefaults standardUserDefaults] objectForKey:kPassword]) {
         
         NSString *userName = [[NSUserDefaults standardUserDefaults] objectForKey:kUserName];
@@ -206,70 +254,52 @@
 //设置用户信息
 - (void)setUserMsgWithName:(NSString *)userName
 {
-    //添加一个新的View显示
-    UIView *loginView = [[UIView alloc]initWithFrame:self.unLoginBtn.bounds];
+    CCUserView *userView = [[[NSBundle mainBundle]loadNibNamed:@"CCUserView" owner:self options:nil]firstObject];
     
-    loginView.tag = 102;
+    userView.size = CGSizeMake(254, 70);
     
-    loginView.backgroundColor = [UIColor colorWithRed:41/255.0 green:42/255.0 blue:43/255.0 alpha:1.0];
+    //设置用户基本信息
+    [userView.nameBtn setTitle:userName forState:UIControlStateNormal];
     
-    _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 40, 40)];
-    
-    //裁剪
-    _imageView.layer.cornerRadius = 10;
-    
-    _imageView.clipsToBounds = YES;
-    
-    //设置默认图片
-    _imageView.image = [UIImage imageNamed:@"articleList_dogLogo"];
-    
-    _imageView.userInteractionEnabled = YES;
-    
-    //添加手势,从相册获取头像
+    //为头像添加点击事件,从相册获取头像
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(getPhotos)];
     
-    [_imageView addGestureRecognizer:tap];
+    [userView.userImgV addGestureRecognizer:tap];
     
-    [loginView addSubview:_imageView];
+    //因为模拟器,定位服务无法执行,为了看到效果,直接调用
+    userView.cityName = @"济南";
     
-    //添加一个 UILabel 显示名字
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(70, 10, 100, 40)];
+    self.userView = userView;
     
-    label.textColor = [UIColor whiteColor];
-    
-    label.text = userName;
-    
-    [loginView addSubview:label];
-    
-    //添加一个现实地理位置的 Label
-    _locationLabel = [[UILabel alloc]initWithFrame:CGRectMake(180, 10, 80, 40)];
-    
-    _locationLabel.textColor = [UIColor whiteColor];
-    
-    [loginView addSubview:_locationLabel];
-    
-    [self.unLoginBtn addSubview:loginView];
+    [self.unLoginBtn addSubview:userView];
 }
 
-//从服务器拿到头像的URL
+//从服务器拿到头像的URL ->并加载头像
 - (void)getImageUrlFromServersWithName:(NSString *)name
 {
     BmobQuery *query = [BmobQuery queryWithClassName:@"_User"];
     
-    [query getObjectInBackgroundWithId:name block:^(BmobObject *object, NSError *error) {
-       
-        if (error) {
+    //子查询
+    [query whereKey:@"username" containedIn:@[name]];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        
+        [query getObjectInBackgroundWithId:[array[0] objectForKey:@"objectId"] block:^(BmobObject *object, NSError *error) {
             
-            NSLog(@"%@",error);
-            
-            return ;
-        }
-        if (object) {
-            
-            NSString *url = [object objectForKey:@"imageUrl"];
-            
-            [_imageView sd_setImageWithURL:[NSURL URLWithString:url]];
-        }
+            if (error) {
+                
+                NSLog(@"%@",error);
+                
+                return ;
+            }
+            if (object) {
+                
+                NSString *url = [object objectForKey:@"imageUrl"];
+                
+                [self.userView.userImgV sd_setImageWithURL:[NSURL URLWithString:url]];
+            }
+        }];
+
     }];
 }
 
@@ -311,7 +341,7 @@
     [self saveIamgeToServers];
     
     //设置头像
-    _imageView.image = image;
+    self.userView.userImgV.image = image;
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -408,9 +438,24 @@
         
         for (CLPlacemark *pm in placemarks) {
             
-            _locationLabel.text = pm.locality;
+            //清空之前的地址信息,重新赋值
+            if (self.userView.cityLabel.text.length >0) {
+                
+                self.userView.cityLabel.text = nil;
+            }
+            self.userView.cityLabel.text = pm.locality;
+            
+            //传递信息 ->用于获取天气信息
+            self.userView.cityName = pm.locality;
         }
     }];
+}
+
+//控制器销毁时调用
+- (void)dealloc
+{
+    //销毁通知
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

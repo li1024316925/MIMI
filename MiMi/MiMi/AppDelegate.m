@@ -14,10 +14,18 @@
 #import "FoundController.h"
 #import "WNXMessageViewController.h"
 #import "WNXSetingViewController.h"
+#import <WeiboSDK.h>
 
 #define kApplication @"1c7018c7e597db7c7da31b2d7d400793"
 
-@interface AppDelegate ()
+#define kSineAppKey @"2864305413"
+
+#define kSineAppSecret @"6c3d4131394d5338381f3a4b2d1acba8"
+
+//回调网址
+#define kRedirectUrl @"http://www.baidu.com"
+
+@interface AppDelegate ()<WeiboSDKDelegate>
 
 @end
 
@@ -77,6 +85,12 @@
     //设置通知监听
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closeDrawer) name:kOpenOrCloseDrawer object:nil];
     
+    //=====Sine
+    [WeiboSDK enableDebugMode:YES];
+    
+    //注册 App
+    [WeiboSDK registerApp:kSineAppKey];
+    
     return YES;
 }
 
@@ -90,8 +104,54 @@
         //关闭
         [self.drawerVC closeDrawerAnimated:YES completion:nil];
     }
-    
 }
+
+//注册微博
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+
+#pragma -mark WeiboSDKDelegate
+
+//收到回复调用
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
+    
+    NSString *accessToken = [(WBAuthorizeResponse *)response accessToken];
+    
+    NSString *uid = [(WBAuthorizeResponse *)response userID];
+    
+    NSDate *date = [(WBAuthorizeResponse *)response expirationDate];
+    
+    if (accessToken == nil) {
+        return;
+    }
+    //得到的新浪微博授权信息，请按照例子来生成NSDictionary
+    NSDictionary *dic = @{@"access_token":accessToken,@"uid":uid,@"expirationDate":date};
+    
+    //通过授权信息注册登录
+    [BmobUser loginInBackgroundWithAuthorDictionary:dic platform:BmobSNSPlatformSinaWeibo block:^(BmobUser *user, NSError *error) {
+        
+        if (error) {
+            
+            [SVProgressHUD showErrorWithStatus:@"微博授权失败,请重试"];
+            NSLog(@"000%@",error);
+            return ;
+        }
+        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"微博登陆成功,仅限本次登陆"]];
+        
+        //发送通知,告诉控制器,请求成功
+        [[NSNotificationCenter defaultCenter]postNotificationName:kLoginBySine object:nil userInfo:@{@"userName":user.username}];
+    }];
+}
+
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request
+{}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
