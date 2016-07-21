@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CCUserView">
+            <rect key="frame" x="0.0" y="0.0" width="304" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="articleList_dogLogo" translatesAutoresizingMaskIntoConstraints="NO" id="GwM-4G-akG">
+                    <rect key="frame" x="8" y="8" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="XgA-SF-kip"/>
+                        <constraint firstAttribute="height" constant="44" id="lFl-6m-ksr"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sB-GD-hwp">
+                    <rect key="frame" x="60" y="8" width="46" height="30"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ji Nan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpZ-RQ-L0b">
+                    <rect key="frame" x="248" y="41" width="48" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hec-Vi-UHD">
+                    <rect key="frame" x="261" y="6" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="L1B-qT-hVE"/>
+                        <constraint firstAttribute="width" constant="35" id="MYu-cn-YMB"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.16862745100000001" green="0.1647058824" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="DpZ-RQ-L0b" secondAttribute="trailing" constant="8" id="0a2-kC-bvb"/>
+                <constraint firstItem="GwM-4G-akG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="108-5Q-QeI"/>
+                <constraint firstItem="DpZ-RQ-L0b" firstAttribute="top" secondItem="hec-Vi-UHD" secondAttribute="bottom" id="3vA-4i-MsC"/>
+                <constraint firstItem="hec-Vi-UHD" firstAttribute="trailing" secondItem="DpZ-RQ-L0b" secondAttribute="trailing" id="5sF-Sg-rR9"/>
+                <constraint firstItem="GwM-4G-akG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="6Pq-Ra-hrW"/>
+                <constraint firstItem="1sB-GD-hwp" firstAttribute="top" secondItem="GwM-4G-akG" secondAttribute="top" id="CCh-MC-sdS"/>
+                <constraint firstItem="1sB-GD-hwp" firstAttribute="leading" secondItem="GwM-4G-akG" secondAttribute="trailing" constant="8" id="D7n-eL-Vcf"/>
+                <constraint firstAttribute="bottom" secondItem="DpZ-RQ-L0b" secondAttribute="bottom" constant="8" id="uM4-ss-2EJ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cityLabel" destination="DpZ-RQ-L0b" id="gcY-Um-OIW"/>
+                <outlet property="nameBtn" destination="1sB-GD-hwp" id="mam-r3-Vp3"/>
+                <outlet property="userImgV" destination="GwM-4G-akG" id="D25-5N-Vv1"/>
+                <outlet property="weatherImgV" destination="hec-Vi-UHD" id="H0B-N8-8Ss"/>
+            </connections>
+            <point key="canvasLocation" x="188" y="347"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="articleList_dogLogo" width="110" height="120"/>
+    </resources>
+</document>

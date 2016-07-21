@@ -15,18 +15,17 @@
 #import <UIImageView+WebCache.h>
 #import <CoreLocation/CoreLocation.h>
 #import <WeiboSDK.h>
+#import "CCUserView.h"
 
 //回调网址
 #define kRedirectUrl @"http://www.baidu.com"
 
+//天气预报API相关
+#define kAppKey @"7c0bed70f4e946198c37e8143ae28e53"
+#define kAppID @"22081"
+
 @interface LeftViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate>
 {
-    //地理位置
-    UILabel *_locationLabel;
-    
-    //头像
-    UIImageView *_imageView;
-    
     //保存全局的AppDelegate对象
     AppDelegate *_appDelegate;
 }
@@ -43,6 +42,9 @@
 
 /** 反地理编码 */
 @property(nonatomic,strong)CLGeocoder *geocoder;
+
+/** 展示用户信息 */
+@property(nonatomic,strong)CCUserView *userView;
 
 @end
 
@@ -179,9 +181,10 @@
     [self setUserMsgWithName:[note.userInfo objectForKey:@"userName"]];
 }
 
-//微信登录
+//微信登录 ->无法注册成为开发者
 - (IBAction)weiChatAction:(UIButton *)sender {
 
+    [SVProgressHUD showErrorWithStatus:@">_<!"];
 }
 //========
 
@@ -252,51 +255,23 @@
 //设置用户信息
 - (void)setUserMsgWithName:(NSString *)userName
 {
-    //添加一个新的View显示
-    UIView *loginView = [[UIView alloc]initWithFrame:self.unLoginBtn.bounds];
+    CCUserView *userView = [[[NSBundle mainBundle]loadNibNamed:@"CCUserView" owner:self options:nil]firstObject];
     
-    loginView.tag = 102;
+    userView.size = CGSizeMake(254, 70);
     
-    loginView.backgroundColor = [UIColor colorWithRed:41/255.0 green:42/255.0 blue:43/255.0 alpha:1.0];
+    //设置用户基本信息
+    [userView.nameBtn setTitle:userName forState:UIControlStateNormal];
     
-    _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 40, 40)];
-    
-    //裁剪
-    _imageView.layer.cornerRadius = 10;
-    
-    _imageView.clipsToBounds = YES;
-    
-    //设置默认图片
-    _imageView.image = [UIImage imageNamed:@"articleList_dogLogo"];
-    
-    _imageView.userInteractionEnabled = YES;
-    
-    //添加手势,从相册获取头像
+    //为头像添加点击事件,从相册获取头像
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(getPhotos)];
     
-    [_imageView addGestureRecognizer:tap];
+    [userView.userImgV addGestureRecognizer:tap];
     
-    [loginView addSubview:_imageView];
+    self.userView = userView;
     
-    //添加一个 UILabel 显示名字
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(70, 10, 100, 40)];
-    
-    label.textColor = [UIColor whiteColor];
-    
-    label.text = userName;
-    
-    [loginView addSubview:label];
-    
-    //添加一个现实地理位置的 Label
-    _locationLabel = [[UILabel alloc]initWithFrame:CGRectMake(180, 10, 80, 40)];
-    
-    _locationLabel.textColor = [UIColor whiteColor];
-    
-    [loginView addSubview:_locationLabel];
-    
-    [self.unLoginBtn addSubview:loginView];
+    [self.unLoginBtn addSubview:userView];
 }
-
+ 
 //从服务器拿到头像的URL ->并加载头像
 - (void)getImageUrlFromServersWithName:(NSString *)name
 {
@@ -319,7 +294,7 @@
                 
                 NSString *url = [object objectForKey:@"imageUrl"];
                 
-                [_imageView sd_setImageWithURL:[NSURL URLWithString:url]];
+                [self.userView.userImgV sd_setImageWithURL:[NSURL URLWithString:url]];
             }
         }];
 
@@ -364,7 +339,7 @@
     [self saveIamgeToServers];
     
     //设置头像
-    _imageView.image = image;
+    self.userView.userImgV.image = image;
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -461,7 +436,15 @@
         
         for (CLPlacemark *pm in placemarks) {
             
-            _locationLabel.text = pm.locality;
+            //清空之前的地址信息,重新赋值
+            if (self.userView.cityLabel.text.length >0) {
+                
+                self.userView.cityLabel.text = nil;
+            }
+            self.userView.cityLabel.text = pm.locality;
+            
+            //传递信息 ->用于获取天气信息
+            self.userView.cityName = pm.locality;
         }
     }];
 }

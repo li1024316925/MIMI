@@ -36,6 +36,8 @@
 		513A7D1F1D3F5E9500480BF4 /* CCSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 513A7D1E1D3F5E9500480BF4 /* CCSegementView.m */; };
 		513A7D211D3F5F3900480BF4 /* CCSegementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513A7D201D3F5F3900480BF4 /* CCSegementView.xib */; };
 		513A7D271D3F63E800480BF4 /* UIView+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 513A7D261D3F63E800480BF4 /* UIView+XMGExtension.m */; };
+		516392BB1D40B83A0022E071 /* CCUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 516392BA1D40B83A0022E071 /* CCUserView.m */; };
+		516392BD1D40B8540022E071 /* CCUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 516392BC1D40B8540022E071 /* CCUserView.xib */; };
 		C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */; };
 		C6E9AB0A1D3A24C100A15CC1 /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB091D3A24C100A15CC1 /* SetingViewController.m */; };
 		C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E9AB0C1D3A250A00A15CC1 /* WNXMessageDeleteButton.m */; };
@@ -129,6 +131,9 @@
 		513A7D201D3F5F3900480BF4 /* CCSegementView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSegementView.xib; sourceTree = "<group>"; };
 		513A7D251D3F63E800480BF4 /* UIView+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XMGExtension.h"; sourceTree = "<group>"; };
 		513A7D261D3F63E800480BF4 /* UIView+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XMGExtension.m"; sourceTree = "<group>"; };
+		516392B91D40B83A0022E071 /* CCUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserView.h; sourceTree = "<group>"; };
+		516392BA1D40B83A0022E071 /* CCUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserView.m; sourceTree = "<group>"; };
+		516392BC1D40B8540022E071 /* CCUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserView.xib; sourceTree = "<group>"; };
 		C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNXMenuButton.h; sourceTree = "<group>"; };
 		C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNXMenuButton.m; sourceTree = "<group>"; };
 		C6E9AB081D3A24C100A15CC1 /* SetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
@@ -326,6 +331,9 @@
 				2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */,
 				2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */,
 				2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */,
+				516392B91D40B83A0022E071 /* CCUserView.h */,
+				516392BA1D40B83A0022E071 /* CCUserView.m */,
+				516392BC1D40B8540022E071 /* CCUserView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -624,6 +632,7 @@
 				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
 				F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */,
 				F0E86D5E1D3A59FC009EA5CF /* FoundCell.xib in Resources */,
+				516392BD1D40B8540022E071 /* CCUserView.xib in Resources */,
 				F0E86D6E1D3A61C6009EA5CF /* detailJson in Resources */,
 				2ACD31D81D3DD048006A1B89 /* SearchTableViewCell.xib in Resources */,
 				2AE34CFA1D3CE833004995BF /* MainRecommendTableHeaderView.xib in Resources */,
@@ -717,6 +726,7 @@
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
 				2AE34CE21D3CB3DE004995BF /* BVBaseModel.m in Sources */,
 				2AE34CE51D3CB450004995BF /* BaseModel.m in Sources */,
+				516392BB1D40B83A0022E071 /* CCUserView.m in Sources */,
 				2AE34CFD1D3D127F004995BF /* SearchViewController.m in Sources */,
 				2AA319021D38D5D600F64761 /* main.m in Sources */,
 				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
