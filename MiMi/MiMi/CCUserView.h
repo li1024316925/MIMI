@@ -25,4 +25,7 @@
 /** 天气 */
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImgV;
 
+//刷新天气
+- (void)getWeatherMsgWithAreaid:(NSString *)areaid With:(NSString *)cityName;
+
 @end

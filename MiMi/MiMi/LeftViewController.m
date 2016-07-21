@@ -20,12 +20,11 @@
 //回调网址
 #define kRedirectUrl @"http://www.baidu.com"
 
-//天气预报API相关
-#define kAppKey @"7c0bed70f4e946198c37e8143ae28e53"
-#define kAppID @"22081"
-
 @interface LeftViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate>
 {
+    /** 用于判断点击图片的次数 */
+    BOOL _isSelected;
+    
     //保存全局的AppDelegate对象
     AppDelegate *_appDelegate;
 }
@@ -267,11 +266,14 @@
     
     [userView.userImgV addGestureRecognizer:tap];
     
+    //因为模拟器,定位服务无法执行,为了看到效果,直接调用
+    userView.cityName = @"济南";
+    
     self.userView = userView;
     
     [self.unLoginBtn addSubview:userView];
 }
- 
+
 //从服务器拿到头像的URL ->并加载头像
 - (void)getImageUrlFromServersWithName:(NSString *)name
 {
