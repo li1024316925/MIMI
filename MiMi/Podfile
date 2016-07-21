@@ -12,5 +12,7 @@ pod 'Masonry'
 
 pod 'MJRefresh'
 
+pod 'AFNetworking'
+
 pod 'WeiboSDK'
 end
