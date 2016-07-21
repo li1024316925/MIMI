@@ -18,6 +18,7 @@
 {
     _cityName = cityName;
     
+    NSLog(@"");
     
     
 }
