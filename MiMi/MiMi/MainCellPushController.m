@@ -59,7 +59,7 @@
     _subTableView.backgroundColor = [UIColor greenColor];
     _subTableView.delegate = self;
     _subTableView.dataSource = self;
-    
+    self.subTableView = _subTableView;
     //头视图
     [self createSubTableHeaderView];
     

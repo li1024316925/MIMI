@@ -85,6 +85,9 @@
     //获取滑动距离
     float tableHeaderViewHeight = _headerView.bounds.size.height;
     float scrollSpace = scrollView.contentOffset.y+20;
+    if (scrollView == _subTableView) {
+        scrollSpace = scrollView.contentOffset.y;
+    }
     float length = tableHeaderViewHeight - _btnsHeight - 128;
     float navigationViewHeight = _navigationView.bounds.size.height;
     
@@ -142,6 +145,10 @@
     
     float length = _headerView.bounds.size.height - _btnsHeight - 128;
     float scrollSpace = scrollView.contentOffset.y + 20;
+    if (scrollView == _subTableView) {
+        scrollSpace = scrollView.contentOffset.y;
+    }
+    NSLog(@"%f",scrollSpace);
     //重新计算透明度
     if (scrollSpace<=length) {
 //        [UIView animateWithDuration:0.3 animations:^{

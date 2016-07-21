@@ -17,9 +17,14 @@
 @property(nonatomic, strong)UINavigationController *rootNaviController;
 
 /**
- 表视图
+ 主表视图
  */
-//@property(nonatomic, strong)UITableView *backTableView;
+@property(nonatomic, strong)UITableView *backTableView;
+
+/**
+ 子表视图
+ */
+@property(nonatomic, strong)UITableView *subTableView;
 
 /**
  假的导航栏
