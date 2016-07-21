@@ -36,6 +36,8 @@
 		513A7D1F1D3F5E9500480BF4 /* CCSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 513A7D1E1D3F5E9500480BF4 /* CCSegementView.m */; };
 		513A7D211D3F5F3900480BF4 /* CCSegementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 513A7D201D3F5F3900480BF4 /* CCSegementView.xib */; };
 		513A7D271D3F63E800480BF4 /* UIView+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 513A7D261D3F63E800480BF4 /* UIView+XMGExtension.m */; };
+		51A2FB941D40FC510052F4BC /* CCUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51A2FB921D40FC510052F4BC /* CCUserView.xib */; };
+		51A2FB951D40FC510052F4BC /* CCUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A2FB931D40FC510052F4BC /* CCUserView.m */; };
 		889D62E91D3F6EF50027E53C /* SegementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889D62E81D3F6EF50027E53C /* SegementCell.xib */; };
 		889D62EC1D3F7A610027E53C /* MXSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 889D62EB1D3F7A610027E53C /* MXSegementView.m */; };
 		889D62F21D3F8CE90027E53C /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 889D62F11D3F8CE90027E53C /* UIView+ViewController.m */; };
@@ -133,6 +135,9 @@
 		513A7D201D3F5F3900480BF4 /* CCSegementView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCSegementView.xib; sourceTree = "<group>"; };
 		513A7D251D3F63E800480BF4 /* UIView+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XMGExtension.h"; sourceTree = "<group>"; };
 		513A7D261D3F63E800480BF4 /* UIView+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XMGExtension.m"; sourceTree = "<group>"; };
+		51A2FB911D40FC510052F4BC /* CCUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUserView.h; sourceTree = "<group>"; };
+		51A2FB921D40FC510052F4BC /* CCUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CCUserView.xib; sourceTree = "<group>"; };
+		51A2FB931D40FC510052F4BC /* CCUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUserView.m; sourceTree = "<group>"; };
 		889D62E81D3F6EF50027E53C /* SegementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegementCell.xib; sourceTree = "<group>"; };
 		889D62EA1D3F7A610027E53C /* MXSegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXSegementView.h; sourceTree = "<group>"; };
 		889D62EB1D3F7A610027E53C /* MXSegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXSegementView.m; sourceTree = "<group>"; };
@@ -322,6 +327,9 @@
 		2AA3191D1D38D69800F64761 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				51A2FB911D40FC510052F4BC /* CCUserView.h */,
+				51A2FB931D40FC510052F4BC /* CCUserView.m */,
+				51A2FB921D40FC510052F4BC /* CCUserView.xib */,
 				2AD2CA4A1D40732F006C7D2A /* SegmentView.h */,
 				2AD2CA491D40732F006C7D2A /* SegmentView.m */,
 				C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */,
@@ -337,9 +345,6 @@
 				2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */,
 				2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */,
 				2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */,
-				516392B91D40B83A0022E071 /* CCUserView.h */,
-				516392BA1D40B83A0022E071 /* CCUserView.m */,
-				516392BC1D40B8540022E071 /* CCUserView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -646,7 +651,7 @@
 				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
 				F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */,
 				F0E86D5E1D3A59FC009EA5CF /* FoundCell.xib in Resources */,
-				516392BD1D40B8540022E071 /* CCUserView.xib in Resources */,
+				51A2FB941D40FC510052F4BC /* CCUserView.xib in Resources */,
 				F0E86D6E1D3A61C6009EA5CF /* detailJson in Resources */,
 				2ACD31D81D3DD048006A1B89 /* SearchTableViewCell.xib in Resources */,
 				2AE34CFA1D3CE833004995BF /* MainRecommendTableHeaderView.xib in Resources */,
@@ -742,7 +747,6 @@
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,
 				2AE34CE21D3CB3DE004995BF /* BVBaseModel.m in Sources */,
 				2AE34CE51D3CB450004995BF /* BaseModel.m in Sources */,
-				516392BB1D40B83A0022E071 /* CCUserView.m in Sources */,
 				2AE34CFD1D3D127F004995BF /* SearchViewController.m in Sources */,
 				2AA319021D38D5D600F64761 /* main.m in Sources */,
 				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
@@ -753,6 +757,7 @@
 				2A2437631D39D83E00F8FA31 /* LLQNavigationController.m in Sources */,
 				C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */,
 				C6E9AB2A1D3A25F600A15CC1 /* WNXSetingView.m in Sources */,
+				51A2FB951D40FC510052F4BC /* CCUserView.m in Sources */,
 				C6E9AB161D3A250A00A15CC1 /* WNXMessageRefreshHeader.m in Sources */,
 				2AE34CDE1D3CB310004995BF /* MainRecommendGroupModel.m in Sources */,
 				F0E86D751D3A641C009EA5CF /* FoundModel.m in Sources */,
