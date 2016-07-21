@@ -10,4 +10,7 @@
 
 @interface CCSegementView : UIView
 
+//根据按钮状态显示/隐藏视图
+-(void)didshowView:(UIButton *)btn;
+
 @end
