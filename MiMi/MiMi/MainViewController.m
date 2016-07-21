@@ -257,7 +257,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MainCellPushController *pushController = [[MainCellPushController alloc] initWithRootNavigationController:self.navigationController];
-    pushController.view.backgroundColor = [UIColor yellowColor];
+    //数据
+    MainRecommendGroupModel *groupModel = _dataList[indexPath.section];
+    pushController.model = groupModel.body[indexPath.row];
+    
+    pushController.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController pushViewController:pushController animated:YES];
 }
 

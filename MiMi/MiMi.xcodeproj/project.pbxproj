@@ -20,6 +20,7 @@
 		2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */; };
 		2ACD31D71D3DD048006A1B89 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */; };
 		2ACD31D81D3DD048006A1B89 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */; };
+		2AD2CA4B1D40732F006C7D2A /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2CA491D40732F006C7D2A /* SegmentView.m */; };
 		2ADEBEA11D3F6156001EE6BE /* MainCellPushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEBEA01D3F6156001EE6BE /* MainCellPushController.m */; };
 		2ADEBEA41D3F74E8001EE6BE /* LLQNavigationHiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEBEA31D3F74E8001EE6BE /* LLQNavigationHiddenViewController.m */; };
 		2AE34CDB1D3C8A7F004995BF /* MainNearbyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34CDA1D3C8A7F004995BF /* MainNearbyView.m */; };
@@ -99,6 +100,8 @@
 		2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
 		2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		2AD2CA491D40732F006C7D2A /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
+		2AD2CA4A1D40732F006C7D2A /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
 		2ADEBE9F1D3F6156001EE6BE /* MainCellPushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCellPushController.h; sourceTree = "<group>"; };
 		2ADEBEA01D3F6156001EE6BE /* MainCellPushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCellPushController.m; sourceTree = "<group>"; };
 		2ADEBEA21D3F74E8001EE6BE /* LLQNavigationHiddenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQNavigationHiddenViewController.h; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 		2AA3191D1D38D69800F64761 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2AD2CA4A1D40732F006C7D2A /* SegmentView.h */,
+				2AD2CA491D40732F006C7D2A /* SegmentView.m */,
 				C6E9AB051D3A249400A15CC1 /* WNXMenuButton.h */,
 				C6E9AB061D3A249400A15CC1 /* WNXMenuButton.m */,
 				2AE34CD91D3C8A7F004995BF /* MainNearbyView.h */,
@@ -715,6 +720,7 @@
 				2AE34CFD1D3D127F004995BF /* SearchViewController.m in Sources */,
 				2AA319021D38D5D600F64761 /* main.m in Sources */,
 				2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */,
+				2AD2CA4B1D40732F006C7D2A /* SegmentView.m in Sources */,
 				2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */,
 				F0E86D621D3A5C98009EA5CF /* PresentController.m in Sources */,
 				2A2437631D39D83E00F8FA31 /* LLQNavigationController.m in Sources */,

@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "LLQNavigationHiddenViewController.h"
+#import "MainRecommendCellModel.h"
 
 @interface MainCellPushController : LLQNavigationHiddenViewController
+
+@property(nonatomic, strong)MainRecommendCellModel *model;
 
 @end

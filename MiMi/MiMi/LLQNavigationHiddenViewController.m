@@ -42,7 +42,7 @@
     
     //添加一个视图作为背景
     _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _navigationView.bounds.size.width, _navigationView.bounds.size.height)];
-    _bgView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"recomend_btn_gone"]];
+    _bgView.backgroundColor = [UIColor colorWithRed:56/255.0 green:191/255.0 blue:168/255.0 alpha:1];
     _bgView.alpha = 0;
     [_navigationView addSubview:_bgView];
     
@@ -71,11 +71,14 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     //获取滑动距离
+    float tableHeaderViewHeight = _backTableView.tableHeaderView.bounds.size.height;
     float scrollSpace = scrollView.contentOffset.y+20;
-    float length = _backTableView.tableHeaderView.bounds.size.height - 128;
-    if (scrollSpace >= length && scrollSpace < (_backTableView.tableHeaderView.frame.size.height - _navigationView.bounds.size.height)) {
+    float length = tableHeaderViewHeight - _btnsHeight - 128;
+    float navigationViewHeight = _navigationView.bounds.size.height;
+    
+    if (scrollSpace >= length && scrollSpace < (tableHeaderViewHeight - navigationViewHeight - _btnsHeight)) {
         //剩余滑动距离
-        float residue = _backTableView.tableHeaderView.frame.size.height - _navigationView.bounds.size.height - length;
+        float residue = tableHeaderViewHeight - navigationViewHeight - length;
         //比例
         float scale = (scrollSpace-length)/residue;
         if (scale<0.1) {
@@ -86,33 +89,44 @@
             _bgView.alpha = scale;
         }];
     }
-    //取到组头视图
-//    UIView *view = [_backTableView headerViewForSection:0];
-//    if (scrollSpace > _backTableView.tableHeaderView.bounds.size.height - 64) {
-//        view.frame = CGRectMake(0, 64, view.bounds.size.width, view.bounds.size.height);
-//        [self.view addSubview:view];
-//    }
     
-}
-//将要结束拖动
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    //重新计算透明度
     [self reloadAlpha:scrollView];
+    
+    //滑动到导航栏时卡住
+    if (scrollSpace >= tableHeaderViewHeight - _btnsHeight - navigationViewHeight) {
+        _btnsView.frame = CGRectMake(0, navigationViewHeight, _btnsView.bounds.size.width, _btnsHeight);
+        [self.view addSubview:_btnsView];
+    }else{
+        _btnsView.frame = CGRectMake(0, tableHeaderViewHeight - _btnsHeight, _btnsView.bounds.size.width, _btnsHeight);
+        [_backTableView.tableHeaderView addSubview:_btnsView];
+    }
+    
+    //缩放头视图
+    if (scrollView == _backTableView) {
+        CGFloat fy = -scrollView.contentOffset.y;
+        CGFloat hight = _backTableView.tableHeaderView.frame.size.height;
+        UIView *headerView = [_backTableView.tableHeaderView viewWithTag:101];
+        //当向下滑动时 对头视图进行缩放
+        if (scrollView.contentOffset.y<0) {
+            headerView.layer.anchorPoint = CGPointMake(0.5, 1);
+            headerView.layer.position = CGPointMake(_backTableView.tableHeaderView.center.x, 220);
+            headerView.transform = CGAffineTransformMakeScale((fy+hight)/hight, (fy+hight)/hight);
+        }
+    }
+    
 }
 
 //已经结束拖动
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [self reloadAlpha:scrollView];
-}
-
-//已经结束减速
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    //重新计算透明度
     [self reloadAlpha:scrollView];
 }
 
 //重新计算透明度方法
 - (void)reloadAlpha:(UIScrollView *)scrollView{
     
-    float length = _backTableView.tableHeaderView.bounds.size.height - 128;
+    float length = _backTableView.tableHeaderView.bounds.size.height - _btnsHeight - 128;
     float scrollSpace = scrollView.contentOffset.y + 20;
     //重新计算透明度
     if (scrollSpace<=length) {
@@ -120,7 +134,7 @@
             _bgView.alpha = 0;
         }];
     }
-    if (scrollSpace>_backTableView.tableHeaderView.frame.size.height - _navigationView.bounds.size.height) {
+    if (scrollSpace>_backTableView.tableHeaderView.frame.size.height - _navigationView.bounds.size.height - _btnsHeight) {
         [UIView animateWithDuration:0.3 animations:^{
             _bgView.alpha = 1;
         }];

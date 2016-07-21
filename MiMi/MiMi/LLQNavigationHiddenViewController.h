@@ -23,6 +23,14 @@
  假的导航栏
  */
 @property(nonatomic, strong)UIView *navigationView;
+/**
+ 按钮组视图
+ */
+@property(nonatomic, strong)UIView *btnsView;
+/**
+ 按钮组的高度
+ */
+@property(nonatomic, assign)float btnsHeight;
 
 //初始化方法
 - (instancetype)initWithRootNavigationController:(UINavigationController *)navigationController;
