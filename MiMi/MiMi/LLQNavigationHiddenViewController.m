@@ -16,13 +16,25 @@
 
 @implementation LLQNavigationHiddenViewController
 
+//页面即将消失
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //恢复导航栏
+    [_rootNaviController setNavigationBarHidden:NO animated:YES];
+}
+
+//页面即将显示
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //隐藏导航栏
+    _rootNaviController.navigationBarHidden = YES;
+}
+
 //初始化方法
 - (instancetype)initWithRootNavigationController:(UINavigationController *)navigationController{
     self = [super init];
     if (self) {
         _rootNaviController = navigationController;
-        //隐藏导航栏
-        _rootNaviController.navigationBarHidden = YES;
     }
     
     return self;
@@ -71,7 +83,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     //获取滑动距离
-    float tableHeaderViewHeight = _backTableView.tableHeaderView.bounds.size.height;
+    float tableHeaderViewHeight = _headerView.bounds.size.height;
     float scrollSpace = scrollView.contentOffset.y+20;
     float length = tableHeaderViewHeight - _btnsHeight - 128;
     float navigationViewHeight = _navigationView.bounds.size.height;
@@ -85,36 +97,38 @@
             scale = 0;
         }
         //透明度
-        [UIView animateWithDuration:0.2 animations:^{
-            _bgView.alpha = scale;
-        }];
+        //                    [UIView animateWithDuration:0.2 animations:^{
+        //                        _bgView.alpha = scale;
+        //                    }];
+        _bgView.alpha = scale;
     }
     
     //重新计算透明度
     [self reloadAlpha:scrollView];
     
-    //滑动到导航栏时卡住
+    //假头视图跟随表视图滑动
+    _headerView.transform = CGAffineTransformMakeTranslation(0, -scrollSpace);
+    
+    //按钮组滑动到导航栏时卡住
     if (scrollSpace >= tableHeaderViewHeight - _btnsHeight - navigationViewHeight) {
         _btnsView.frame = CGRectMake(0, navigationViewHeight, _btnsView.bounds.size.width, _btnsHeight);
         [self.view addSubview:_btnsView];
     }else{
         _btnsView.frame = CGRectMake(0, tableHeaderViewHeight - _btnsHeight, _btnsView.bounds.size.width, _btnsHeight);
-        [_backTableView.tableHeaderView addSubview:_btnsView];
+        [_headerView addSubview:_btnsView];
     }
     
     //缩放头视图
-    if (scrollView == _backTableView) {
-        CGFloat fy = -scrollView.contentOffset.y;
-        CGFloat hight = _backTableView.tableHeaderView.frame.size.height;
-        UIView *headerView = [_backTableView.tableHeaderView viewWithTag:101];
-        //当向下滑动时 对头视图进行缩放
-        if (scrollView.contentOffset.y<0) {
-            headerView.layer.anchorPoint = CGPointMake(0.5, 1);
-            headerView.layer.position = CGPointMake(_backTableView.tableHeaderView.center.x, 220);
-            headerView.transform = CGAffineTransformMakeScale((fy+hight)/hight, (fy+hight)/hight);
-        }
+    CGFloat fy = -scrollView.contentOffset.y;
+    CGFloat hight = _headerView.frame.size.height;
+    UIView *headerView = [_headerView viewWithTag:101];
+    //当向下滑动时 对头视图进行缩放
+    if (scrollView.contentOffset.y<0) {
+        headerView.layer.anchorPoint = CGPointMake(0.5, 1);
+        headerView.layer.position = CGPointMake(_headerView.center.x, 220);
+        headerView.transform = CGAffineTransformMakeScale((fy+hight)/hight, (fy+hight)/hight);
     }
-    
+
 }
 
 //已经结束拖动
@@ -126,29 +140,22 @@
 //重新计算透明度方法
 - (void)reloadAlpha:(UIScrollView *)scrollView{
     
-    float length = _backTableView.tableHeaderView.bounds.size.height - _btnsHeight - 128;
+    float length = _headerView.bounds.size.height - _btnsHeight - 128;
     float scrollSpace = scrollView.contentOffset.y + 20;
     //重新计算透明度
     if (scrollSpace<=length) {
-        [UIView animateWithDuration:0.3 animations:^{
-            _bgView.alpha = 0;
-        }];
+//        [UIView animateWithDuration:0.3 animations:^{
+//            _bgView.alpha = 0;
+//        }];
+        _bgView.alpha = 0;
     }
-    if (scrollSpace>_backTableView.tableHeaderView.frame.size.height - _navigationView.bounds.size.height - _btnsHeight) {
-        [UIView animateWithDuration:0.3 animations:^{
-            _bgView.alpha = 1;
-        }];
+    if (scrollSpace>_headerView.frame.size.height - _navigationView.bounds.size.height - _btnsHeight) {
+//        [UIView animateWithDuration:0.3 animations:^{
+//            _bgView.alpha = 1;
+//        }];
+        _bgView.alpha = 1;
     }
 
-}
-
-//页面即将消失
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    
-    //恢复导航栏
-    [_rootNaviController setNavigationBarHidden:NO animated:YES];
-    
 }
 
 
