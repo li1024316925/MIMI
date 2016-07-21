@@ -13,6 +13,7 @@
 #import <MJExtension.h>
 #import <MJRefresh.h>
 #import "CCSegementView.h"
+#import "MXSegementView.h"
 
 static NSString *identifier = @"RecommendCell";
 
@@ -26,6 +27,9 @@ static NSString *identifier = @"RecommendCell";
 @property(nonatomic,strong)MJRefreshGifHeader *header;
 
 @property(nonatomic,strong)CCSegementView *segementView;
+
+//MXSegementView
+@property (nonatomic,strong)MXSegementView *segementCollectionView;
 
 @end
 
@@ -42,6 +46,8 @@ static NSString *identifier = @"RecommendCell";
     [self createTableView];
     
     [self getRefresh];
+    
+    [self createdCollectionview];
     
     [self addSegemnetView];
 }
@@ -128,8 +134,29 @@ static NSString *identifier = @"RecommendCell";
     [segementView layoutIfNeeded];
 
     self.segementView = segementView;
-    
+
     [self.tableView addSubview:segementView];
+
+}
+
+//懒加载MXSegementView
+-(MXSegementView *)segementCollectionView{
+
+    if (!_segementCollectionView) {
+     
+        _segementCollectionView = [[MXSegementView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
+        _segementCollectionView.backgroundColor = [UIColor blackColor];
+        _segementCollectionView.alpha = 0;
+        _segementCollectionView.tag = 301;
+    }
+    
+    return _segementCollectionView;
+}
+
+//创建集合视图
+-(void)createdCollectionview{
+    
+    [self.tableView addSubview:self.segementCollectionView];
 }
 
 //创建表视图
@@ -147,7 +174,10 @@ static NSString *identifier = @"RecommendCell";
     
     self.tableView = tabelView;
     
+    tabelView.tag = 310;
+    
     [self.view addSubview:tabelView];
+    
 }
 
 #pragma -mark UITableViewDelegate
@@ -183,8 +213,6 @@ static NSString *identifier = @"RecommendCell";
     return cell;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+
 
 @end
