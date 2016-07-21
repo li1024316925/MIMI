@@ -17,6 +17,12 @@
                         <constraint firstAttribute="width" constant="44" id="XgA-SF-kip"/>
                         <constraint firstAttribute="height" constant="44" id="lFl-6m-ksr"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sB-GD-hwp">
                     <rect key="frame" x="60" y="8" width="46" height="30"/>
