@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - BaiduMapKit (3.0.0)
   - BmobSDK (1.7.1)
   - Masonry (1.0.1)
   - MJExtension (3.0.11)
@@ -26,6 +27,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - BaiduMapKit
   - BmobSDK
   - Masonry
   - MJExtension
@@ -36,6 +38,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BaiduMapKit: de2a726d5296d6b2dc0e974b683af73153608dcd
   BmobSDK: ebc3cb46b90d746f23121e9ea058a3122b85861f
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJExtension: f9ae6ddc0f1c482c3c9af750280ccebd14381958
@@ -44,6 +47,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   WeiboSDK: acb067053668102cf07d01aa7604350162c2e466
 
-PODFILE CHECKSUM: 848861d9764f93037bff492beb76dd08b05ab0ba
+PODFILE CHECKSUM: 8d337bd04928246ead8ecd1fb37b4e09c29a3b11
 
 COCOAPODS: 1.0.1

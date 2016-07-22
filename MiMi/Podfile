@@ -15,4 +15,7 @@ pod 'MJRefresh'
 pod 'AFNetworking'
 
 pod 'WeiboSDK'
+
+pod 'BaiduMapKit'
+
 end
