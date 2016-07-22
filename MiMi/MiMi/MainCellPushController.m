@@ -56,7 +56,6 @@
 - (void)createSubTableView{
     
     _subTableView = [[UITableView alloc] initWithFrame:CGRectMake(kScreenWidth, -20, kScreenWidth, kScreenHeight+20) style:UITableViewStyleGrouped];
-    _subTableView.backgroundColor = [UIColor greenColor];
     _subTableView.delegate = self;
     _subTableView.dataSource = self;
     self.subTableView = _subTableView;
@@ -73,7 +72,6 @@
     
     //头视图
     UIView *subHeaderview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 280+280)];
-    subHeaderview.backgroundColor = [UIColor yellowColor];
     _subTableView.tableHeaderView = subHeaderview;
     
 }
@@ -164,10 +162,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"backCell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"backCell"];
-        cell.backgroundColor = [UIColor cyanColor];
-    }
-    if (indexPath.row == 0) {
-        cell.backgroundColor = [UIColor redColor];
     }
     
     return cell;

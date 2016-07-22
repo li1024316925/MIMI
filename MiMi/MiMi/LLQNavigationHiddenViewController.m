@@ -100,9 +100,6 @@
             scale = 0;
         }
         //透明度
-        //                    [UIView animateWithDuration:0.2 animations:^{
-        //                        _bgView.alpha = scale;
-        //                    }];
         _bgView.alpha = scale;
     }
     
@@ -148,18 +145,11 @@
     if (scrollView == _subTableView) {
         scrollSpace = scrollView.contentOffset.y;
     }
-    NSLog(@"%f",scrollSpace);
     //重新计算透明度
     if (scrollSpace<=length) {
-//        [UIView animateWithDuration:0.3 animations:^{
-//            _bgView.alpha = 0;
-//        }];
         _bgView.alpha = 0;
     }
     if (scrollSpace>_headerView.frame.size.height - _navigationView.bounds.size.height - _btnsHeight) {
-//        [UIView animateWithDuration:0.3 animations:^{
-//            _bgView.alpha = 1;
-//        }];
         _bgView.alpha = 1;
     }
 
