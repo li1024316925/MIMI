@@ -19,6 +19,9 @@
 		2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */; };
 		2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */; };
 		2AAD6FDF1D41F0C0000EF992 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD6FDE1D41F0C0000EF992 /* CoreData.m */; };
+		2AAD6FE11D4233DB000EF992 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAD6FE01D4233DA000EF992 /* MapKit.framework */; };
+		2AAD6FE51D425031000EF992 /* MainPushSubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD6FE31D425031000EF992 /* MainPushSubTableViewCell.m */; };
+		2AAD6FE61D425031000EF992 /* MainPushSubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD6FE41D425031000EF992 /* MainPushSubTableViewCell.xib */; };
 		2ACD31D71D3DD048006A1B89 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */; };
 		2ACD31D81D3DD048006A1B89 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */; };
 		2AD2CA4B1D40732F006C7D2A /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2CA491D40732F006C7D2A /* SegmentView.m */; };
@@ -106,6 +109,10 @@
 		2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		2AAD6FDD1D41F0C0000EF992 /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
 		2AAD6FDE1D41F0C0000EF992 /* CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreData.m; sourceTree = "<group>"; };
+		2AAD6FE01D4233DA000EF992 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2AAD6FE21D425031000EF992 /* MainPushSubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPushSubTableViewCell.h; sourceTree = "<group>"; };
+		2AAD6FE31D425031000EF992 /* MainPushSubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPushSubTableViewCell.m; sourceTree = "<group>"; };
+		2AAD6FE41D425031000EF992 /* MainPushSubTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainPushSubTableViewCell.xib; sourceTree = "<group>"; };
 		2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
 		2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -213,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AAD6FE11D4233DB000EF992 /* MapKit.framework in Frameworks */,
 				D75685C243CB51AEF9C937BE /* libPods-MiMi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +357,9 @@
 				2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */,
 				2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */,
 				2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */,
+				2AAD6FE21D425031000EF992 /* MainPushSubTableViewCell.h */,
+				2AAD6FE31D425031000EF992 /* MainPushSubTableViewCell.m */,
+				2AAD6FE41D425031000EF992 /* MainPushSubTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -531,6 +542,7 @@
 		3C8A63763184D59EF7CB2127 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2AAD6FE01D4233DA000EF992 /* MapKit.framework */,
 				DC93DF00EAB2F12E7286723F /* libPods-MiMi.a */,
 			);
 			name = Frameworks;
@@ -661,6 +673,7 @@
 				C6E9AB341D3A314F00A15CC1 /* MessageData.plist in Resources */,
 				C6E9AB1A1D3A250A00A15CC1 /* WNXNoHaveMessageView.xib in Resources */,
 				2AA319261D38D6F000F64761 /* LeftViewController.xib in Resources */,
+				2AAD6FE61D425031000EF992 /* MainPushSubTableViewCell.xib in Resources */,
 				2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */,
 				F0E86D561D3A126F009EA5CF /* LoginOrRegisterController.xib in Resources */,
 				F0E86D5E1D3A59FC009EA5CF /* FoundCell.xib in Resources */,
@@ -770,6 +783,7 @@
 				F0E86D621D3A5C98009EA5CF /* PresentController.m in Sources */,
 				2A2437631D39D83E00F8FA31 /* LLQNavigationController.m in Sources */,
 				C6E9AB071D3A249400A15CC1 /* WNXMenuButton.m in Sources */,
+				2AAD6FE51D425031000EF992 /* MainPushSubTableViewCell.m in Sources */,
 				C6E9AB2A1D3A25F600A15CC1 /* WNXSetingView.m in Sources */,
 				51A2FB951D40FC510052F4BC /* CCUserView.m in Sources */,
 				C6E9AB161D3A250A00A15CC1 /* WNXMessageRefreshHeader.m in Sources */,

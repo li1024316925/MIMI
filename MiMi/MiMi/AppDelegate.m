@@ -15,6 +15,7 @@
 #import "WNXMessageViewController.h"
 #import "WNXSetingViewController.h"
 #import <WeiboSDK.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
 
 #define kApplication @"1c7018c7e597db7c7da31b2d7d400793"
 
@@ -22,11 +23,15 @@
 
 #define kSineAppSecret @"6c3d4131394d5338381f3a4b2d1acba8"
 
+#define kBaiduMapAppKey @"kG7IuclhksPG409ZrAuIz24wIdf5W7i6"
+
 //回调网址
 #define kRedirectUrl @"http://www.baidu.com"
 
 @interface AppDelegate ()<WeiboSDKDelegate>
-
+{
+    BMKMapManager *_manager;
+}
 @end
 
 @implementation AppDelegate
@@ -90,6 +95,14 @@
     
     //注册 App
     [WeiboSDK registerApp:kSineAppKey];
+    
+    
+    //百度地图
+    _manager = [[BMKMapManager alloc] init];
+    BOOL ret = [_manager start:kBaiduMapAppKey generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
     
     return YES;
 }

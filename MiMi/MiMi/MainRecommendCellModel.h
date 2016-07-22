@@ -14,5 +14,17 @@
 @property(nonatomic, copy)NSString *imageURL;
 @property(nonatomic, copy)NSString *fav_count;
 @property(nonatomic, copy)NSString *poi_name;
+/**
+ 纬度
+ */
+@property(nonatomic, copy)NSString *latitude;
+/**
+ 经度
+ */
+@property(nonatomic, copy)NSString *longitude;
+
+@property(nonatomic, copy)NSString *TEL;
+@property(nonatomic, copy)NSString *openTime;
+@property(nonatomic, copy)NSString *averageSpend;
 
 @end

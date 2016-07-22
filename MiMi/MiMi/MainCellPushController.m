@@ -8,12 +8,18 @@
 
 #import "MainCellPushController.h"
 #import "SegmentView.h"
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
+#import <MapKit/MapKit.h>
 
-@interface MainCellPushController ()<UITableViewDataSource,UITableViewDelegate>
+typedef void(^ModelDataBlock)(NSDictionary *dic);
+
+@interface MainCellPushController ()<UITableViewDataSource,UITableViewDelegate,BMKMapViewDelegate>
 {
     UIView *_navigationView;
     UITableView *_backTableView;
     UITableView *_subTableView;
+    NSMutableArray *_subDataArray;
 }
 @end
 
@@ -35,6 +41,53 @@
     
     //子表视图
     [self createSubTableView];
+    
+    //加载子表视图数据
+    [self loadSubTableViewData];
+    
+}
+
+//将model的数据存入数组
+- (void)loadSubTableViewData{
+    
+    _subDataArray = [[NSMutableArray alloc] init];
+    
+    //反地理编码
+    [self reverseGeocodeLocationWithBlock:^(NSDictionary *dic) {
+       
+        //将model的数据存入数组
+        [_subDataArray addObject:dic];
+        [_subDataArray addObject:_model.TEL];
+        [_subDataArray addObject:_model.openTime];
+        [_subDataArray addObject:_model.averageSpend];
+        
+        //刷新表视图
+        [_subTableView reloadData];
+        
+    }];
+    
+    
+}
+
+//反地理编码
+- (void)reverseGeocodeLocationWithBlock:(ModelDataBlock)block{
+    
+    //地理编码器
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    
+    //位置
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:[_model.latitude floatValue] longitude:[_model.longitude floatValue]];
+    //地理编码
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@",error);
+            return;
+        }
+        for (CLPlacemark *placemark in placemarks) {
+            //回调block
+            block(placemark.addressDictionary);
+        }
+    }];
     
 }
 
@@ -72,6 +125,24 @@
     
     //头视图
     UIView *subHeaderview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 280+280)];
+    
+    //创建地图
+    BMKMapView *mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 280, kScreenWidth, 280)];
+    [subHeaderview addSubview:mapView];
+    mapView.delegate = self;
+    
+    //添加大头针视图
+    BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
+    CLLocationCoordinate2D coor;
+    coor.latitude = [self.model.latitude floatValue];
+    coor.longitude = [self.model.longitude floatValue];
+    annotation.coordinate = coor;
+    annotation.title = self.model.poi_name;
+    [mapView addAnnotation:annotation];
+    //设置地图显示区域
+    mapView.zoomLevel = 20;
+    [mapView setCenterCoordinate:coor animated:YES];
+    
     _subTableView.tableHeaderView = subHeaderview;
     
 }
@@ -152,7 +223,17 @@
 //返回每组单元格个数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 25;
+    if (tableView == _subTableView) {
+        
+        return _subDataArray.count;
+        
+    }else if (tableView == _backTableView){
+        
+        return 25;
+        
+    }
+    
+    return 0;
     
 }
 
@@ -168,5 +249,23 @@
     
 }
 
+
+#pragma mark ------ BMKMapViewDelegate
+
+//返回标注视图
+- (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation{
+    
+    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
+        //创建标注视图
+        BMKPinAnnotationView *annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation"];
+        //标注视图颜色
+        annotationView.pinColor = BMKPinAnnotationColorPurple;
+        //动画效果
+        annotationView.animatesDrop = YES;
+        return annotationView;
+    }
+    
+    return nil;
+}
 
 @end
