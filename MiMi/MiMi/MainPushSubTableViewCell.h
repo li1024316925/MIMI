@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainPushSubTableViewCellModel.h"
 
 @interface MainPushSubTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
+@property (weak, nonatomic) IBOutlet UILabel *content;
+@property (weak, nonatomic) IBOutlet UIImageView *pushBtn;
+
+@property (nonatomic, strong)MainPushSubTableViewCellModel *model;
 
 @end

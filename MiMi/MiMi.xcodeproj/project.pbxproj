@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A2437601D39C8D700F8FA31 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A24375F1D39C8D700F8FA31 /* MainViewController.m */; };
 		2A2437631D39D83E00F8FA31 /* LLQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2437621D39D83E00F8FA31 /* LLQNavigationController.m */; };
+		2A7458941D4258840056A324 /* MainPushSubTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7458931D4258840056A324 /* MainPushSubTableViewCellModel.m */; };
 		2AA319021D38D5D600F64761 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319011D38D5D600F64761 /* main.m */; };
 		2AA319051D38D5D600F64761 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319041D38D5D600F64761 /* AppDelegate.m */; };
 		2AA3190D1D38D5D600F64761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AA3190C1D38D5D600F64761 /* Assets.xcassets */; };
@@ -89,6 +90,8 @@
 		2A24375F1D39C8D700F8FA31 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		2A2437611D39D83E00F8FA31 /* LLQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLQNavigationController.h; sourceTree = "<group>"; };
 		2A2437621D39D83E00F8FA31 /* LLQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLQNavigationController.m; sourceTree = "<group>"; };
+		2A7458921D4258840056A324 /* MainPushSubTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPushSubTableViewCellModel.h; sourceTree = "<group>"; };
+		2A7458931D4258840056A324 /* MainPushSubTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPushSubTableViewCellModel.m; sourceTree = "<group>"; };
 		2AA318FD1D38D5D600F64761 /* MiMi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiMi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA319011D38D5D600F64761 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2AA319031D38D5D600F64761 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -332,6 +335,8 @@
 				2AE34CE71D3CB745004995BF /* MainRecommendCellModel.m */,
 				2AE34CDC1D3CB310004995BF /* MainRecommendGroupModel.h */,
 				2AE34CDD1D3CB310004995BF /* MainRecommendGroupModel.m */,
+				2A7458921D4258840056A324 /* MainPushSubTableViewCellModel.h */,
+				2A7458931D4258840056A324 /* MainPushSubTableViewCellModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -760,6 +765,7 @@
 				2ACD31D71D3DD048006A1B89 /* SearchTableViewCell.m in Sources */,
 				C6E9AB301D3A29CE00A15CC1 /* UIBarButtonItem+WNXBarButtonItem.m in Sources */,
 				C6E9AB1F1D3A252B00A15CC1 /* WNXMessageViewController.m in Sources */,
+				2A7458941D4258840056A324 /* MainPushSubTableViewCellModel.m in Sources */,
 				C6E9AB151D3A250A00A15CC1 /* WNXMessageDeleteButton.m in Sources */,
 				C6E9AB191D3A250A00A15CC1 /* WNXNoHaveMessageView.m in Sources */,
 				2AE34CEF1D3CC15C004995BF /* MainRecommendCell.m in Sources */,

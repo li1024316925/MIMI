@@ -10,6 +10,15 @@
 
 @implementation MainPushSubTableViewCell
 
+//复写set方法
+- (void)setModel:(MainPushSubTableViewCellModel *)model{
+    
+    _model = model;
+    _titleLable.text = _model.title;
+    _content.text = _model.content;
+    
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }

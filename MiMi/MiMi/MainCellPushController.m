@@ -11,8 +11,10 @@
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 #import <MapKit/MapKit.h>
+#import "MainPushSubTableViewCellModel.h"
+#import "MainPushSubTableViewCell.h"
 
-typedef void(^ModelDataBlock)(NSDictionary *dic);
+typedef void(^ModelDataBlock)(NSString *str);
 
 @interface MainCellPushController ()<UITableViewDataSource,UITableViewDelegate,BMKMapViewDelegate>
 {
@@ -53,13 +55,14 @@ typedef void(^ModelDataBlock)(NSDictionary *dic);
     _subDataArray = [[NSMutableArray alloc] init];
     
     //反地理编码
-    [self reverseGeocodeLocationWithBlock:^(NSDictionary *dic) {
+    [self reverseGeocodeLocationWithBlock:^(NSString *str) {
        
         //将model的数据存入数组
-        [_subDataArray addObject:dic];
-        [_subDataArray addObject:_model.TEL];
-        [_subDataArray addObject:_model.openTime];
-        [_subDataArray addObject:_model.averageSpend];
+        MainPushSubTableViewCellModel *model = [[MainPushSubTableViewCellModel alloc] initWithDic:@{@"title":_model.poi_name,@"content":str}];
+        [_subDataArray addObject:model];
+        [_subDataArray addObject:[[MainPushSubTableViewCellModel alloc] initWithDic:@{@"title":@"电话",@"content":_model.TEL}]];
+        [_subDataArray addObject:[[MainPushSubTableViewCellModel alloc] initWithDic:@{@"title":@"营业时间",@"content":_model.openTime}]];
+        [_subDataArray addObject:[[MainPushSubTableViewCellModel alloc] initWithDic:@{@"title":@"人均消费",@"content":_model.averageSpend}]];
         
         //刷新表视图
         [_subTableView reloadData];
@@ -83,10 +86,11 @@ typedef void(^ModelDataBlock)(NSDictionary *dic);
             NSLog(@"%@",error);
             return;
         }
-        for (CLPlacemark *placemark in placemarks) {
-            //回调block
-            block(placemark.addressDictionary);
-        }
+        CLPlacemark *placemark = placemarks[0];
+        //回调block
+        NSDictionary *dic = [NSDictionary dictionaryWithDictionary:placemark.addressDictionary];
+        NSString *address = [dic objectForKey:@"Name"];
+        block(address);
     }];
     
 }
@@ -111,6 +115,7 @@ typedef void(^ModelDataBlock)(NSDictionary *dic);
     _subTableView = [[UITableView alloc] initWithFrame:CGRectMake(kScreenWidth, -20, kScreenWidth, kScreenHeight+20) style:UITableViewStyleGrouped];
     _subTableView.delegate = self;
     _subTableView.dataSource = self;
+    _subTableView.rowHeight = 90;
     self.subTableView = _subTableView;
     //头视图
     [self createSubTableHeaderView];
@@ -240,12 +245,34 @@ typedef void(^ModelDataBlock)(NSDictionary *dic);
 //返回单元格
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"backCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"backCell"];
+    if (tableView == _subTableView) {
+        
+        //复用单元格
+        MainPushSubTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pushSubTableViewCell"];
+        if (cell == nil) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"MainPushSubTableViewCell" owner:nil options:nil] lastObject];
+        }
+        cell.model = _subDataArray[indexPath.row];
+        if (indexPath.row == 0 || indexPath.row == 1) {
+            cell.pushBtn.hidden = NO;
+        }else{
+            cell.pushBtn.hidden = YES;
+        }
+        
+        return cell;
+        
+    }else if (tableView == _backTableView){
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"backCell"];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"backCell"];
+        }
+        
+        return cell;
+        
     }
     
-    return cell;
+    return nil;
     
 }
 
