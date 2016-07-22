@@ -18,6 +18,7 @@
 		2AA3193B1D38D7F400F64761 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319351D38D7F400F64761 /* MMDrawerController.m */; };
 		2AA3193C1D38D7F400F64761 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */; };
 		2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */; };
+		2AAD6FDF1D41F0C0000EF992 /* CoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD6FDE1D41F0C0000EF992 /* CoreData.m */; };
 		2ACD31D71D3DD048006A1B89 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */; };
 		2ACD31D81D3DD048006A1B89 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */; };
 		2AD2CA4B1D40732F006C7D2A /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2CA491D40732F006C7D2A /* SegmentView.m */; };
@@ -103,6 +104,8 @@
 		2AA319371D38D7F400F64761 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
 		2AA319381D38D7F400F64761 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		2AAD6FDD1D41F0C0000EF992 /* CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreData.h; sourceTree = "<group>"; };
+		2AAD6FDE1D41F0C0000EF992 /* CoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreData.m; sourceTree = "<group>"; };
 		2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
 		2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -276,6 +279,7 @@
 		2AA319181D38D5F800F64761 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2AAD6FDC1D41F01A000EF992 /* NetWork */,
 				2AA3191C1D38D68D00F64761 /* Model */,
 				2AA3191D1D38D69800F64761 /* View */,
 				2AA3191E1D38D6A000F64761 /* Controller */,
@@ -486,6 +490,15 @@
 				2AA319391D38D7F400F64761 /* UIViewController+MMDrawerController.m */,
 			);
 			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		2AAD6FDC1D41F01A000EF992 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				2AAD6FDD1D41F0C0000EF992 /* CoreData.h */,
+				2AAD6FDE1D41F0C0000EF992 /* CoreData.m */,
+			);
+			name = NetWork;
 			sourceTree = "<group>";
 		};
 		2AE34CD51D3C87C4004995BF /* LLQNavigationController */ = {
@@ -738,6 +751,7 @@
 				C6E9AB191D3A250A00A15CC1 /* WNXNoHaveMessageView.m in Sources */,
 				2AE34CEF1D3CC15C004995BF /* MainRecommendCell.m in Sources */,
 				C6E9AB171D3A250A00A15CC1 /* WNXMessageCell.m in Sources */,
+				2AAD6FDF1D41F0C0000EF992 /* CoreData.m in Sources */,
 				F0E86D5D1D3A59FC009EA5CF /* FoundCell.m in Sources */,
 				F05F15731D3D04E700DE454E /* PushFoundModel.m in Sources */,
 				513A7D1F1D3F5E9500480BF4 /* CCSegementView.m in Sources */,

@@ -14,6 +14,7 @@
 #import "MainRecommendTableHeaderView.h"
 #import "SearchViewController.h"
 #import "MainCellPushController.h"
+#import "CoreData.h"
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -60,49 +61,46 @@
 //加载数据
 - (void)loadData{
     
-    //解析plist文件
-    NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"HomeDatas" ofType:@"plist"]];
-    
-    //组数据
-    for (NSDictionary *dic in array) {
-        
-        //行数据
-        NSArray *bodyArray = [dic objectForKey:@"body"];
-        NSMutableArray *bodyMutableArray = [[NSMutableArray alloc] init];
-        for (NSDictionary *bodyDic in bodyArray) {
-            //行数据解析为model
-            MainRecommendCellModel *bodyModel = [[MainRecommendCellModel alloc] initWithDataDic:bodyDic];
-            [bodyMutableArray addObject:bodyModel];
-        }
-        
-        NSMutableDictionary *groupDic = [NSMutableDictionary dictionaryWithDictionary:dic];
-        [groupDic setValue:bodyMutableArray forKey:@"body"];
-        //组数据解析为model
-        MainRecommendGroupModel *groupModel = [[MainRecommendGroupModel alloc] initWithDataDic:groupDic];
-        [self.dataList addObject:groupModel];
-        
-    }
+    [self loadWebData];
     
 }
 
 //加载网络数据库数据
 - (void)loadWebData{
     
-    NSMutableArray *arr = [NSMutableArray array];
-    
-    BmobQuery *query = [BmobQuery queryWithClassName:@"MainGroup"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-       
-        for (BmobObject *obj in array) {
-            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-            [dic setValue:[obj objectForKey:@"tag_name"] forKey:@"tag_name"];
-            [dic setValue:[obj objectForKey:@"section_count"] forKey:@"section_count"];
-            [dic setValue:[obj objectForKey:@"color"] forKey:@"color"];
-            [dic setValue:[obj objectForKey:@"body"] forKey:@"body"];
-            [arr addObject:dic];
+    BmobQuery *sectionQuery = [BmobQuery queryWithClassName:@"MainGroup"];
+    [sectionQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        
+        for (BmobObject *sectionObj in array) {
+            
+            NSMutableDictionary *sectionDic = [NSMutableDictionary dictionary];
+            //使用KVC取到obj的属性
+            sectionDic = [sectionObj valueForKey:@"dataDic"];
+            
+            //行数据
+            //取到每组对应的表名
+            NSString *bodyTableName = [sectionDic objectForKey:@"body"];
+            //获取表的所有数据
+            BmobQuery *rowQuery = [BmobQuery queryWithClassName:bodyTableName];
+            [rowQuery findObjectsInBackgroundWithBlock:^(NSArray *rowarray, NSError *error) {
+                NSMutableArray *bodyMutableArray = [[NSMutableArray alloc] init];
+                for (BmobObject *rowObj in rowarray) {
+                    //使用KVC取到rowObj的属性
+                    NSMutableDictionary *rowDic = [NSMutableDictionary dictionary];
+                    rowDic = [rowObj valueForKey:@"dataDic"];
+                    //行数据解析为model
+                    MainRecommendCellModel *bodyModel = [[MainRecommendCellModel alloc] initWithDataDic:rowDic];
+                    [bodyMutableArray addObject:bodyModel];
+                }
+                [sectionDic setObject:bodyMutableArray forKey:@"body"];
+                //组数据解析为model
+                MainRecommendGroupModel *groupModel = [[MainRecommendGroupModel alloc] initWithDataDic:sectionDic];
+                [self.dataList addObject:groupModel];
+                
+                [_mainTableView reloadData];
+            }];
         }
         
-        self.dataList = arr;
     }];
     
 }
