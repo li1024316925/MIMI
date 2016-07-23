@@ -16,6 +16,9 @@
 #import "WNXSetingViewController.h"
 #import <WeiboSDK.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>
+
 
 #define kApplication @"1c7018c7e597db7c7da31b2d7d400793"
 
@@ -103,6 +106,8 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
+    //导航
+    
     
     return YES;
 }

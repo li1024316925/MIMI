@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainRecommendCellModel.h"
+
+typedef void(^IndexBlock)(void);
 
 @interface MapViewController : UIViewController
+
+@property(nonatomic, strong)MainRecommendCellModel *model;
+
+@property(nonatomic, copy)IndexBlock indexBlock;
+
+- (void)setIndexBlock:(IndexBlock)indexBlock;
 
 @end

@@ -13,6 +13,7 @@
 #import <MapKit/MapKit.h>
 #import "MainPushSubTableViewCellModel.h"
 #import "MainPushSubTableViewCell.h"
+#import "MapViewController.h"
 
 typedef void(^ModelDataBlock)(NSString *str);
 
@@ -206,12 +207,18 @@ typedef void(^ModelDataBlock)(NSString *str);
             _subTableView.transform = CGAffineTransformIdentity;
             _backTableView.transform = CGAffineTransformIdentity;
         }];
+        //滑动到指定位置
+        [_subTableView setContentOffset:CGPointMake(0, 0) animated:YES];
+        [_backTableView setContentOffset:CGPointMake(0, 0) animated:YES];
     }else if (index == 1){
         //偏移
         [UIView animateWithDuration:0.3 animations:^{
             _subTableView.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
             _backTableView.transform = CGAffineTransformMakeTranslation(-kScreenWidth, 0);
         }];
+        //滑动到指定位置
+        [_subTableView setContentOffset:CGPointMake(0, 0) animated:YES];
+        [_backTableView setContentOffset:CGPointMake(0, 0) animated:YES];
     }
     
 }
@@ -319,6 +326,13 @@ typedef void(^ModelDataBlock)(NSString *str);
         if (indexPath.row == 0) {
             
             //弹出地图页面
+            MapViewController *mapVC = [[MapViewController alloc] init];
+            mapVC.model = _model;
+            //block赋值
+            [mapVC setIndexBlock:^{
+                [self btnsViewAction:1];
+            }];
+            [self presentViewController:mapVC animated:YES completion:nil];
             
         }else if (indexPath.row == 1){
             
