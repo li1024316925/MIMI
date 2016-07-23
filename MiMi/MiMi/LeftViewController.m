@@ -217,9 +217,7 @@
 //退出登录
 - (void)logoutNotification:(NSNotification *)note
 {
-    UIView *loginView = [self.unLoginBtn viewWithTag:102];
-    
-    [loginView removeFromSuperview];
+    [self.userView removeFromSuperview];
 }
 
 //账号自动登录
