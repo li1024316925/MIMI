@@ -58,12 +58,23 @@
     _bgView.alpha = 0;
     [_navigationView addSubview:_bgView];
     
-    //按钮
-    UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(5, 64-35, 30, 30)];
+    //左按钮
+    UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(5, 64-35, 130, 30)];
     [leftBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [leftBtn setTitle:@"推荐&附近" forState:UIControlStateNormal];
+    leftBtn.titleLabel.textColor = [UIColor whiteColor];
+    leftBtn.titleLabel.font = [UIFont boldSystemFontOfSize:20];
+    leftBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 1, 0, 1);
+    leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 1, 0, 69);
     [_navigationView addSubview:leftBtn];
     [leftBtn addTarget:self action:@selector(leftBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     _navigationView.alpha = 1;
+    
+    //右按钮
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(_navigationView.bounds.size.width-5-35, 64-35, 30, 25)];
+    [rightBtn setImage:[UIImage imageNamed:@"btn_share_normal_6P"] forState:UIControlStateNormal];
+    [_navigationView addSubview:rightBtn];
+    [rightBtn addTarget:self action:@selector(rightBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:_navigationView];
     
@@ -72,7 +83,12 @@
 //左按钮点击方法
 - (void)leftBtnAction:(UIButton *)button{
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+//右按钮点击方法
+- (void)rightBtnAction:(UIButton *)button{
     
 }
 

@@ -27,6 +27,11 @@ typedef void(^ModelDataBlock)(NSString *str);
 
 @implementation MainCellPushController
 
+//修改状态栏
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 //还原所有视图形变
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
@@ -252,9 +257,7 @@ typedef void(^ModelDataBlock)(NSString *str);
         
         //复用单元格
         MainPushSubTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pushSubTableViewCell"];
-//        if (cell == nil) {
-//            cell = [[[NSBundle mainBundle] loadNibNamed:@"MainPushSubTableViewCell" owner:self options:nil] lastObject];
-//        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         //配置单元格
         [self configureCell:cell atIndexPath:indexPath];
         
@@ -285,6 +288,7 @@ typedef void(^ModelDataBlock)(NSString *str);
     cell.model = _subDataArray[indexPath.row];
 }
 
+
 #pragma mark ------ UITableViewDelegate
 
 //返回单元格高度
@@ -306,6 +310,47 @@ typedef void(^ModelDataBlock)(NSString *str);
     return 0;
     
 }
+
+//点击单元格时调用
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (tableView == _subTableView) {
+        
+        if (indexPath.row == 0) {
+            
+            //弹出地图页面
+            
+        }else if (indexPath.row == 1){
+            
+            //打电话
+            //警告框
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"拨打电话" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            //打电话按钮
+            MainPushSubTableViewCellModel *alertModel = _subDataArray[indexPath.row];
+            UIAlertAction *telAction = [UIAlertAction actionWithTitle:alertModel.content style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",alertModel.content]]]) {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",alertModel.content]]];
+                }
+            }];
+            
+            //取消按钮
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            }];
+            
+            [alert addAction:telAction];
+            [alert addAction:cancelAction];
+            
+            //模态弹出
+            [self presentViewController:alert animated:YES completion:nil];
+            
+        }
+        
+    }
+    
+}
+
 
 #pragma mark ------ BMKMapViewDelegate
 

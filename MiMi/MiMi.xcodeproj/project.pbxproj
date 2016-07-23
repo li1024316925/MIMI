@@ -27,6 +27,7 @@
 		2AC3F83E1D4306A600A60B37 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3F8381D4306A600A60B37 /* UITableView+FDKeyedHeightCache.m */; };
 		2AC3F83F1D4306A600A60B37 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3F83A1D4306A600A60B37 /* UITableView+FDTemplateLayoutCell.m */; };
 		2AC3F8401D4306A600A60B37 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3F83C1D4306A600A60B37 /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		2AC3F8431D4346FA00A60B37 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3F8421D4346FA00A60B37 /* MapViewController.m */; };
 		2ACD31D71D3DD048006A1B89 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */; };
 		2ACD31D81D3DD048006A1B89 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */; };
 		2AD2CA4B1D40732F006C7D2A /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2CA491D40732F006C7D2A /* SegmentView.m */; };
@@ -128,6 +129,8 @@
 		2AC3F83A1D4306A600A60B37 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		2AC3F83B1D4306A600A60B37 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
 		2AC3F83C1D4306A600A60B37 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		2AC3F8411D4346FA00A60B37 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		2AC3F8421D4346FA00A60B37 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		2ACD31D41D3DD048006A1B89 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
 		2ACD31D51D3DD048006A1B89 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		2ACD31D61D3DD048006A1B89 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -394,6 +397,8 @@
 				2AE34CFC1D3D127F004995BF /* SearchViewController.m */,
 				2ADEBE9F1D3F6156001EE6BE /* MainCellPushController.h */,
 				2ADEBEA01D3F6156001EE6BE /* MainCellPushController.m */,
+				2AC3F8411D4346FA00A60B37 /* MapViewController.h */,
+				2AC3F8421D4346FA00A60B37 /* MapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -812,6 +817,7 @@
 				F05F15731D3D04E700DE454E /* PushFoundModel.m in Sources */,
 				513A7D1F1D3F5E9500480BF4 /* CCSegementView.m in Sources */,
 				C6E9AB201D3A252B00A15CC1 /* WNXMessagePushViewController.m in Sources */,
+				2AC3F8431D4346FA00A60B37 /* MapViewController.m in Sources */,
 				2AA3193A1D38D7F400F64761 /* MMDrawerBarButtonItem.m in Sources */,
 				889D62F81D4075D40027E53C /* MXSegementCellCollectionViewCell.m in Sources */,
 				2AA3193D1D38D7F400F64761 /* UIViewController+MMDrawerController.m in Sources */,

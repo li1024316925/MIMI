@@ -65,6 +65,7 @@
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>tel</string>
 		<string>baidumap</string>
 		<string>weibosdk2.5</string>
 		<string>weibosdk</string>
