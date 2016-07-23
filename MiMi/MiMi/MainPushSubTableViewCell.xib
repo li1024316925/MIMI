@@ -22,7 +22,7 @@
                             <constraint firstAttribute="height" constant="35" id="mvq-gx-JGV"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-bp-fh4">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ffff" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-bp-fh4">
                         <rect key="frame" x="51" y="8" width="291" height="27"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                         <color key="textColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,15 +44,17 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="xDn-2b-q56" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="23" id="6tV-IG-qcc"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Vvu-oU-KPI" secondAttribute="trailing" constant="44" id="9fo-EO-8GH"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Vvu-oU-KPI" secondAttribute="bottom" constant="8" id="9BC-u8-FiG"/>
+                    <constraint firstItem="xDn-2b-q56" firstAttribute="leading" secondItem="RtS-bp-fh4" secondAttribute="trailing" constant="30" id="9yu-80-lzl"/>
                     <constraint firstItem="ndB-qg-Za4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="CcR-rf-vYH"/>
-                    <constraint firstItem="Vvu-oU-KPI" firstAttribute="top" secondItem="RtS-bp-fh4" secondAttribute="bottom" constant="8" id="SoG-zV-f7S"/>
-                    <constraint firstItem="RtS-bp-fh4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="UgA-MR-wWu"/>
+                    <constraint firstItem="xDn-2b-q56" firstAttribute="leading" secondItem="Vvu-oU-KPI" secondAttribute="trailing" constant="30" id="G4K-KS-nLp"/>
+                    <constraint firstItem="Vvu-oU-KPI" firstAttribute="top" secondItem="RtS-bp-fh4" secondAttribute="bottom" constant="8" id="TgJ-RG-x4V"/>
+                    <constraint firstItem="Vvu-oU-KPI" firstAttribute="top" secondItem="RtS-bp-fh4" secondAttribute="bottom" constant="8" id="VmI-DR-XT2"/>
+                    <constraint firstItem="RtS-bp-fh4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="c1I-Cz-VX0"/>
                     <constraint firstItem="xDn-2b-q56" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="c3E-OB-ipj"/>
-                    <constraint firstItem="RtS-bp-fh4" firstAttribute="leading" secondItem="ndB-qg-Za4" secondAttribute="trailing" constant="8" id="caH-Cr-F1a"/>
+                    <constraint firstItem="RtS-bp-fh4" firstAttribute="leading" secondItem="ndB-qg-Za4" secondAttribute="trailing" constant="8" id="cC1-kC-AsP"/>
                     <constraint firstItem="ndB-qg-Za4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="khe-f8-omm"/>
-                    <constraint firstItem="Vvu-oU-KPI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="43" id="t3c-km-VE6"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="RtS-bp-fh4" secondAttribute="trailing" constant="44" id="zgr-cU-bft"/>
+                    <constraint firstItem="Vvu-oU-KPI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="43" id="wsL-UI-FhN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

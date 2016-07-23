@@ -115,10 +115,13 @@ typedef void(^ModelDataBlock)(NSString *str);
     _subTableView = [[UITableView alloc] initWithFrame:CGRectMake(kScreenWidth, -20, kScreenWidth, kScreenHeight+20) style:UITableViewStyleGrouped];
     _subTableView.delegate = self;
     _subTableView.dataSource = self;
-    _subTableView.rowHeight = 90;
+//    _subTableView.rowHeight = 90;
     self.subTableView = _subTableView;
     //头视图
     [self createSubTableHeaderView];
+    
+    //注册单元格
+    [_subTableView registerNib:[UINib nibWithNibName:@"MainPushSubTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"pushSubTableViewCell"];
     
     //添加到假头视图之下
     [self.view insertSubview:_subTableView belowSubview:self.headerView];
@@ -249,15 +252,11 @@ typedef void(^ModelDataBlock)(NSString *str);
         
         //复用单元格
         MainPushSubTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"pushSubTableViewCell"];
-        if (cell == nil) {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"MainPushSubTableViewCell" owner:nil options:nil] lastObject];
-        }
-        cell.model = _subDataArray[indexPath.row];
-        if (indexPath.row == 0 || indexPath.row == 1) {
-            cell.pushBtn.hidden = NO;
-        }else{
-            cell.pushBtn.hidden = YES;
-        }
+//        if (cell == nil) {
+//            cell = [[[NSBundle mainBundle] loadNibNamed:@"MainPushSubTableViewCell" owner:self options:nil] lastObject];
+//        }
+        //配置单元格
+        [self configureCell:cell atIndexPath:indexPath];
         
         return cell;
         
@@ -276,6 +275,37 @@ typedef void(^ModelDataBlock)(NSString *str);
     
 }
 
+//配置单元格
+- (void)configureCell:(MainPushSubTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0 || indexPath.row == 1) {
+        cell.pushBtn.hidden = NO;
+    }else{
+        cell.pushBtn.hidden = YES;
+    }
+    cell.model = _subDataArray[indexPath.row];
+}
+
+#pragma mark ------ UITableViewDelegate
+
+//返回单元格高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (tableView == _subTableView) {
+        
+        //高度自适应
+        return [tableView fd_heightForCellWithIdentifier:@"pushSubTableViewCell" configuration:^(id cell) {
+            [self configureCell:cell atIndexPath:indexPath];
+        }];
+        
+    }else if (tableView == _backTableView){
+        
+        return 20;
+        
+    }
+    
+    return 0;
+    
+}
 
 #pragma mark ------ BMKMapViewDelegate
 

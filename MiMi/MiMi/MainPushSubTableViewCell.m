@@ -17,7 +17,18 @@
     _titleLable.text = _model.title;
     _content.text = _model.content;
     
+//    [self sizeThatFits:CGSizeMake(kScreenWidth, 0)];
 }
+
+//- (CGSize)sizeThatFits:(CGSize)size{
+//    
+//    CGFloat totalHeight = 0;
+//    totalHeight += [self.titleLable sizeThatFits:size].height;
+//    totalHeight += [self.content sizeThatFits:size].height;
+//    totalHeight += 20;
+//    return CGSizeMake(size.width, totalHeight);
+//    
+//}
 
 - (void)awakeFromNib {
     // Initialization code
